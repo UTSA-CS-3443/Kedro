@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1280.0" prefWidth="1280.0" text="Kedro" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1280.0" prefWidth="1280.0">
+         <children>
+            <ImageView fitHeight="1159.0" fitWidth="625.0" layoutX="727.0" layoutY="104.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../Design/SanAntoniomap.gif" />
+               </image>
+            </ImageView>
+            <Button layoutX="407.0" layoutY="-22.0" mnemonicParsing="false" prefHeight="117.0" prefWidth="396.0" style="-fx-background-color: white;" text="Profile">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button layoutX="797.0" layoutY="-26.0" mnemonicParsing="false" prefHeight="123.0" prefWidth="481.0" style="-fx-background-color: #278FB4;" text="Create Event">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="126.0" fitWidth="133.0" layoutX="720.0" layoutY="1117.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@PartyKedro.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="1132.0" layoutY="1075.0" mnemonicParsing="false" text="Map" />
+            <Button layoutX="966.0" layoutY="1084.0" mnemonicParsing="false" text="HeatMap" />
+            <TableView layoutX="-1.0" layoutY="98.0" prefHeight="1125.0" prefWidth="729.0">
+              <columns>
+                <TableColumn prefWidth="359.46235144138336" text="Events Near Your Zip Code" />
+                <TableColumn prefWidth="368.53770446777344" text="Top Events" />
+              </columns>
+            </TableView>
+            <Button layoutX="-19.0" layoutY="-15.0" mnemonicParsing="false" prefHeight="113.0" prefWidth="440.0" style="-fx-background-color: #278FB4;" text="Events">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <TextField layoutX="-15.0" layoutY="1151.0" prefHeight="88.0" prefWidth="742.0" promptText="Enter your Zipcode">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </TextField>
+         </children></AnchorPane>
+  </content>
+</TitledPane>
