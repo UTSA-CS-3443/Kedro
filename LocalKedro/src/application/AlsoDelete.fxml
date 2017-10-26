@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Button mnemonicParsing="false" text="tton" BorderPane.alignment="CENTER">
+         <graphic>
+            <ColorPicker />
+         </graphic>
+         <BorderPane.margin>
+            <Insets top="50.0" />
+         </BorderPane.margin>
+      </Button>
+   </top>
+   <left>
+      <CheckBox mnemonicParsing="false" text="CheckBox" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <ComboBox prefWidth="150.0" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <PasswordField BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <ChoiceBox prefWidth="150.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
