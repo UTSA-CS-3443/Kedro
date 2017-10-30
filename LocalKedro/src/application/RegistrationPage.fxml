@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <VBox layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <TextField promptText="USERNAME" />
+                  <TextField promptText="EMAIL" />
+                  <TextField promptText="EMAIL CONFIRM" />
+                  <PasswordField promptText="PASSWORD" />
+                  <PasswordField promptText="PASSWORD CONFIRM" />
+               </children>
+            </VBox>
+            <Button layoutX="267.0" layoutY="312.0" mnemonicParsing="false" text="REGISTER" />
+            <Label layoutX="260.0" layoutY="60.0" text="REGISTRATION" />
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
