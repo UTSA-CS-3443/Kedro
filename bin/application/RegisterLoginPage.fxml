@@ -10,10 +10,9 @@
          <children>
             <PasswordField layoutX="226.0" layoutY="200.0" promptText="PASSWORD" />
             <TextField layoutX="226.0" layoutY="156.0" promptText="USERNAME" />
-            <Button layoutX="274.0" layoutY="244.0" mnemonicParsing="false" text="LOGIN" />
+            <Button layoutX="274.0" layoutY="244.0" mnemonicParsing="false" onAction="#logIn" text="LOGIN" />
             <Button layoutX="267.0" layoutY="290.0" mnemonicParsing="false" onAction="#handle" text="REGISTER" />
             <Label layoutX="246.0" layoutY="114.0" text="LOGIN OR REGISTER" />
-            <ColorPicker layoutX="55.0" layoutY="68.0" />
          </children></AnchorPane>
   </content>
 </ScrollPane>

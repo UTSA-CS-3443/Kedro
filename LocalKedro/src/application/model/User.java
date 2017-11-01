@@ -1,5 +1,7 @@
 package application.model;
 
+import java.io.*;
+
 public class User {
 
 	private String name,password,email;
@@ -28,5 +30,13 @@ public class User {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public void userWrite() {
+		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("User.txt")))){
+			pw.println("gysdhkjsa");
+		}
+		catch(Exception e) {
+			System.out.println("you done goofed");
+		}
 	}
 }
