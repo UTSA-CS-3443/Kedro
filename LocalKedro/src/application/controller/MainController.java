@@ -6,8 +6,20 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+
 
 public class MainController implements EventHandler<ActionEvent> {
+	
+	AnchorPane aPane = new AnchorPane();
+	public TextField USERNAME;
+	public TextField PASSWORD;
+	Button LOGIN = new Button();
+	String u = "username";
+	String p = "password";
+	
 	
 	public void handle(ActionEvent event) {
 		//compare emails to each other and password
@@ -20,10 +32,11 @@ public class MainController implements EventHandler<ActionEvent> {
 			}
 		System.out.println("Register");
 	}
-
-	public void logIn(ActionEvent event) {
-		//check if both the fields are filled
-		//then search for username and if password is associated with it
+	
+	public void handleButtonAction(ActionEvent arg0){
+		u=USERNAME.getText().toString();
+		p=PASSWORD.getText().toString();
+		System.out.println(u + "\n" + p);
 		try {
 			   Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml")); 
 			   Main.stage.setScene(new Scene(root, 600, 400)); 
@@ -31,6 +44,7 @@ public class MainController implements EventHandler<ActionEvent> {
 			} catch(Exception e) { 
 			   e.printStackTrace(); 
 			}
-		System.out.println("Log in");
 	}
+
+	
 }
