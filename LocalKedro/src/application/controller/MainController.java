@@ -33,4 +33,16 @@ public class MainController implements EventHandler<ActionEvent> {
 			}
 		System.out.println("Log in");
 	}
+	
+	public void back(ActionEvent event) {
+		//compare emails to each other and password
+		try {
+			   Parent root = FXMLLoader.load(getClass().getResource("RegisterLoginPage.fxml")); 
+			   Main.stage.setScene(new Scene(root, 600, 400)); 
+			   Main.stage.show(); 
+			} catch(Exception e) { 
+			   e.printStackTrace(); 
+			}
+		System.out.println("Register");
+	}
 }

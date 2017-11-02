@@ -19,7 +19,7 @@
             </VBox>
             <Button layoutX="267.0" layoutY="312.0" mnemonicParsing="false" text="REGISTER" />
             <Label layoutX="260.0" layoutY="60.0" text="REGISTRATION" />
-            <Button layoutX="25" layoutY="25" text="Back" />
+            <Button layoutX="25" layoutY="25" mnemonicParsing="false" text="Back" />
          </children></AnchorPane>
   </content>
 </ScrollPane>
