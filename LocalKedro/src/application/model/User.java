@@ -10,6 +10,13 @@ public class User {
 		this.setName(name);
 		this.setPassword(password);
 		this.setEmail(email);
+		userWrite();
+	}
+	
+	public User(String name, String password) {
+		this.setName(name);
+		this.setPassword(password);
+		userCheck();
 	}
 	
 	/////GETTERS AND SETTERS//////
@@ -31,11 +38,27 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public void userWrite() {
-		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("User.txt")))){
-			pw.println("gysdhkjsa");
+	public void userCheck() {
+		try (BufferedReader br = new BufferedReader(new FileReader("Users.txt"))){
+			String line = null;
+		    while ((line = br.readLine()) != null) {
+		        if(line.equals(this.getName())) {
+		        	System.out.println("You exist!");
+		        }
+		    }
 		}
 		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void userWrite() {
+		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("Users.txt")))){
+			pw.println(this.getName());
+			pw.println(this.getPassword());
+			pw.println(this.getEmail());
+		}
+		catch(Exception e) {
+			e.printStackTrace();
 			System.out.println("you done goofed");
 		}
 	}
