@@ -44,14 +44,17 @@ public class User {
 			String line = null;
 		    while ((line = br.readLine()) != null) {
 		        if(line.equals(this.getName())) {
-		        	System.out.println("You exist!");
 		        	line = br.readLine();
 		        	if(line != null && line.equals(this.getPassword())) {
 		        		System.out.println("You exist with password!");	
 		        	}
 		        	else {
+		        		System.out.println("Incorrect password");
 		        		//controller error call
 		        	}
+		        }
+		        else {
+		        	System.out.println("Incorrect username");
 		        }
 		    }
 		}
