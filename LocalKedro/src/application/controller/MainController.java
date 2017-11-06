@@ -13,11 +13,9 @@ import javafx.scene.layout.AnchorPane;
 
 
 public class MainController implements EventHandler<ActionEvent> {
-	
-	AnchorPane aPane = new AnchorPane();
+
 	public TextField USERNAME;
 	public TextField PASSWORD;
-	Button LOGIN = new Button();
 	String u = "username";
 	String p = "password";
 	

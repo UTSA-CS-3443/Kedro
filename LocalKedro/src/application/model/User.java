@@ -1,6 +1,7 @@
 package application.model;
 
 import java.io.*;
+import application.controller.MainController;
 
 public class User {
 
@@ -44,6 +45,13 @@ public class User {
 		    while ((line = br.readLine()) != null) {
 		        if(line.equals(this.getName())) {
 		        	System.out.println("You exist!");
+		        	line = br.readLine();
+		        	if(line != null && line.equals(this.getPassword())) {
+		        		System.out.println("You exist with password!");	
+		        	}
+		        	else {
+		        		//controller error call
+		        	}
 		        }
 		    }
 		}

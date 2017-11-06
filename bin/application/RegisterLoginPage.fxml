@@ -6,11 +6,11 @@
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
   <content>
-    <AnchorPane fx:id="aPane" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0">
          <children>
             <PasswordField id="PASSWORD" fx:id="PASSWORD" onAction="#handleButtonAction" layoutX="226.0" layoutY="200.0" promptText="PASSWORD" />
             <TextField id="USERNAME" fx:id="USERNAME" onAction="#handleButtonAction" layoutX="226.0" layoutY="156.0" promptText="USERNAME" />
-            <Button fx:id="LOGIN" onAction="#handleButtonAction" layoutX="274.0" layoutY="244.0" mnemonicParsing="false" text="LOGIN" />
+            <Button onAction="#handleButtonAction" layoutX="274.0" layoutY="244.0" mnemonicParsing="false" text="LOGIN" />
             <Button layoutX="267.0" layoutY="290.0" mnemonicParsing="false" onAction="#handle" text="REGISTER" />
             <Label layoutX="246.0" layoutY="114.0" text="LOGIN OR REGISTER" />
          </children></AnchorPane>
