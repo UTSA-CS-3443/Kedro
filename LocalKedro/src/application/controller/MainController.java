@@ -31,14 +31,15 @@ public class MainController implements EventHandler<ActionEvent> {
 			}
 		System.out.println("Register");
 	}
-	
+	// opens up the Events Page when you click on Login for now
+	// after Home Page is made, logging in will lead to the Home Page
 	public void handleButtonAction(ActionEvent arg0){
 		u=USERNAME.getText().toString();
 		p=PASSWORD.getText().toString();
 		User user = new User(u,p);
 		System.out.println(u + "\n" + p);
 		try {
-			   Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml")); 
+			   Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml")); 
 			   Main.stage.setScene(new Scene(root, 600, 400)); 
 			   Main.stage.show(); 
 			} catch(Exception e) { 
@@ -47,16 +48,16 @@ public class MainController implements EventHandler<ActionEvent> {
 	}
 	
 	public void handleEvent(ActionEvent event) {
-		name
-		type
-		date
-		location
+		//name
+		//type
+		//date
+		//location
 		//compare emails to each other and password
 		try {
 			   Parent root = FXMLLoader.load(getClass().getResource("IdkIguess.fxml"));
 			   Main.stage.setScene(new Scene(root, 600, 400));
 			   Main.stage.show();
-			   Event event = new Event(name, type, date, location);
+			   //Event event = new Event(name, type, date, location);
 			} catch(Exception e) {
 			   e.printStackTrace();
 			}
