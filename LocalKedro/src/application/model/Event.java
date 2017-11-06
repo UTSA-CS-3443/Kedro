@@ -7,7 +7,7 @@ public class Event {
 	private String name;
 	private Type type;
 	private Date date;
-	private Location location;
+	private Location location;//make this a string
 
 	public Event(String name, Type type, Date date, Location location) {
 		//objects need to be created for each of these and maybe add some more info to this
@@ -19,7 +19,10 @@ public class Event {
 	
 	public void eventWrite() {
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("Event.txt")))){
-			pw.println("gysdhkjsa");
+			pw.println(this.getName());
+			pw.println(this.getType());
+			pw.println(this.getDate());
+			pw.println(this.getLocation());
 		}
 		catch(Exception e) {
 			System.out.println("you done goofed");

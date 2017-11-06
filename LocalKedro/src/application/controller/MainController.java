@@ -45,4 +45,21 @@ public class MainController implements EventHandler<ActionEvent> {
 			   e.printStackTrace(); 
 			}
 	}
+	
+	public void handleEvent(ActionEvent event) {
+		name
+		type
+		date
+		location
+		//compare emails to each other and password
+		try {
+			   Parent root = FXMLLoader.load(getClass().getResource("IdkIguess.fxml"));
+			   Main.stage.setScene(new Scene(root, 600, 400));
+			   Main.stage.show();
+			   Event event = new Event(name, type, date, location);
+			} catch(Exception e) {
+			   e.printStackTrace();
+			}
+		System.out.println("event");
+	}
 }
