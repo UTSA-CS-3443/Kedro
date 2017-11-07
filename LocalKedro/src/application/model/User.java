@@ -79,7 +79,8 @@ public class User {
 	}
 
 	public void userWrite() {
-		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("Users.txt")))) {
+		File file = new File("/Users/Travis/git/Kedro/UserFolder/"+ this.getName());
+		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
 			pw.println(this.getName());
 			pw.println(this.getPassword());
 			pw.println(this.getEmail());
