@@ -6,6 +6,7 @@ import application.controller.MainController;
 public class User {
 
 	private String name,password,email;
+	private boolean proceed = false;
 	
 	public User(String name, String password, String email) {
 		this.setName(name);
@@ -13,11 +14,52 @@ public class User {
 		this.setEmail(email);
 		userWrite();
 	}
-	
+	/**
+	 * Creates the current user object and loads all of their info into the application
+	 * also if you guys get tired of logging in then just comment out this.setProceed(userCheck());
+	 * and uncomment this.setProceed(true); and it'll let you log in regardless
+	 * @param name
+	 * @param password
+	 */
 	public User(String name, String password) {
 		this.setName(name);
 		this.setPassword(password);
-		userCheck();
+		//this.setProceed(true);
+		this.setProceed(userCheck());
+	}
+	
+	public boolean userCheck() {
+		try (BufferedReader br = new BufferedReader(new FileReader("Users.txt"))){
+			String line = null;
+		    while ((line = br.readLine()) != null) {
+		        if(line.equals(this.getName())) {
+		        	line = br.readLine();
+		        	if(line != null && line.equals(this.getPassword())) {
+		        		System.out.println("Welcome!");	
+		        		return true;
+		        	}
+		        	else {
+		        		return false;
+		        	}
+		        }
+		    }
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return false;
+	}
+	public void userWrite() {
+		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("Users.txt")))){
+			pw.println(this.getName());
+			pw.println(this.getPassword());
+			pw.println(this.getEmail());
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("you done goofed");
+		}
 	}
 	
 	/////GETTERS AND SETTERS//////
@@ -39,38 +81,12 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public void userCheck() {
-		try (BufferedReader br = new BufferedReader(new FileReader("Users.txt"))){
-			String line = null;
-		    while ((line = br.readLine()) != null) {
-		        if(line.equals(this.getName())) {
-		        	line = br.readLine();
-		        	if(line != null && line.equals(this.getPassword())) {
-		        		System.out.println("You exist with password!");	
-		        	}
-		        	else {
-		        		System.out.println("Incorrect password");
-		        		//controller error call
-		        	}
-		        }
-		        else {
-		        	System.out.println("Incorrect username");
-		        }
-		    }
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
+
+	public boolean isProceed() {
+		return proceed;
 	}
-	public void userWrite() {
-		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("Users.txt")))){
-			pw.println(this.getName());
-			pw.println(this.getPassword());
-			pw.println(this.getEmail());
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-			System.out.println("you done goofed");
-		}
+
+	public void setProceed(boolean proceed) {
+		this.proceed = proceed;
 	}
 }

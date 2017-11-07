@@ -11,7 +11,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-
+/**
+ * This will handle the user input and button presses on the register login page and
+ * the registration page
+ * @author SpaceHawkksssssss
+ *
+ */
 public class MainController implements EventHandler<ActionEvent> {
 
 	public TextField USERNAME;
@@ -21,7 +26,6 @@ public class MainController implements EventHandler<ActionEvent> {
 	
 	
 	public void handle(ActionEvent event) {
-		//compare emails to each other and password
 		try {
 			   Parent root = FXMLLoader.load(getClass().getResource("RegistrationPage.fxml"));
 			   Main.stage.setScene(new Scene(root, 600, 400));
@@ -38,29 +42,18 @@ public class MainController implements EventHandler<ActionEvent> {
 		p=PASSWORD.getText().toString();
 		User user = new User(u,p);
 		System.out.println(u + "\n" + p);
-		try {
-			   Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml")); 
-			   Main.stage.setScene(new Scene(root, 600, 400)); 
-			   Main.stage.show(); 
-			} catch(Exception e) { 
-			   e.printStackTrace(); 
+		//added error checking so need name and abc123 to log in
+		if(user.isProceed()) {
+			try {
+			   		Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml")); 
+			   		Main.stage.setScene(new Scene(root, 600, 400)); 
+			   		Main.stage.show(); 
+				} catch(Exception e) { 
+					e.printStackTrace(); 
+				}
 			}
-	}
-	
-	public void handleEvent(ActionEvent event) {
-		//name
-		//type
-		//date
-		//location
-		//compare emails to each other and password
-		try {
-			   Parent root = FXMLLoader.load(getClass().getResource("IdkIguess.fxml"));
-			   Main.stage.setScene(new Scene(root, 600, 400));
-			   Main.stage.show();
-			   //Event event = new Event(name, type, date, location);
-			} catch(Exception e) {
-			   e.printStackTrace();
-			}
-		System.out.println("event");
+		else {
+			System.out.println("invalid username or password");
+		}
 	}
 }

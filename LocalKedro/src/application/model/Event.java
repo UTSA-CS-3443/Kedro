@@ -28,6 +28,26 @@ public class Event {
 			System.out.println("you done goofed");
 		}
 	}
+	
+	public boolean eventCheck() {
+		try (BufferedReader br = new BufferedReader(new FileReader("Event.txt"))){
+			String line = null;
+		    while ((line = br.readLine()) != null) {
+		        if(line.equals(this.getName())) {
+		        	line = br.readLine();
+		        	return true;
+		        }
+		        else {
+		        	System.out.println("Event not here");
+		        	return false;
+		        }
+		    }
+		}
+		catch(Exception e) {
+			System.out.println("Something doesn't exist");
+		}
+		return false;
+	}
 
 	public String getName() {
 		return name;
