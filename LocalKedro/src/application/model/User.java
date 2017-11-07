@@ -1,83 +1,127 @@
 package application.model;
 
 import java.io.*;
+import java.util.*;
 import application.controller.MainController;
 
 public class User {
 
-	private String name,password,email;
+	private String name, password, email;
 	private boolean proceed = false;
-	
+	private ArrayList<RSVP> rsvp;
+
 	public User(String name, String password, String email) {
 		this.setName(name);
 		this.setPassword(password);
 		this.setEmail(email);
 		userWrite();
+		this.rsvp = new ArrayList<RSVP>();
 	}
+
 	/**
-	 * Creates the current user object and loads all of their info into the application
-	 * also if you guys get tired of logging in then just comment out this.setProceed(userCheck());
-	 * and uncomment this.setProceed(true); and it'll let you log in regardless
+	 * Creates the current user object and loads all of their info into the
+	 * application also if you guys get tired of logging in then just comment out
+	 * this.setProceed(userCheck()); and uncomment this.setProceed(true); and it'll
+	 * let you log in regardless
+	 * 
 	 * @param name
 	 * @param password
 	 */
 	public User(String name, String password) {
 		this.setName(name);
 		this.setPassword(password);
-		//this.setProceed(true);
+		// this.setProceed(true);
+		this.rsvp = new ArrayList<RSVP>();
 		this.setProceed(userCheck());
 	}
-	
+
+	/**
+	 * this function checks if the user exists and if they do it reads in all of their
+	 * rsvped events and other attributes that I have yet to add
+	 * @return true if the user exists
+	 */
 	public boolean userCheck() {
-		try (BufferedReader br = new BufferedReader(new FileReader("Users.txt"))){
-			String line = null;
-		    while ((line = br.readLine()) != null) {
-		        if(line.equals(this.getName())) {
-		        	line = br.readLine();
-		        	if(line != null && line.equals(this.getPassword())) {
-		        		System.out.println("Welcome!");	
-		        		return true;
-		        	}
-		        	else {
-		        		return false;
-		        	}
-		        }
-		    }
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-			return false;
+		File folder = new File("/Users/Travis/git/Kedro/UserFolder");
+		File[] listOfFiles = folder.listFiles();
+
+		for (File file : listOfFiles) {
+			if (file.isFile() && file.getName().equals(this.getName()+".txt")) {
+				try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+					String line = null;
+					while ((line = br.readLine()) != null) { // username
+						if (line.equals(this.getName())) {
+							line = br.readLine(); // password
+							if (line != null && line.equals(this.getPassword())) {
+								System.out.println("Welcome!");
+								this.setEmail(br.readLine()); // email
+								while ((line = br.readLine()) != null) { // reads in events to arrayList
+									if (!(line.equals("*"))) {
+										RSVP loadIn = new RSVP(line);
+										this.rsvp.add(loadIn);
+									} else if (line.equals("*")) {
+										break;
+									}
+								}
+								// System.out.println(toString() + "\n");
+								return true;
+							} else {
+								return false;
+							}
+						}
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+					return false;
+				}
+			}
 		}
 		return false;
 	}
+
 	public void userWrite() {
-		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("Users.txt")))){
+		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("Users.txt")))) {
 			pw.println(this.getName());
 			pw.println(this.getPassword());
 			pw.println(this.getEmail());
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("you done goofed");
 		}
 	}
-	
-	/////GETTERS AND SETTERS//////
+
+	public void signIn() {
+
+	}
+
+	public String toString() {
+		String line = "";
+		for (RSVP r : rsvp) {
+			line += r.getName();
+		}
+		return line;
+	}
+
+	///// GETTERS AND SETTERS//////
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
