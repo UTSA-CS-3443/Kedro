@@ -14,6 +14,7 @@ public class CreateEventController implements EventHandler<ActionEvent>{
 	//when join event is pressed it creates an rsvp object for the user
 	@Override
 	public void handle(ActionEvent event) {
+		//takes info from the user and puts into event object in the try
 		try {
 			   Parent root = FXMLLoader.load(getClass().getResource("")); //replace this pls
 			   Main.stage.setScene(new Scene(root, 600, 400));

@@ -2,14 +2,14 @@ package application.model;
 
 public class RSVP {
 	
-	private String name;
+	private String eventName;
 	public RSVP(String rsvp) {
 		this.setName(rsvp);
 	}
 	public String getName() {
-		return name;
+		return eventName;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.eventName = name;
 	}
 }

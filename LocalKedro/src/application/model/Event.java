@@ -21,7 +21,11 @@ public class Event {
 	}
 	
 	public void addGuest(User user) {
-		rsvp.add(user);
+		this.rsvp.add(user);
+	}
+	
+	public int getGuests() {
+		return this.rsvp.size();
 	}
 	
 	public void eventWrite() {
@@ -35,23 +39,20 @@ public class Event {
 			System.out.println("you done goofed");
 		}
 	}
-	
+	//doesn't work right yet. Need event pages finished
 	public boolean eventCheck() {
-		try (BufferedReader br = new BufferedReader(new FileReader("Event.txt"))){
-			String line = null;
-		    while ((line = br.readLine()) != null) {
-		        if(line.equals(this.getName())) {
-		        	line = br.readLine();
-		        	return true;
-		        }
-		        else {
-		        	System.out.println("Event not here");
-		        	return false;
-		        }
-		    }
-		}
-		catch(Exception e) {
-			System.out.println("Something doesn't exist");
+		File folder = new File("/Users/Travis/git/Kedro/EventFolder");
+		File[] listOfFiles = folder.listFiles();
+
+		for (File file : listOfFiles) {
+			if (file.isFile() && file.getName().equals(this.getName())) {
+				return false;
+			}
+			else if(!(file.isFile()) && !(file.getName().equals(this.getName())))
+				try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+				} catch (Exception e) {
+					System.out.println("Something doesn't exist");
+				}
 		}
 		return false;
 	}

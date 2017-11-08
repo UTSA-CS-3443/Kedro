@@ -41,32 +41,33 @@ public class User {
 	 * @return true if the user exists
 	 */
 	public boolean userCheck() {
-		File folder = new File("/Users/Travis/git/Kedro/UserFolder");
+		String filePath = new File("").getAbsolutePath();
+		filePath += "\\UserFolder";
+		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();
 
 		for (File file : listOfFiles) {
-			if (file.isFile() && file.getName().equals(this.getName()+".txt")) {
+			if (file.isFile() && file.getName().equals(this.getName() + ".txt")) {
 				try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 					String line = null;
-					while ((line = br.readLine()) != null) { // username
-						if (line.equals(this.getName())) {
-							line = br.readLine(); // password
-							if (line != null && line.equals(this.getPassword())) {
-								System.out.println("Welcome!");
-								this.setEmail(br.readLine()); // email
-								while ((line = br.readLine()) != null) { // reads in events to arrayList
-									if (!(line.equals("*"))) {
-										RSVP loadIn = new RSVP(line);
-										this.rsvp.add(loadIn);
-									} else if (line.equals("*")) {
-										break;
-									}
+					line = br.readLine(); // user name
+					if (line.equals(this.getName())) {
+						line = br.readLine(); // password
+						if (line != null && line.equals(this.getPassword())) {
+							System.out.println("Welcome!");
+							this.setEmail(br.readLine()); // email
+							while ((line = br.readLine()) != null) { // reads in events to arrayList
+								if (!(line.equals("*"))) {
+									RSVP loadIn = new RSVP(line);
+									this.rsvp.add(loadIn);
+								} else if (line.equals("*")) {
+									break;
 								}
-								// System.out.println(toString() + "\n");
-								return true;
-							} else {
-								return false;
 							}
+							// System.out.println(toString() + "\n");
+							return true;
+						} else {
+							return false;
 						}
 					}
 				} catch (Exception e) {
@@ -79,7 +80,9 @@ public class User {
 	}
 
 	public void userWrite() {
-		File file = new File("/Users/Travis/git/Kedro/UserFolder/"+ this.getName());
+		String filePath = new File("").getAbsolutePath();
+		filePath += "\\UserFolder";
+		File file = new File(filePath + this.getName());
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
 			pw.println(this.getName());
 			pw.println(this.getPassword());
@@ -96,7 +99,7 @@ public class User {
 
 	public String toString() {
 		String line = "";
-		for (RSVP r : rsvp) {
+		for (RSVP r : this.rsvp) {
 			line += r.getName();
 		}
 		return line;

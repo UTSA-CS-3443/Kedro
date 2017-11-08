@@ -2,14 +2,33 @@ package application.model;
 
 public class Date {
 
-	private String date;
-	public Date(String date) {
-		this.setDate(date);
+	private int iDay;
+	private int iMonth;
+	private int iYear;
+	
+	public Date(int day, int month, int year) {
+		this.setiDay(day);
+		this.setiMonth(month);
+		this.setiYear(year);
 	}
-	public String getDate() {
-		return date;
+	
+	/////GETTERS AND SETTERS/////
+	public int getiDay() {
+		return iDay;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setiDay(int iDay) {
+		this.iDay = iDay;
+	}
+	public int getiMonth() {
+		return iMonth;
+	}
+	public void setiMonth(int iMonth) {
+		this.iMonth = iMonth;
+	}
+	public int getiYear() {
+		return iYear;
+	}
+	public void setiYear(int iYear) {
+		this.iYear = iYear;
 	}
 }
