@@ -93,8 +93,8 @@ public class User {
 		}
 	}
 
-	public void signIn() {
-
+	public void signIn(Event event) {
+		event.addGuest(this.getName());
 	}
 
 	public String toString() {
