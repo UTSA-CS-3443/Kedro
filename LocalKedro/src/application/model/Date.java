@@ -5,11 +5,13 @@ public class Date {
 	private int iDay;
 	private int iMonth;
 	private int iYear;
+	private String[] dateArray;
 	
-	public Date(int day, int month, int year) {
-		this.setiDay(day);
-		this.setiMonth(month);
-		this.setiYear(year);
+	public Date(String string) {
+		dateArray = string.split("/", 3);
+		this.setiDay(Integer.parseInt(dateArray[1]));
+		this.setiMonth(Integer.parseInt(dateArray[0]));
+		this.setiYear(Integer.parseInt(dateArray[2]));
 	}
 	
 	/////GETTERS AND SETTERS/////

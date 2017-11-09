@@ -3,13 +3,16 @@ package application.model;
 import java.io.*;
 import java.util.ArrayList;
 
+import application.Location;
+import application.RSVP;
+
 public class Event {
 	
 	private String name;
 	private Type type;
 	private Date date;
 	private Location location;//make this a string
-	private ArrayList<User> rsvp;
+	private ArrayList<RSVP> rsvp;
 
 	public Event(String name, Type type, Date date, Location location) {
 		//objects need to be created for each of these and maybe add some more info to this
@@ -17,11 +20,12 @@ public class Event {
 		this.setType(type);
 		this.setDate(date);
 		this.setLocation(location);
-		this.rsvp = new ArrayList<User>();
+		this.rsvp = new ArrayList<RSVP>();
 	}
 	
-	public void addGuest(User user) {
-		this.rsvp.add(user);
+	public void addGuest(String string) {
+		RSVP rp = new RSVP(string);
+		this.rsvp.add(rp);
 	}
 	
 	public int getGuests() {
