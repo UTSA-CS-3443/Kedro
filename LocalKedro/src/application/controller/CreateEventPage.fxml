@@ -40,7 +40,7 @@
             <Font name="Heiti TC Light" size="13.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="10.0" layoutY="175.0" promptText="Event Name">
+      <TextField fx:id="ENAME" alignment="CENTER" layoutX="10.0" layoutY="175.0" promptText="Event Name">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -51,7 +51,7 @@
             <Tooltip />
          </tooltip>
       </TextField>
-      <TextField alignment="CENTER" promptText="Event Type">
+      <TextField fx:id="ETYPE" alignment="CENTER" promptText="Event Type">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -62,7 +62,7 @@
             <Tooltip />
          </tooltip>
       </TextField>
-      <TextField alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Date">
+      <TextField fx:id="EDATE" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Date">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -73,7 +73,7 @@
             <Tooltip />
          </tooltip>
       </TextField>
-      <TextField alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Location">
+      <TextField fx:id="ELOC" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Location">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
