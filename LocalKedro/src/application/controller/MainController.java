@@ -7,6 +7,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -39,10 +41,10 @@ public class MainController implements EventHandler<ActionEvent> {
 	public void handleButtonAction(ActionEvent arg0) {
 		u = USERNAME.getText().toString();
 		p = PASSWORD.getText().toString();
-		//User user = new User(u, p);
+		User user = new User(u, p);
 		System.out.println(u + "\n" + p);
 		// added error checking so need name and abc123 to log in
-		//if (user.isProceed()) {
+		if (user.isProceed()) {
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
 				Main.stage.setScene(new Scene(root, 600, 400));
@@ -50,9 +52,13 @@ public class MainController implements EventHandler<ActionEvent> {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		//} else {
-			//System.out.println("invalid username or password");
-		//}
+		} else {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Username not found");
+				alert.setHeaderText("Username not found");
+				alert.setContentText("That was username does not exist");
+				alert.showAndWait();
+		}
 			System.out.println("Logged In");
 	}
 }

@@ -13,27 +13,27 @@
    <children>
       <VBox layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" spacing="15.0">
          <children>
-            <TextField promptText="USERNAME">
+            <TextField fx:id="USERNAME" promptText="USERNAME">
                <effect>
                   <DropShadow />
                </effect>
             </TextField>
-            <TextField promptText="EMAIL">
+            <TextField fx:id="EMAIL" promptText="EMAIL">
                <effect>
                   <DropShadow />
                </effect>
             </TextField>
-            <TextField promptText="EMAIL CONFIRM">
+            <TextField fx:id="ECONFIRM" promptText="EMAIL CONFIRM">
                <effect>
                   <DropShadow />
                </effect>
             </TextField>
-            <PasswordField promptText="PASSWORD">
+            <PasswordField fx:id="PASSWORD" promptText="PASSWORD">
                <effect>
                   <DropShadow />
                </effect>
             </PasswordField>
-            <PasswordField promptText="PASSWORD CONFIRM">
+            <PasswordField fx:id="PCONFIRM" promptText="PASSWORD CONFIRM">
                <effect>
                   <DropShadow />
                </effect>
