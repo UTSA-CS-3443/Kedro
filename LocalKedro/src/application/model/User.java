@@ -45,9 +45,8 @@ public class User {
 		filePath += "\\UserFolder";
 		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();
-
 		for (File file : listOfFiles) {
-			if (file.isFile() && file.getName().equals(this.getName() + ".txt")) {
+			if (file.isFile() && file.getName().equals(this.getName())) {
 				try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 					String line = null;
 					line = br.readLine(); // user name
@@ -81,8 +80,9 @@ public class User {
 
 	public void userWrite() {
 		String filePath = new File("").getAbsolutePath();
-		filePath += "\\UserFolder";
+		filePath += "\\UserFolder\\";
 		File file = new File(filePath + this.getName());
+		System.out.println(file.getAbsolutePath());
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
 			pw.println(this.getName());
 			pw.println(this.getPassword());

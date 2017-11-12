@@ -43,11 +43,11 @@ public class RegistrationPageController implements EventHandler<ActionEvent>{
 		e = EMAIL.getText().toString();
 		econfirm = ECONFIRM.getText().toString();
 		pconfirm = PCONFIRM.getText().toString();
-		
-		if (p.equals(pconfirm)){
-			if(e.equals(econfirm)){
+
+		if (p.equals(pconfirm)) {
+			if (e.equals(econfirm)) {
 				User user = new User(u, p, e);
-				if (user.isProceed()){
+				if (user.isProceed()) {
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setTitle("Invalid Username");
 					alert.setHeaderText("Username is already in use");
@@ -55,22 +55,20 @@ public class RegistrationPageController implements EventHandler<ActionEvent>{
 					alert.showAndWait();
 				}
 				try {
-					   Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-					   Main.stage.setScene(new Scene(root, 600, 400));
-					   Main.stage.show();
-					} catch(Exception ex) {
-					   ex.printStackTrace();
-					}
-			}
-			else{
+					Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+					Main.stage.setScene(new Scene(root, 600, 400));
+					Main.stage.show();
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			} else {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Emails do not match");
 				alert.setHeaderText("The emails entered do not match");
 				alert.setContentText("The emails you entered do not match");
 				alert.showAndWait();
 			}
-		}
-		else {
+		} else {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Passwords do not match");
 			alert.setHeaderText("The passwords entered do not match");
