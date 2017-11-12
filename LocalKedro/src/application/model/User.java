@@ -98,9 +98,9 @@ public class User {
 	}
 
 	public String toString() {
-		String line = "";
+		String line = "" + this.getName() + this.getEmail();
 		for (RSVP r : this.rsvp) {
-			line += r.getName();
+			line += r.getName() + "\n";
 		}
 		return line;
 	}

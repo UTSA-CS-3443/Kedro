@@ -10,26 +10,21 @@ public class EventSearch {
 	private Type searchType;
 	private Location searchLocal;
 	
-	public EventSearch(String name) {
+	public EventSearch(String name, Type type, Location location) {
 		this.searchName = name;
-		searchAll(name, null, null); //can search name only right now
-	}
-	
-	public EventSearch(Type type) {
 		this.searchType = type;
-	}
-	
-	public EventSearch(Location location) {
 		this.searchLocal = location;
+		searchAll(name, type, location); //can search name only right now
 	}
-	
-	public Event[] searchAll(String name, Type type, Location location) {
+	//creates new objects based on the search specified
+	//major search function
+	public DisplayEvent[] searchAll(String name, Type type, Location location) {
 		String filePath = new File("").getAbsolutePath();
 		filePath += "\\EventFolder";
 		BufferedReader br;
 		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();
-		Event[] eventList = new Event[listOfFiles.length-1];
+		DisplayEvent[] eventList = new DisplayEvent[listOfFiles.length-1];
 		int i = 0;
 		for(File rd : listOfFiles) {
 			if(i > listOfFiles.length) {
@@ -45,7 +40,7 @@ public class EventSearch {
 					Date time = new Date(dt);
 					Type tp = new Type(tpNm);
 					Location lo = new Location(Integer.parseInt(ll));
-					Event event = new Event(evtNm, tp, time, lo);
+					DisplayEvent event = new DisplayEvent(evtNm, tp, time, lo);
 					String line;
 					while((line = br.readLine()) != null) {
 						event.addGuest(line);

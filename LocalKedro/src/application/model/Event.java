@@ -21,6 +21,7 @@ public class Event {
 		this.setDate(date);
 		this.setLocation(location);
 		this.rsvp = new ArrayList<RSVP>();
+		eventWrite();
 	}
 	
 	public void addGuest(String string) {
@@ -45,7 +46,7 @@ public class Event {
 	}
 	//doesn't work right yet. Need event pages finished
 	public boolean eventCheck() {
-		File folder = new File("/Users/Travis/git/Kedro/EventFolder");
+		File folder = new File("/Users/Travis/git/Kedro/EventFolder");//add filepath
 		File[] listOfFiles = folder.listFiles();
 
 		for (File file : listOfFiles) {
@@ -59,6 +60,14 @@ public class Event {
 				}
 		}
 		return false;
+	}
+	
+	public String toString() {
+		String line = "" + this.getName() + this.getType() + this.getDate() + this.getLocation() + "\n";
+		for (RSVP r : this.rsvp) {
+			line += r.getName() + "\n";
+		}
+		return line;
 	}
 
 	public String getName() {
