@@ -8,11 +8,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
-
-public class RegistrationPageController implements EventHandler<ActionEvent>{
+public class RegistrationController implements EventHandler<ActionEvent>{
+	
 	public TextField USERNAME;
 	public TextField PASSWORD;
 	public TextField EMAIL;
@@ -25,19 +27,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent>{
 	String econfirm = "confirm email";
 	String pconfirm = "confirm password";
 	
-	public void back(ActionEvent event) {
-		try {
-			   Parent root = FXMLLoader.load(getClass().getResource("RegisterLoginPage.fxml"));
-			   Main.stage.setScene(new Scene(root, 600, 400));
-			   Main.stage.show();
-			} catch(Exception e) {
-			   e.printStackTrace();
-			}
-		System.out.println("Back");
-    }
-	
-	@Override
-	public void handle(ActionEvent event) {
+	public void handleButtonRegistration(ActionEvent arg0){
 		u = USERNAME.getText().toString();
 		p = PASSWORD.getText().toString();
 		e = EMAIL.getText().toString();
@@ -55,12 +45,12 @@ public class RegistrationPageController implements EventHandler<ActionEvent>{
 					alert.showAndWait();
 				}
 				try {
-					   Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-					   Main.stage.setScene(new Scene(root, 600, 400));
-					   Main.stage.show();
-					} catch(Exception ex) {
-					   ex.printStackTrace();
-					}
+					Parent root = FXMLLoader.load(getClass().getResource("Travis'HomePageVersion.fxml"));
+					Main.stage.setScene(new Scene(root, 600, 400));
+					Main.stage.show();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 			else{
 				Alert alert = new Alert(AlertType.ERROR);
@@ -78,6 +68,12 @@ public class RegistrationPageController implements EventHandler<ActionEvent>{
 			alert.showAndWait();
 		}
 		System.out.println(u + "\n" + p + "\n" + e + "\n" + econfirm + "\n" + pconfirm + "\n");
-		System.out.println("Registered");
 	}
+
+	@Override
+	public void handle(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
