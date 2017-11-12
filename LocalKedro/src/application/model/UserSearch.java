@@ -9,30 +9,34 @@ import java.io.IOException;
 public class UserSearch {
 
 	private String name;
+
 	public UserSearch(String name) {
 		this.name = name;
 		searchAll(name);
 	}
-	
-	public User[] searchAll(String name) {
+
+	public DisplayUser[] searchAll(String name) {
 		String filePath = new File("").getAbsolutePath();
 		filePath += "\\EventFolder";
 		BufferedReader br;
 		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();
-		User[] userList = new User[listOfFiles.length-1];
+		DisplayUser[] userList = new DisplayUser[listOfFiles.length - 1];
 		int i = 0;
-		for(File rd : listOfFiles) {
-			if(i > listOfFiles.length) {
+		for (File rd : listOfFiles) {
+			if (i > listOfFiles.length) {
 				return userList;
 			}
-			if(rd.getName().equals(name)) {
+			if (rd.getName().equals(name)) {
 				try {
 					br = new BufferedReader(new FileReader("rd"));
-					User user = new User(evtNm, tp, time, lo);
+					String dsf = br.readLine();
+					br.readLine();
+					br.readLine();
+					DisplayUser user = new DisplayUser(dsf);
 					String line;
-					while((line = br.readLine()) != null) {
-						event.addGuest(line);
+					while ((line = br.readLine()) != null) {
+						user.signIn(line);
 					}
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -42,6 +46,7 @@ public class UserSearch {
 					e.printStackTrace();
 				}
 			}
-	}
+		}
+		return null;
 	}
 }

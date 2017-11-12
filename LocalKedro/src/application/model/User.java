@@ -93,8 +93,9 @@ public class User {
 		}
 	}
 
-	public void signIn() {
-
+	public void signIn(Event event) {
+		RSVP rp = new RSVP(event.getName());
+		this.rsvp.add(rp);
 	}
 
 	public String toString() {
