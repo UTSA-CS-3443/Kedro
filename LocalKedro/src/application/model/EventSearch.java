@@ -2,7 +2,7 @@ package application.model;
 
 import java.io.*;
 
-import application.Location;
+//import application.Location;
 
 public class EventSearch {
 

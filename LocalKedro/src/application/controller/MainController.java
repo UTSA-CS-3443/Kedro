@@ -35,24 +35,24 @@ public class MainController implements EventHandler<ActionEvent> {
 			}
 		System.out.println("Register");
 	}
-	// opens up the Events Page when you click on Login for now
-	// after Home Page is made, logging in will lead to the Home Page
+	// opens up HomePage with successful login
 	public void handleButtonAction(ActionEvent arg0) {
 		u = USERNAME.getText().toString();
 		p = PASSWORD.getText().toString();
-		User user = new User(u, p);
+		//User user = new User(u, p);
 		System.out.println(u + "\n" + p);
 		// added error checking so need name and abc123 to log in
-		if (user.isProceed()) {
+		//if (user.isProceed()) {
 			try {
-				Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
+				Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
 				Main.stage.setScene(new Scene(root, 600, 400));
 				Main.stage.show();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else {
-			System.out.println("invalid username or password");
-		}
+		//} else {
+			//System.out.println("invalid username or password");
+		//}
+			System.out.println("Logged In");
 	}
 }

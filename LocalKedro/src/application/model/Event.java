@@ -3,8 +3,8 @@ package application.model;
 import java.io.*;
 import java.util.ArrayList;
 
-import application.Location;
-import application.RSVP;
+//import application.Location;
+//import application.RSVP;
 
 public class Event {
 	

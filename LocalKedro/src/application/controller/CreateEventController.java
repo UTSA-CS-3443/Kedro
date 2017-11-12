@@ -16,13 +16,15 @@ public class CreateEventController implements EventHandler<ActionEvent>{
 	public void handle(ActionEvent event) {
 		//takes info from the user and puts into event object in the try
 		try {
-			   Parent root = FXMLLoader.load(getClass().getResource("")); //replace this pls
+			   Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
 			   Main.stage.setScene(new Scene(root, 600, 400));
 			   Main.stage.show();
 			   //Event event = new Event(name, type, date, location);
-			} catch(Exception e) {
+		} 
+		catch(Exception e) {
 			   e.printStackTrace();
-			}		
+		}
+		System.out.println("Event Created");
 	}
 
 }
