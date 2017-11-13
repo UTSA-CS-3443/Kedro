@@ -2,6 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.DropShadow?>
@@ -84,16 +85,37 @@
             <Tooltip />
          </tooltip>
       </TextField>
-      <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handle" prefHeight="66.0" prefWidth="601.0" style="-fx-background-color: yellow;" text="Create Your Event!" VBox.vgrow="SOMETIMES">
-         <font>
-            <Font name="Hoefler Text" size="36.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="CROSSHAIR" />
-         </cursor>
-         <tooltip>
-            <Tooltip text="Create an event with the above info" />
-         </tooltip>
-      </Button>
+      <ButtonBar>
+         <buttons>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: yellow;" text="Create Your Event!" textAlignment="CENTER">
+               <font>
+                  <Font name="Hoefler Text" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Create an event with the above info" />
+               </tooltip>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#cancel" style="-fx-background-color: yellow;" text="Cancel" textAlignment="CENTER">
+               <font>
+                  <Font name="Hoefler Text" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Cancel" />
+               </tooltip>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+         </buttons>
+      </ButtonBar>
    </children>
 </VBox>

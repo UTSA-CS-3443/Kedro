@@ -44,4 +44,15 @@ public class CreateEventController implements EventHandler<ActionEvent>{
 		System.out.println("Event Created");
 	}
 
+	public void cancel(ActionEvent event) {
+		try {
+			   Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
+			   Main.stage.setScene(new Scene(root, 600, 400));
+			   Main.stage.show();
+		}
+		catch(Exception e) {
+			   e.printStackTrace();
+		}
+		System.out.println("Create Event Cancelled");
+    }
 }
