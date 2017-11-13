@@ -34,8 +34,8 @@ public class RegistrationPageController implements EventHandler<ActionEvent>{
 			   e.printStackTrace();
 			}
 		System.out.println("Back");
-    }
-	
+	}
+
 	@Override
 	public void handle(ActionEvent event) {
 		u = USERNAME.getText().toString();
@@ -47,19 +47,21 @@ public class RegistrationPageController implements EventHandler<ActionEvent>{
 		if (p.equals(pconfirm)) {
 			if (e.equals(econfirm)) {
 				User user = new User(u, p, e);
-				if (user.isProceed()) {
+				if (!(user.isProceed())) {
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setTitle("Invalid Username");
 					alert.setHeaderText("Username is already in use");
 					alert.setContentText("Sorry that Username is already taken please use a different Username");
 					alert.showAndWait();
-				}
-				try {
-					Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-					Main.stage.setScene(new Scene(root, 600, 400));
-					Main.stage.show();
-				} catch (Exception ex) {
-					ex.printStackTrace();
+				} else {
+					try {
+						user.userWrite();
+						Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+						Main.stage.setScene(new Scene(root, 600, 400));
+						Main.stage.show();
+					} catch (Exception ex) {
+						ex.printStackTrace();
+					}
 				}
 			} else {
 				Alert alert = new Alert(AlertType.ERROR);
@@ -75,7 +77,5 @@ public class RegistrationPageController implements EventHandler<ActionEvent>{
 			alert.setContentText("The passwords you entered do not match");
 			alert.showAndWait();
 		}
-		System.out.println(u + "\n" + p + "\n" + e + "\n" + econfirm + "\n" + pconfirm + "\n");
-		System.out.println("Registered");
 	}
 }

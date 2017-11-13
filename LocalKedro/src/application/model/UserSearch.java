@@ -33,11 +33,14 @@ public class UserSearch {
 					String dsf = br.readLine();
 					br.readLine();
 					br.readLine();
+					//reads lines into garbage to skip past the personal info
+					//goes down to events they are registered to go to
 					DisplayUser user = new DisplayUser(dsf);
 					String line;
 					while ((line = br.readLine()) != null) {
 						user.signIn(line);
 					}
+					br.close();
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

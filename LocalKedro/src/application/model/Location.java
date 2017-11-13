@@ -12,4 +12,8 @@ public class Location {
 	public void setZipcode(int zipcode) {
 		this.zipcode = zipcode;
 	}
+	
+	public String toString() {
+		return "" + this.zipcode + "\n";
+	}
 }

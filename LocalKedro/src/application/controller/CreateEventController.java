@@ -1,6 +1,10 @@
 package application.controller;
 
 import application.Main;
+import application.model.Date;
+import application.model.Event;
+import application.model.Location;
+import application.model.Type;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -35,7 +39,10 @@ public class CreateEventController implements EventHandler<ActionEvent>{
 			   Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
 			   Main.stage.setScene(new Scene(root, 600, 400));
 			   Main.stage.show();
-			   //Event event = new Event(eName, eType, eDate, eLoc);
+			   Type type = new Type(eType);
+			   Date date = new Date(eDate);
+			   Location local = new Location(Integer.parseInt(eLoc));
+			   Event event1 = new Event(eName, type, date, local);
 		} 
 		catch(Exception e) {
 			   e.printStackTrace();

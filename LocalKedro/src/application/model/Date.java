@@ -14,6 +14,10 @@ public class Date {
 		this.setiYear(Integer.parseInt(dateArray[2]));
 	}
 	
+	public String toString() {
+		return "" + this.getiMonth() + "/" + this.getiDay() + "/" +this.getiYear() + "\n";
+	}
+	
 	/////GETTERS AND SETTERS/////
 	public int getiDay() {
 		return iDay;

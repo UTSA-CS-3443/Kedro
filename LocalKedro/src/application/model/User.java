@@ -14,10 +14,10 @@ public class User {
 		this.setName(name);
 		this.setPassword(password);
 		this.setEmail(email);
-		userWrite();
+		this.setProceed(userCheck());
+		System.out.println(this.isProceed() + " in user");
 		this.rsvp = new ArrayList<RSVP>();
 	}
-
 	/**
 	 * Creates the current user object and loads all of their info into the
 	 * application also if you guys get tired of logging in then just comment out
@@ -69,6 +69,7 @@ public class User {
 							return false;
 						}
 					}
+					br.close();
 				} catch (Exception e) {
 					e.printStackTrace();
 					return false;

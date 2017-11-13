@@ -21,4 +21,8 @@ public class Type {
 				return false;
 		}
 	}
+	
+	public String toString() {
+		return "" + this.name + "\n";
+	}
 }

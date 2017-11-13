@@ -45,6 +45,7 @@ public class EventSearch {
 					while((line = br.readLine()) != null) {
 						event.addGuest(line);
 					}
+					br.close();
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

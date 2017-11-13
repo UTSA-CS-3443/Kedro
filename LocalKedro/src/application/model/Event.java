@@ -34,27 +34,35 @@ public class Event {
 	}
 	
 	public void eventWrite() {
-		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("Event.txt")))){
+		String filePath = new File("").getAbsolutePath();
+		filePath += "\\EventFolder\\";
+		File file = new File(filePath + this.getName());
+		System.out.println(file.getAbsolutePath());
+		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
 			pw.println(this.getName());
-			pw.println(this.getType());
-			pw.println(this.getDate());
-			pw.println(this.getLocation());
-		}
-		catch(Exception e) {
+			pw.println(this.getDate().toString());
+			pw.println(this.getLocation().toString());
+			pw.println(this.getType().toString());
+			//print out the guest list too I think
+		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("you done goofed");
 		}
 	}
 	//doesn't work right yet. Need event pages finished
 	public boolean eventCheck() {
-		File folder = new File("/Users/Travis/git/Kedro/EventFolder");//add filepath
+		String filePath = new File("").getAbsolutePath();
+		filePath += "\\EventFolder";
+		File folder = new File(filePath); //add filepath
 		File[] listOfFiles = folder.listFiles();
 
 		for (File file : listOfFiles) {
 			if (file.isFile() && file.getName().equals(this.getName())) {
 				return false;
 			}
-			else if(!(file.isFile()) && !(file.getName().equals(this.getName())))
+			else if(!(file.isFile()) || !(file.getName().equals(this.getName())))
 				try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+					//haven't done this yet
 				} catch (Exception e) {
 					System.out.println("Something doesn't exist");
 				}
@@ -70,6 +78,7 @@ public class Event {
 		return line;
 	}
 
+	/////GETTERS AND SETTERS/////
 	public String getName() {
 		return name;
 	}

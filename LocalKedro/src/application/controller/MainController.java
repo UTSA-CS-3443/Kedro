@@ -56,7 +56,7 @@ public class MainController implements EventHandler<ActionEvent> {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Username not found");
 				alert.setHeaderText("Username not found");
-				alert.setContentText("That was username does not exist");
+				alert.setContentText("Sorry that username does not exist");
 				alert.showAndWait();
 		}
 			System.out.println("Logged In");
