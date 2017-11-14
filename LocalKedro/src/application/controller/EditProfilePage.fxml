@@ -42,7 +42,7 @@
             <Font name="Heiti TC Light" size="13.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="10.0" layoutY="175.0" promptText="Your Name">
+      <TextField fx:id="Yname" alignment="CENTER" layoutX="10.0" layoutY="175.0" promptText="Your Name">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -53,7 +53,7 @@
             <Tooltip text="Enter First and Last Name" />
          </tooltip>
       </TextField>
-      <TextField alignment="CENTER" promptText="Your Email Address">
+      <TextField fx:id="Yemail" alignment="CENTER" promptText="Your Email Address">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -64,7 +64,7 @@
             <Tooltip text="Enter Email Address" />
          </tooltip>
       </TextField>
-      <TextField alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Your Zip Code">
+      <TextField fx:id="Yzip" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Your Zip Code">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -75,7 +75,7 @@
             <Tooltip text="Enter Zip Code" />
          </tooltip>
       </TextField>
-      <PasswordField alignment="CENTER" promptText="Password">
+      <PasswordField fx:id="PASS" alignment="CENTER" promptText="Password">
          <tooltip>
             <Tooltip text="Enter Your Password" />
          </tooltip>
