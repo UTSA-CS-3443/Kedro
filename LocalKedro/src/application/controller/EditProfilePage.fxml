@@ -3,6 +3,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.DropShadow?>
@@ -14,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefWidth="601.0" style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateEventController">
+<VBox prefWidth="601.0" style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EditProfileController">
    <children>
       <AnchorPane>
          <children>
@@ -36,12 +37,12 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the event name, type, date, and location." textAlignment="CENTER" wrappingWidth="600.21875">
+      <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit your information down below." textAlignment="CENTER" wrappingWidth="600.21875">
          <font>
             <Font name="Heiti TC Light" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="ENAME" alignment="CENTER" layoutX="10.0" layoutY="175.0" promptText="Event Name">
+      <TextField alignment="CENTER" layoutX="10.0" layoutY="175.0" promptText="Your Name">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -49,10 +50,10 @@
             <Glow />
          </effect>
          <tooltip>
-            <Tooltip text="Enter Event Name" />
+            <Tooltip text="Enter First and Last Name" />
          </tooltip>
       </TextField>
-      <TextField fx:id="ETYPE" alignment="CENTER" promptText="Event Type">
+      <TextField alignment="CENTER" promptText="Your Email Address">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -60,10 +61,10 @@
             <Glow />
          </effect>
          <tooltip>
-            <Tooltip text="Enter Event Type" />
+            <Tooltip text="Enter Email Address" />
          </tooltip>
       </TextField>
-      <TextField fx:id="EDATE" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Date">
+      <TextField alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Your Zip Code">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -71,23 +72,17 @@
             <Glow />
          </effect>
          <tooltip>
-            <Tooltip text="Enter Event Date" />
+            <Tooltip text="Enter Zip Code" />
          </tooltip>
       </TextField>
-      <TextField fx:id="ELOC" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Location">
-         <font>
-            <Font name="Didot" size="13.0" />
-         </font>
-         <effect>
-            <Glow />
-         </effect>
+      <PasswordField alignment="CENTER" promptText="Password">
          <tooltip>
-            <Tooltip text="Enter Event Location" />
+            <Tooltip text="Enter Your Password" />
          </tooltip>
-      </TextField>
+      </PasswordField>
       <ButtonBar>
          <buttons>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: yellow;" text="Create Your Event!" textAlignment="CENTER">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: yellow;" text="Confirm" textAlignment="CENTER">
                <font>
                   <Font name="Hoefler Text" size="24.0" />
                </font>
@@ -95,7 +90,7 @@
                   <Cursor fx:constant="CROSSHAIR" />
                </cursor>
                <tooltip>
-                  <Tooltip text="Create an event with the above info" />
+                  <Tooltip text="Update Info" />
                </tooltip>
                <effect>
                   <DropShadow />

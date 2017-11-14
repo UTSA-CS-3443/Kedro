@@ -56,7 +56,7 @@
                   </ToggleButton>
                </children>
             </VBox>
-            <ToggleButton layoutX="225.0" layoutY="17.0" mnemonicParsing="false" prefHeight="80.0" style="-fx-background-color: yellow;" text="Profile">
+            <ToggleButton layoutX="225.0" layoutY="17.0" mnemonicParsing="false" onAction="#openProfilesPage" prefHeight="80.0" style="-fx-background-color: yellow;" text="Profiles">
                <effect>
                   <DropShadow />
                </effect>
@@ -79,9 +79,6 @@
          <effect>
             <Glow />
          </effect>
-         <tooltip>
-            <Tooltip />
-         </tooltip>
       </TextField>
       <Pagination pageCount="20" prefHeight="200.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
          <effect>

@@ -31,4 +31,15 @@ public class EventController implements EventHandler<ActionEvent>{
 				System.out.println("Creating Event");		
 	}
 
+	public void openProfilesPage(ActionEvent event) {
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfilesPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Profiles Page");
+	}
+
 }

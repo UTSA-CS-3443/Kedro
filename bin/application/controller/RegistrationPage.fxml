@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -11,7 +12,7 @@
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.RegistrationPageController">
    <children>
-      <VBox layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" spacing="15.0">
+      <VBox layoutX="201.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" spacing="15.0">
          <children>
             <TextField fx:id="USERNAME" promptText="USERNAME">
                <effect>
@@ -28,6 +29,11 @@
                   <DropShadow />
                </effect>
             </TextField>
+            <TextField layoutX="10.0" layoutY="94.0" promptText="ZIP CODE">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TextField>
             <PasswordField fx:id="PASSWORD" promptText="PASSWORD">
                <effect>
                   <DropShadow />
@@ -40,7 +46,12 @@
             </PasswordField>
          </children>
       </VBox>
-      <Button layoutX="262.0" layoutY="312.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: yellow;" text="REGISTER">
+      <Label layoutX="256.0" layoutY="44.0" text="REGISTRATION">
+         <font>
+            <Font name="Euphemia UCAS" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="262.0" layoutY="350.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: yellow;" text="REGISTER">
          <effect>
             <DropShadow />
          </effect>
@@ -48,11 +59,6 @@
             <Font name="Futura Medium" size="13.0" />
          </font>
       </Button>
-      <Label layoutX="256.0" layoutY="61.0" text="REGISTRATION">
-         <font>
-            <Font name="Euphemia UCAS" size="13.0" />
-         </font>
-      </Label>
       <Button layoutX="25" layoutY="25" mnemonicParsing="false" onAction="#back" style="-fx-background-color: yellow;" text="Back">
          <effect>
             <DropShadow />
@@ -61,5 +67,10 @@
             <Font name="Futura Medium" size="13.0" />
          </font>
       </Button>
+      <CheckBox layoutX="117.0" layoutY="323.0" mnemonicParsing="false" text="By checking this, you verify that you are at least 13 years old.">
+         <font>
+            <Font name="Optima Regular" size="13.0" />
+         </font>
+      </CheckBox>
    </children>
 </AnchorPane>

@@ -49,7 +49,7 @@
             <Glow />
          </effect>
          <tooltip>
-            <Tooltip />
+            <Tooltip text="Enter Event Name" />
          </tooltip>
       </TextField>
       <TextField fx:id="ETYPE" alignment="CENTER" promptText="Event Type">
@@ -60,7 +60,7 @@
             <Glow />
          </effect>
          <tooltip>
-            <Tooltip />
+            <Tooltip text="Enter Event Type" />
          </tooltip>
       </TextField>
       <TextField fx:id="EDATE" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Date">
@@ -71,7 +71,7 @@
             <Glow />
          </effect>
          <tooltip>
-            <Tooltip />
+            <Tooltip text="Enter Event Date" />
          </tooltip>
       </TextField>
       <TextField fx:id="ELOC" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Location">
@@ -82,7 +82,7 @@
             <Glow />
          </effect>
          <tooltip>
-            <Tooltip />
+            <Tooltip text="Enter Event Location" />
          </tooltip>
       </TextField>
       <ButtonBar>

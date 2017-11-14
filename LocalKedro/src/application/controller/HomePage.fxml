@@ -52,7 +52,7 @@
                   </ToggleButton>
                </children>
             </VBox>
-            <ToggleButton layoutX="225.0" layoutY="17.0" mnemonicParsing="false" prefHeight="80.0" style="-fx-background-color: yellow;" text="Profile">
+            <ToggleButton layoutX="225.0" layoutY="17.0" mnemonicParsing="false" onAction="#openProfilesPage" prefHeight="80.0" style="-fx-background-color: yellow;" text="Profiles">
                <effect>
                   <DropShadow />
                </effect>
