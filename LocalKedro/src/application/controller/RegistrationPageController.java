@@ -18,9 +18,11 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 	public TextField EMAIL;
 	public TextField ECONFIRM;
 	public TextField PCONFIRM;
+	public TextField ZIP;
 
 	public CheckBox CHECK;
 
+	String z = "zip";
 	String p = "password";
 	String u = "user";
 	String e = "email";
@@ -45,6 +47,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 		e = EMAIL.getText().toString();
 		econfirm = ECONFIRM.getText().toString();
 		pconfirm = PCONFIRM.getText().toString();
+		z = ZIP.getText().toString();
 
 		if (!(CHECK.isSelected())) {
 			Alert alert = new Alert(AlertType.ERROR);
@@ -56,7 +59,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 			if (USERNAME.getText() == null || USERNAME.getText().isEmpty() || PASSWORD.getText() == null
 					|| PASSWORD.getText().isEmpty() || EMAIL.getText() == null || EMAIL.getText().isEmpty()
 					|| ECONFIRM.getText() == null || ECONFIRM.getText().isEmpty() || PCONFIRM.getText() == null
-					|| PCONFIRM.getText().isEmpty()) {
+					|| PCONFIRM.getText().isEmpty() || ZIP.getText() == null || ZIP.getText().isEmpty()) {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Empty");
 				alert.setHeaderText("Empty");
