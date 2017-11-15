@@ -49,7 +49,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 		pconfirm = PCONFIRM.getText().toString();
 		z = ZIP.getText().toString();
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		if (p.equals(pconfirm)) {
 			if (e.equals(econfirm)) {
 				User user = new User(u, p, e);
@@ -77,9 +77,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 				alert.showAndWait();
 			}
 		} else {
-=======
 		if (!(CHECK.isSelected())) {
->>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Empty");
 			alert.setHeaderText("Empty");
@@ -133,4 +131,5 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 			}
 		}
 	}
+}
 }
