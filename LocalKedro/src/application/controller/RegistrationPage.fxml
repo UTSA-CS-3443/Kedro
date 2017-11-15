@@ -29,7 +29,7 @@
                   <DropShadow />
                </effect>
             </TextField>
-            <TextField layoutX="10.0" layoutY="94.0" promptText="ZIP CODE">
+            <TextField fx:id="ZIP" layoutX="10.0" layoutY="94.0" promptText="ZIP CODE">
                <effect>
                   <DropShadow />
                </effect>
@@ -67,7 +67,7 @@
             <Font name="Futura Medium" size="13.0" />
          </font>
       </Button>
-      <CheckBox layoutX="117.0" layoutY="323.0" mnemonicParsing="false" text="By checking this, you verify that you are at least 13 years old.">
+      <CheckBox fx:id="CHECK" layoutX="117.0" layoutY="323.0" mnemonicParsing="false" text="By checking this, you verify that you are at least 13 years old.">
          <font>
             <Font name="Optima Regular" size="13.0" />
          </font>
