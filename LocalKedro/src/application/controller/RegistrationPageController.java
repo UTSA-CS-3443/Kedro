@@ -47,7 +47,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent>{
 		if (p.equals(pconfirm)) {
 			if (e.equals(econfirm)) {
 				User user = new User(u, p, e);
-				if (!(user.isProceed())) {
+				if (user.isProceed()) {
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setTitle("Invalid Username");
 					alert.setHeaderText("Username is already in use");

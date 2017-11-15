@@ -15,7 +15,7 @@ public class User {
 		this.setPassword(password);
 		this.setEmail(email);
 		this.setProceed(userCheck());
-		System.out.println(this.isProceed() + " in user");
+		System.out.println(this.isProceed() + " " + this.getName() + " " + this.getPassword() + " " + this.getEmail() +" in user");
 		this.rsvp = new ArrayList<RSVP>();
 	}
 	/**
