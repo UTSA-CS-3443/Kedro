@@ -6,6 +6,7 @@ import java.io.*;
 
 public class EventSearch {
 
+	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String searchName;
 	private Type searchType;
 	private Location searchLocal;
@@ -20,7 +21,12 @@ public class EventSearch {
 	//major search function
 	public DisplayEvent[] searchAll(String name, Type type, Location location) {
 		String filePath = new File("").getAbsolutePath();
-		filePath += "\\EventFolder";
+		if(OS.equals("mac os x")) {
+			filePath += "/EventFolder";
+		}
+		else {
+			filePath += "\\EventFolder";
+		}
 		BufferedReader br;
 		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();

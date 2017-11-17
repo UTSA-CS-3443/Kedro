@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Event {
 	
+	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String name;
 	private Type type;
 	private Date date;
@@ -35,7 +36,12 @@ public class Event {
 	
 	public void eventWrite() {
 		String filePath = new File("").getAbsolutePath();
-		filePath += "\\EventFolder\\";
+		if(OS.equals("mac os x")) {
+			filePath += "/EventFolder";
+		}
+		else {
+			filePath += "\\EventFolder";
+		}
 		File file = new File(filePath + this.getName());
 		System.out.println(file.getAbsolutePath());
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {

@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public class UserSearch {
 
+	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String name;
 
 	public UserSearch(String name) {
@@ -17,7 +18,12 @@ public class UserSearch {
 
 	public DisplayUser[] searchAll(String name) {
 		String filePath = new File("").getAbsolutePath();
-		filePath += "\\EventFolder";
+		if(OS.equals("mac os x")) {
+			filePath += "/UserFolder";
+		}
+		else {
+			filePath += "\\UserFolder";
+		}
 		BufferedReader br;
 		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();

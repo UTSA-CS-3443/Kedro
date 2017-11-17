@@ -5,15 +5,18 @@ import java.util.*;
 import application.controller.MainController;
 
 public class User {
-
+	
+	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String name, password, email;
+	private Location loc;
 	private boolean proceed = false;
 	private ArrayList<RSVP> rsvp;
 
-	public User(String name, String password, String email) {
+	public User(String name, String password, String email, Location location) {
 		this.setName(name);
 		this.setPassword(password);
 		this.setEmail(email);
+		this.setLoc(location);
 		this.setProceed(userCheck());
 		System.out.println(this.isProceed() + " " + this.getName() + " " + this.getPassword() + " " + this.getEmail() +" in user");
 		this.rsvp = new ArrayList<RSVP>();
@@ -42,7 +45,12 @@ public class User {
 	 */
 	public boolean userCheck() {
 		String filePath = new File("").getAbsolutePath();
-		filePath += "\\UserFolder";
+		if(OS.equals("mac os x")) {
+			filePath += "/UserFolder";
+		}
+		else {
+			filePath += "\\UserFolder";
+		}
 		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();
 		for (File file : listOfFiles) {
@@ -138,5 +146,11 @@ public class User {
 
 	public void setProceed(boolean proceed) {
 		this.proceed = proceed;
+	}
+	public Location getLoc() {
+		return loc;
+	}
+	public void setLoc(Location loc) {
+		this.loc = loc;
 	}
 }

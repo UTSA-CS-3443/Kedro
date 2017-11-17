@@ -38,6 +38,7 @@ public class EditProfileController implements EventHandler<ActionEvent> {
 			alert.showAndWait();
 		} else {
 			try {
+				
 				Parent root = FXMLLoader.load(getClass().getResource("ProfileViewPage.fxml"));
 				Main.stage.setScene(new Scene(root, 600, 400));
 				Main.stage.show();
