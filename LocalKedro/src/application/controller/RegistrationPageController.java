@@ -99,7 +99,8 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 			} else {
 				if (p.equals(pconfirm)) {
 					if (e.equals(econfirm)) {
-						User user = new User(u, p, e);
+						Location location = new Location(Integer.parseInt(z));
+						User user = new User(u, p, e, location);
 						if (!(user.isProceed())) {
 							Alert alert = new Alert(AlertType.ERROR);
 							alert.setTitle("Invalid Username");
@@ -109,6 +110,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 							alert.showAndWait();
 						} else {
 							try {
+								Main.user = user;
 								user.userWrite();
 								Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
 								Main.stage.setScene(new Scene(root, 600, 400));
