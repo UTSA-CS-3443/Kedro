@@ -68,11 +68,6 @@
                   <Font name="Bangla MN" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="events"  layoutX="14.0" layoutY="165.0" text="Recent Events Attended:">
-               <font>
-                  <Font name="Bangla MN" size="12.0" />
-               </font>
-            </Label>
          </children></AnchorPane>
    </children>
 </VBox>
