@@ -20,6 +20,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 	public TextField ECONFIRM;
 	public TextField PCONFIRM;
 	public TextField ZIP;
+	public TextField FULLNAME;
 
 	public CheckBox CHECK;
 
@@ -29,6 +30,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 	String e = "email";
 	String econfirm = "email";
 	String pconfirm = "password";
+	String fname = "full name";
 
 	public void back(ActionEvent event) {
 		try {
@@ -49,12 +51,13 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 		econfirm = ECONFIRM.getText().toString();
 		pconfirm = PCONFIRM.getText().toString();
 		z = ZIP.getText().toString();
+		fname = FULLNAME.getText().toString();
 
 //<<<<<<< HEAD
 		if (p.equals(pconfirm)) {
 			if (e.equals(econfirm)) {
 				Location location = new Location(Integer.parseInt(z));
-				User user = new User(u, p, e, location);
+				User user = new User(u, p, e, location, fname);
 				if (user.isProceed()) {
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setTitle("Invalid Username");
@@ -90,7 +93,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 			if (USERNAME.getText() == null || USERNAME.getText().isEmpty() || PASSWORD.getText() == null
 					|| PASSWORD.getText().isEmpty() || EMAIL.getText() == null || EMAIL.getText().isEmpty()
 					|| ECONFIRM.getText() == null || ECONFIRM.getText().isEmpty() || PCONFIRM.getText() == null
-					|| PCONFIRM.getText().isEmpty() || ZIP.getText() == null || ZIP.getText().isEmpty()) {
+					|| PCONFIRM.getText().isEmpty() || ZIP.getText() == null || ZIP.getText().isEmpty() || FULLNAME.getText() == null || FULLNAME.getText().isEmpty()) {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Empty");
 				alert.setHeaderText("Empty");
@@ -100,7 +103,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 				if (p.equals(pconfirm)) {
 					if (e.equals(econfirm)) {
 						Location location = new Location(Integer.parseInt(z));
-						User user = new User(u, p, e, location);
+						User user = new User(u, p, e, location, fname);
 						if (!(user.isProceed())) {
 							Alert alert = new Alert(AlertType.ERROR);
 							alert.setTitle("Invalid Username");
