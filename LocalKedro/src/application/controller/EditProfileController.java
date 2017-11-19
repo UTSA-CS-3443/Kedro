@@ -1,6 +1,7 @@
 package application.controller;
 
 import application.Main;
+import application.model.Location;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -37,6 +38,12 @@ public class EditProfileController implements EventHandler<ActionEvent> {
 			alert.setContentText("You left a field blank");
 			alert.showAndWait();
 		} else {
+			Main.user.setFName(n);
+			Location location = new Location(Integer.parseInt(z));
+			Main.user.setLoc(location);
+			Main.user.setEmail(e);
+			Main.user.setPassword(p);
+			Main.user.userWrite();
 			try {
 				
 				Parent root = FXMLLoader.load(getClass().getResource("ProfileViewPage.fxml"));
