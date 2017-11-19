@@ -20,7 +20,6 @@ public class ProfileViewController implements Initializable,EventHandler<ActionE
 	public Label user;
 	public Label name;
 	public Label zip;
-	public Label events;
 	
 	@Override
 	public void handle(ActionEvent event) {
@@ -66,6 +65,5 @@ public class ProfileViewController implements Initializable,EventHandler<ActionE
 		else{
 			zip.setText("Zip Code : " + Main.user.getLoc());
 		}
-		events.setText("Recent Events : TEST");
 	}
 }
