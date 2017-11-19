@@ -69,26 +69,26 @@ public class UserController implements Initializable {
     
     @FXML
 	protected void handle() {
-		/*try {
+		try {
 			Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
 			Main.stage.setScene(new Scene(root, 600, 400));
 			Main.stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} */
+		} 
 		System.out.println("Events Page"); 
     	
 	}
 	
     @FXML
 	protected void openProfilesPage() {   
-		/* try {
+		 try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfilesPage.fxml"));
 			Main.stage.setScene(new Scene(root, 600, 400));
 			Main.stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} */
+		} 
 		System.out.println("Profiles Page");
 	}
 	
