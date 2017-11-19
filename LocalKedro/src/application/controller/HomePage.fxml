@@ -12,8 +12,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import com.teamdev.jxmaps.javafx.MapView?>
+<?import javafx.scene.layout.BorderPane?>
 
-<VBox style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.UserController">
+<VBox style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.UserController" >
    <children>
       <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="KEDRO" textAlignment="CENTER" wrappingWidth="129.13134765625">
          <font>
@@ -75,11 +77,11 @@
                   <Text layoutX="51.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local events go here" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
-               <children>
-                  <Text layoutX="69.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Map goes here" />
-               </children>
-            </AnchorPane>
+          <BorderPane prefHeight="205.0" prefWidth="174.0"  xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+    			<center>
+   				<MapView fx:id="mapView"/>
+   			 </center>
+		</BorderPane>
         </items>
       </SplitPane>
    </children>

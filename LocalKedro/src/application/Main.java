@@ -1,5 +1,7 @@
 package application;
 
+import com.teamdev.jxmaps.javafx.MapView;
+
 import application.model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,12 @@ public class Main extends Application {
 
 	public static Stage stage;
 	public static User user;
+	
+	@Override
+	    public void init() throws Exception {
+	        // Initializing of JavaFX engine
+	        MapView.InitJavaFX();
+	    }
 
 	@Override
 	public void start(Stage primaryStage) {
