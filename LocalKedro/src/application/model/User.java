@@ -87,6 +87,9 @@ public class User {
 		return false;
 	}
 
+	/**
+	 * This function is called by the controller to write the user after it has been verified
+	 */
 	public void userWrite() {
 		String filePath = new File("").getAbsolutePath();
 		filePath += "\\UserFolder\\";
@@ -95,6 +98,7 @@ public class User {
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
 			pw.println(this.getName());
 			pw.println(this.getPassword());
+			pw.println(this.getLoc());
 			pw.println(this.getEmail());
 		} catch (Exception e) {
 			e.printStackTrace();
