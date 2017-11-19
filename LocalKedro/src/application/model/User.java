@@ -11,6 +11,7 @@ public class User {
 	private Location loc;
 	private boolean proceed = false;
 	private ArrayList<RSVP> rsvp;
+	String z;
 
 	public User(String name, String password, String email, Location location, String fname) {
 		this.setName(name);
@@ -87,6 +88,42 @@ public class User {
 		}
 		return false;
 	}
+	
+	public void setCurrentUser() {
+		String filePath = new File("").getAbsolutePath();
+		if(OS.equals("mac os x")) {
+			filePath += "/UserFolder";
+		}
+		else {
+			filePath += "\\UserFolder";
+		}
+		File folder = new File(filePath);
+		File[] listOfFiles = folder.listFiles();
+		for (File file : listOfFiles) {
+			if (file.isFile() && file.getName().equals(this.getName())) {
+				try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+					String line = null;
+					line = br.readLine(); // user name
+					setName(line);
+					line = br.readLine(); // password
+					setPassword(line);
+					line = br.readLine(); // full name
+					setFName(line);
+					line = br.readLine();
+					setEmail(line);
+					line = br.readLine();
+					z = line;
+					Location location = new Location(Integer.parseInt(z));
+					setLoc(location);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+	
+
 
 	public void userWrite() {
 		String filePath = new File("").getAbsolutePath();
@@ -95,8 +132,8 @@ public class User {
 		System.out.println(file.getAbsolutePath());
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
 			pw.println(this.getName());
-			pw.println(this.getFName());
 			pw.println(this.getPassword());
+			pw.println(this.getFName());
 			pw.println(this.getEmail());
 			pw.println(this.getLoc());
 		} catch (Exception e) {
