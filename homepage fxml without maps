@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+
+<VBox style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.UserController" >
+   <children>
+      <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="KEDRO" textAlignment="CENTER" wrappingWidth="129.13134765625">
+         <font>
+            <Font name="AppleMyungjo Regular" size="24.0" />
+         </font>
+      </Text>
+      <AnchorPane />
+      <ImageView fitHeight="131.0" fitWidth="130.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+         <image>
+            <Image url="@../logoPartyCenter.png" />
+         </image>
+      </ImageView>
+      <ButtonBar prefHeight="46.0" prefWidth="468.0">
+        <buttons>
+            <VBox>
+               <children>
+                  <ToggleButton mnemonicParsing="false" onAction="#handle" prefHeight="50.0" prefWidth="229.0" style="-fx-background-color: yellow;" text="Events">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <font>
+                        <Font name="Monaco" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="CROSSHAIR" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text="Bring up Events Page" />
+                     </tooltip>
+                  </ToggleButton>
+               </children>
+            </VBox>
+            <ToggleButton layoutX="225.0" layoutY="17.0" mnemonicParsing="false" onAction="#openProfilesPage" prefHeight="80.0" style="-fx-background-color: yellow;" text="Profiles">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Monaco" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Bring up Profile Page" />
+               </tooltip>
+            </ToggleButton>
+        </buttons>
+      </ButtonBar>
+      <SplitPane dividerPositions="0.5" VBox.vgrow="ALWAYS">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="174.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
+               <children>
+                  <Text layoutX="51.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local events go here" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
+               <children>
+                 <Text layoutX="69.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Map goes here" />
+              </children>
+           </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</VBox>
