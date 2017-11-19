@@ -7,16 +7,17 @@ import application.controller.MainController;
 public class User {
 	
 	private static String OS = System.getProperty("os.name").toLowerCase();
-	private String name, password, email;
+	private String name, password, email, fname;
 	private Location loc;
 	private boolean proceed = false;
 	private ArrayList<RSVP> rsvp;
 
-	public User(String name, String password, String email, Location location) {
+	public User(String name, String password, String email, Location location, String fname) {
 		this.setName(name);
 		this.setPassword(password);
 		this.setEmail(email);
 		this.setLoc(location);
+		this.setFName(fname);
 		this.setProceed(userCheck());
 		System.out.println(this.isProceed() + " " + this.getName() + " " + this.getPassword() + " " + this.getEmail() +" in user");
 		this.rsvp = new ArrayList<RSVP>();
@@ -87,9 +88,6 @@ public class User {
 		return false;
 	}
 
-	/**
-	 * This function is called by the controller to write the user after it has been verified
-	 */
 	public void userWrite() {
 		String filePath = new File("").getAbsolutePath();
 		filePath += "\\UserFolder\\";
@@ -97,9 +95,10 @@ public class User {
 		System.out.println(file.getAbsolutePath());
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
 			pw.println(this.getName());
+			pw.println(this.getFName());
 			pw.println(this.getPassword());
-			pw.println(this.getLoc());
 			pw.println(this.getEmail());
+			pw.println(this.getLoc());
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("you done goofed");
@@ -120,6 +119,14 @@ public class User {
 	}
 
 	///// GETTERS AND SETTERS//////
+	public String getFName(){
+		return fname;
+	}
+	
+	public void setFName(String fname){
+		this.fname = fname;
+	}
+	
 	public String getName() {
 		return name;
 	}
