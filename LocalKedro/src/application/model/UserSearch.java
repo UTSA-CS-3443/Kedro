@@ -5,17 +5,31 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
+/**
+ * this class searches through the list of files and returns an array of users that match
+ * @author Travis Woods
+ *
+ */
 public class UserSearch {
-
+	//class constants
 	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String name;
 
+	/**
+	 * this sets the class constant to the object name
+	 * @param name
+	 */
 	public UserSearch(String name) {
 		this.name = name;
-		searchAll(name);
 	}
 
+	/**
+	 * this is the search function the searches by username
+	 * and doesn't display anything except their name and
+	 * the events they rsvped to go to
+	 * @param name
+	 * @return
+	 */
 	public DisplayUser[] searchAll(String name) {
 		String filePath = new File("").getAbsolutePath();
 		if(OS.equals("mac os x")) {
@@ -46,16 +60,16 @@ public class UserSearch {
 					while ((line = br.readLine()) != null) {
 						user.signIn(line);
 					}
+					userList[i] = user;
 					br.close();
 				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					return null;
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					return null;
 				}
 			}
+			i++;
 		}
-		return null;
+		return userList;
 	}
 }

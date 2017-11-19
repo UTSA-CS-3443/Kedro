@@ -5,7 +5,11 @@ import java.util.ArrayList;
 
 //import application.Location;
 //import application.RSVP;
-
+/**
+ * this class creates an event object and writes it to the file folder
+ * @author Travis Woods
+ *
+ */
 public class Event {
 	
 	private static String OS = System.getProperty("os.name").toLowerCase();
@@ -22,7 +26,6 @@ public class Event {
 		this.setDate(date);
 		this.setLocation(location);
 		this.rsvp = new ArrayList<RSVP>();
-		eventWrite();
 	}
 	
 	public void addGuest(String string) {
@@ -37,10 +40,10 @@ public class Event {
 	public void eventWrite() {
 		String filePath = new File("").getAbsolutePath();
 		if(OS.equals("mac os x")) {
-			filePath += "/EventFolder";
+			filePath += "/EventFolder/";
 		}
 		else {
-			filePath += "\\EventFolder";
+			filePath += "\\EventFolder\\";
 		}
 		File file = new File(filePath + this.getName());
 		System.out.println(file.getAbsolutePath());
@@ -50,12 +53,14 @@ public class Event {
 			pw.println(this.getLocation().toString());
 			pw.println(this.getType().toString());
 			//print out the guest list too I think
+			pw.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("you done goofed");
 		}
 	}
 	//doesn't work right yet. Need event pages finished
+	//false returns if the name exists
 	public boolean eventCheck() {
 		String filePath = new File("").getAbsolutePath();
 		filePath += "\\EventFolder";
@@ -68,7 +73,8 @@ public class Event {
 			}
 			else if(!(file.isFile()) || !(file.getName().equals(this.getName())))
 				try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-					//haven't done this yet
+					return true;
+					//because the name doesn't exist
 				} catch (Exception e) {
 					System.out.println("Something doesn't exist");
 				}
