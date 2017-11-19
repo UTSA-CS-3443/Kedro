@@ -1,6 +1,10 @@
 package application.controller;
 
 import application.model.User;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import application.Main;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -26,6 +30,9 @@ public class MainController implements EventHandler<ActionEvent> {
 	public TextField PASSWORD;
 	String u = null;
 	String p = null;
+	String name = null;
+	String zip = null;
+	String email = null;
 
 	public void handle(ActionEvent event) {
 		try {
@@ -70,6 +77,7 @@ public class MainController implements EventHandler<ActionEvent> {
 				alert.showAndWait();
 			}
 		}
+		Main.user.setCurrentUser();
 		System.out.println("Logged In");
 	}
 }
