@@ -12,7 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 
-public class EventSearch implements Initializable,EventHandler<ActionEvent> {
+public class EventSearchController implements Initializable,EventHandler<ActionEvent> {
 	
 	public Hyperlink event1;
 	public Hyperlink event2;

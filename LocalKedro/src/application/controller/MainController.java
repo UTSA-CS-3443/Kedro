@@ -58,15 +58,21 @@ public class MainController implements EventHandler<ActionEvent> {
 			alert.showAndWait();
 		} else {
 			User user = new User(u, p);
-			Main.user = user;
 			System.out.println(u + "\n" + p);
 			// added error checking so need name and abc123 to log in
 			if (user.isProceed()) {
 				try {
+					user.userWrite();
+					//sets the main user to this
+					Main.user = user;
 					Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
 					Main.stage.setScene(new Scene(root, 600, 400));
 					Main.stage.show();
-				} catch (Exception e) {
+				} catch (NullPointerException e) {
+					System.out.println("error with homepage loading");
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} else {
@@ -77,7 +83,8 @@ public class MainController implements EventHandler<ActionEvent> {
 				alert.showAndWait();
 			}
 		}
-		Main.user.setCurrentUser();
+		//this is fucking retarded. dont do this. its referencing itself
+		//Main.user.setCurrentUser();
 		System.out.println("Logged In");
 	}
 }

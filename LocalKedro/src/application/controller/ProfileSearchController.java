@@ -12,7 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 
-public class ProfileSearch implements Initializable,EventHandler<ActionEvent> {
+public class ProfileSearchController implements Initializable,EventHandler<ActionEvent> {
 	
 	public Hyperlink profile1;
 	public Hyperlink profile2;

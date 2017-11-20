@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="application.controller.ProfileViewController"> 
+<VBox style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="application.controller.ProfileSearchViewController"> 
    <children>
       <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="KEDRO" textAlignment="CENTER" wrappingWidth="129.13134765625">
          <font>
@@ -35,20 +35,6 @@
       <ButtonBar>
         <buttons>
             <VBox />
-            <Button mnemonicParsing="false" onAction="#handle" style="-fx-background-color: yellow;" text="Edit">
-               <font>
-                  <Font name="Chalkboard" size="12.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
-               </cursor>
-               <tooltip>
-                  <Tooltip text="Edit your profile info" />
-               </tooltip>
-            </Button>
         </buttons>
       </ButtonBar>
       <AnchorPane prefHeight="301.0" prefWidth="306.0">
