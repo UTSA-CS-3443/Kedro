@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.UserController">
+<VBox style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EventSearch">
    <children>
       <AnchorPane />
       <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="KEDRO" textAlignment="CENTER" wrappingWidth="129.13134765625">
@@ -33,9 +33,9 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="183.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
                <children>
-                  <Hyperlink text="Event 1" textFill="#eeff00" />
-                  <Hyperlink text="Event 2" textFill="#eeff00" />
-                  <Hyperlink text="Event 3" textFill="#eeff00" />
+                  <Hyperlink fx:id="event1" text="Event 1" onAction="#handle" textFill="#eeff00" />
+                  <Hyperlink fx:id="event2" text="Event 2" onAction="#handle" textFill="#eeff00" />
+                  <Hyperlink fx:id="event3" text="Event 3" onAction="#handle" textFill="#eeff00" />
                </children>
             </VBox>
          </children>
