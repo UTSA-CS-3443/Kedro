@@ -80,6 +80,22 @@
             <Glow />
          </effect>
       </TextField>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" VBox.vgrow="NEVER">
+        <buttons>
+          <Button mnemonicParsing="false" style="-fx-background-color: yellow;" text="Search">
+               <font>
+                  <Font name="Monaco" size="13.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+        </buttons>
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </ButtonBar>
       <Pagination pageCount="20" prefHeight="200.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
          <effect>
             <SepiaTone level="0.25" />
