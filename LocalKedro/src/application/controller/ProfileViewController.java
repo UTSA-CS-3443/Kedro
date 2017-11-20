@@ -47,14 +47,17 @@ public class ProfileViewController implements Initializable,EventHandler<ActionE
 
 	@Override
 	public void initialize(java.net.URL arg0, ResourceBundle arg1) {
-		if (Main.user.getName() == null){
+		user.setText("Travis80");
+		name.setText("Travis Woods");
+		zip.setText("78016");
+		/*if (Main.user.getName() == null){
 			user.setText("Username : ");
 		}
 		else{
 			user.setText("Username: " + Main.user.getName());
 		}
 		if (Main.user.getFName() == null){
-			name.setText("Name :");
+			name.setText("Name :")
 		}
 		else{
 			name.setText("Name : " + Main.user.getFName());
@@ -64,6 +67,6 @@ public class ProfileViewController implements Initializable,EventHandler<ActionE
 		}
 		else{
 			zip.setText("Zip Code : " + Main.user.getLoc());
-		}
+		}*/
 	}
 }
