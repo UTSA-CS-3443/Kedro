@@ -14,6 +14,7 @@ import com.teamdev.jxmaps.javafx.MapView;
 import com.teamdev.jxmaps.MapViewOptions;
 import com.teamdev.jxmaps.MapComponentType;
 
+
 import application.Main;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -61,7 +62,7 @@ public class UserController implements Initializable {
                     // Setting the map center
                     map.setCenter(new LatLng(35.91466, 10.312499));
                     // Setting initial zoom value
-                    map.setZoom(2.0);
+                    map.setZoom(10.0);
                 }
             }
         });
@@ -91,17 +92,6 @@ public class UserController implements Initializable {
 		} 
 		System.out.println("Profiles Page");
 	}
-    
-    public void logout() {
-    		try {
-			Parent root = FXMLLoader.load(getClass().getResource("RegisterLoginPage.fxml"));
-			Main.stage.setScene(new Scene(root, 600, 400));
-			Main.stage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} 
-		System.out.println("Logout");
-    }
 	
 
 }
