@@ -65,6 +65,7 @@ public class MainController implements EventHandler<ActionEvent> {
 					user.userWrite();
 					//sets the main user to this
 					Main.user = user;
+					Main.user.setCurrentUser();
 					Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
 					Main.stage.setScene(new Scene(root, 600, 400));
 					Main.stage.show();

@@ -91,37 +91,34 @@ public class User {
 	}
 	//this function is useless. In main the current user is already set by the registerlogin controller
 	//and the registrationpage controller
-//	public void setCurrentUser() {
-//		String filePath = new File("").getAbsolutePath();
-//		if (OS.equals("mac os x")) {
-//			filePath += "/UserFolder";
-//		} else {
-//			filePath += "\\UserFolder";
-//		}
-//		File folder = new File(filePath);
-//		File[] listOfFiles = folder.listFiles();
-//		for (File file : listOfFiles) {
-//			if (file.isFile() && file.getName().equals(this.getName())) {
-//				try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-//					String line = null;
-//					line = br.readLine(); // user name
-//					setName(line);
-//					line = br.readLine(); // password
-//					setPassword(line);
-//					line = br.readLine(); // full name
-//					setFName(line);
-//					line = br.readLine();
-//					setEmail(line);
-//					line = br.readLine();
-//					z = line;
-//					Location location = new Location(Integer.parseInt(z));
-//					setLoc(location);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		}
-//	}
+	public void setCurrentUser() {
+		String filePath = new File("").getAbsolutePath();
+		if (OS.equals("mac os x")) {
+			filePath += "/UserFolder/" + this.getName();
+		} else {
+			filePath += "\\UserFolder\\" + this.getName();
+		}
+		File file = new File(filePath);
+		if (file.isFile()) {
+			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+				String line = null;
+				line = br.readLine(); // user name
+				this.setName(line);
+				line = br.readLine(); // password
+				this.setPassword(line);
+				line = br.readLine(); // full name
+				this.setFName(line);
+				line = br.readLine();
+				this.setEmail(line);
+				line = br.readLine();
+				z = line;
+				Location location = new Location(Integer.parseInt(z));
+				this.setLoc(location);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
 	public void userWrite() {
 		String filePath = new File("").getAbsolutePath();

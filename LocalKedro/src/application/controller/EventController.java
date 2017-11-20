@@ -58,7 +58,7 @@ public class EventController implements EventHandler<ActionEvent>{
 			//this is an array of event names. Set the text in the fxml to this in a for loop
 			if(de.length > 0 && de[0] != null) {
 				for(int i = 0; i <= de.length-1; i++) {
-					System.out.println(de[i].getName());
+					System.out.println(de[i].toString());
 					//set the hyperlink values or put this somewhere else. idk
 					//maybe iteratively create new hyperlinks
 				}
