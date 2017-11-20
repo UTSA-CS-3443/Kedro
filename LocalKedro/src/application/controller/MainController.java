@@ -83,8 +83,6 @@ public class MainController implements EventHandler<ActionEvent> {
 				alert.showAndWait();
 			}
 		}
-		//this is fucking retarded. dont do this. its referencing itself
-		//Main.user.setCurrentUser();
 		System.out.println("Logged In");
 	}
 }

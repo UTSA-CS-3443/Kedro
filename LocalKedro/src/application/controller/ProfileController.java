@@ -46,6 +46,7 @@ public class ProfileController implements EventHandler<ActionEvent> {
 			Main.stage.setScene(new Scene(root, 600, 400));
 			Main.stage.show();
 		} catch (Exception e) {
+			System.out.println("search didn't work");
 			e.printStackTrace();
 		}
 		System.out.println("profile search");
