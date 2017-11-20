@@ -93,5 +93,15 @@ public class UserController implements Initializable {
 		System.out.println("Profiles Page");
 	}
 	
+    public void logout() {
+    	  try {
+    	 	  Parent root = FXMLLoader.load(getClass().getResource("RegisterLoginPage.fxml"));
+    	 	  Main.stage.setScene(new Scene(root, 600, 400));
+    	 	  Main.stage.show();
+    	 	} catch (Exception e) {
+    	 			e.printStackTrace();
+    	 	} 
+    	 		System.out.println("Logout");
 
+    }
 }
