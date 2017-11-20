@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TextField;
 
 public class EditProfileController implements EventHandler<ActionEvent> {
@@ -65,6 +66,17 @@ public class EditProfileController implements EventHandler<ActionEvent> {
 			e.printStackTrace();
 		}
 		System.out.println("Edit Profile Cancelled");
+	}
+	
+	public void home(MouseEvent event) {
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Home Button");
 	}
 
 }

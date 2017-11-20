@@ -53,7 +53,6 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 		z = ZIP.getText().toString();
 		fname = FULLNAME.getText().toString();
 
-//<<<<<<< HEAD
 		if (p.equals(pconfirm)) {
 			if (e.equals(econfirm)) {
 				Location location = new Location(Integer.parseInt(z));
@@ -66,8 +65,8 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 					alert.showAndWait();
 				} else {
 					try {
-						Main.user = user; //added an overall user object
 						user.userWrite();
+						Main.user = user; //added an overall user object
 						Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
 						Main.stage.setScene(new Scene(root, 600, 400));
 						Main.stage.show();

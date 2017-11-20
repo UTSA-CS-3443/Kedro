@@ -18,7 +18,7 @@
          </font>
       </Text>
       <AnchorPane />
-      <ImageView fitHeight="131.0" fitWidth="130.0">
+      <ImageView fitHeight="131.0" fitWidth="130.0" onMouseClicked="#home">
          <effect>
             <DropShadow />
          </effect>

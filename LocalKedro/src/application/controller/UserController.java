@@ -95,6 +95,7 @@ public class UserController implements Initializable {
 	
     public void logout() {
     	  try {
+    		  Main.user = null;
     	 	  Parent root = FXMLLoader.load(getClass().getResource("RegisterLoginPage.fxml"));
     	 	  Main.stage.setScene(new Scene(root, 600, 400));
     	 	  Main.stage.show();

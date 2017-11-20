@@ -127,7 +127,12 @@ public class User {
 
 	public void userWrite() {
 		String filePath = new File("").getAbsolutePath();
-		filePath += "\\UserFolder\\";
+		if(OS.equals("mac os x")) {
+			filePath += "/UserFolder/";
+		}
+		else {
+			filePath += "\\UserFolder\\";
+		}
 		File file = new File(filePath + this.getName());
 		System.out.println(file.getAbsolutePath());
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {

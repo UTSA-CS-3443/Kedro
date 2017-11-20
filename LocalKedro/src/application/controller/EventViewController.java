@@ -15,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 public class EventViewController implements Initializable,EventHandler<ActionEvent>{
 	
@@ -28,7 +29,7 @@ public class EventViewController implements Initializable,EventHandler<ActionEve
 
 	}
 	
-	public void home(ActionEvent event) {
+	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
 			Main.stage.setScene(new Scene(root, 600, 400));

@@ -24,7 +24,7 @@
                   <Font name="AppleMyungjo Regular" size="24.0" />
                </font>
             </Text>
-            <ImageView fitHeight="131.0" fitWidth="130.0" layoutY="34.0">
+            <ImageView fitHeight="131.0" fitWidth="130.0" layoutY="34.0" onMouseClicked="#home">
                <effect>
                   <DropShadow />
                </effect>

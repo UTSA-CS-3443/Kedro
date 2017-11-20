@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.input.MouseEvent;
 
 public class EventSearchController implements Initializable,EventHandler<ActionEvent> {
 	
@@ -36,6 +37,17 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 		event2.setText("House Warming");
 		event3.setText("Metallica concert");
 		
+	}
+	
+	public void home(MouseEvent event) {
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Home Button");
 	}
 
 }

@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 public class ProfileController implements EventHandler<ActionEvent> {
 	
@@ -44,7 +45,7 @@ public class ProfileController implements EventHandler<ActionEvent> {
 	public void search(ActionEvent event){
 		s = search.getText().toString();
 		try {
-			UserSearch us = new UserSearch(s);
+			/*UserSearch us = new UserSearch(s);
 			DisplayUser[] du = us.searchAll();
 			//this is an array of user names. Set the text in the fxml to this in a for loop
 			if(du.length > 0 && du[0] != null) {
@@ -53,7 +54,7 @@ public class ProfileController implements EventHandler<ActionEvent> {
 					//set the hyperlink values or put this somewhere else. idk
 					//maybe iteratively create new hyperlinks
 				}
-			}
+			}*/
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileResultsPage.fxml"));
 			Main.stage.setScene(new Scene(root, 600, 400));
 			Main.stage.show();
@@ -62,5 +63,16 @@ public class ProfileController implements EventHandler<ActionEvent> {
 			e.printStackTrace();
 		}
 		System.out.println("profile search");
+	}
+	
+	public void home(MouseEvent event) {
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Home Button");
 	}
 }

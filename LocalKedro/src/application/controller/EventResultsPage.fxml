@@ -18,7 +18,7 @@
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>
       </Text>
-      <ImageView fitHeight="131.0" fitWidth="130.0">
+      <ImageView fitHeight="131.0" fitWidth="130.0" onMouseClicked="#home">
          <effect>
             <DropShadow />
          </effect>
@@ -33,9 +33,9 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="183.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
                <children>
-                  <Hyperlink fx:id="event1" text="Event 1" onAction="#handle" textFill="#eeff00" />
-                  <Hyperlink fx:id="event2" text="Event 2" onAction="#handle" textFill="#eeff00" />
-                  <Hyperlink fx:id="event3" text="Event 3" onAction="#handle" textFill="#eeff00" />
+                  <Hyperlink fx:id="event1" onAction="#handle" text="Event 1" textFill="#eeff00" />
+                  <Hyperlink fx:id="event2" onAction="#handle" text="Event 2" textFill="#eeff00" />
+                  <Hyperlink fx:id="event3" onAction="#handle" text="Event 3" textFill="#eeff00" />
                </children>
             </VBox>
          </children>

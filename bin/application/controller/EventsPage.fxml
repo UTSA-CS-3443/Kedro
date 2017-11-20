@@ -25,7 +25,7 @@
          </font>
       </Text>
       <AnchorPane />
-      <ImageView fitHeight="131.0" fitWidth="130.0">
+      <ImageView fitHeight="131.0" fitWidth="130.0" onMouseClicked="#home">
          <effect>
             <DropShadow />
          </effect>
@@ -72,7 +72,7 @@
             </ToggleButton>
         </buttons>
       </ButtonBar>
-      <TextField alignment="CENTER" fx:id="search" onAction="#search" prefHeight="27.0" prefWidth="600.0" promptText="Search Events">
+      <TextField fx:id="search" alignment="CENTER" onAction="#search" prefHeight="27.0" prefWidth="600.0" promptText="Search Events">
          <font>
             <Font name="Didot" size="13.0" />
          </font>

@@ -14,6 +14,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 public class ProfileViewController implements Initializable,EventHandler<ActionEvent>{
 	
@@ -47,17 +48,14 @@ public class ProfileViewController implements Initializable,EventHandler<ActionE
 
 	@Override
 	public void initialize(java.net.URL arg0, ResourceBundle arg1) {
-		user.setText("Travis80");
-		name.setText("Travis Woods");
-		zip.setText("78016");
-		/*if (Main.user.getName() == null){
+		if (Main.user.getName() == null){
 			user.setText("Username : ");
 		}
 		else{
 			user.setText("Username: " + Main.user.getName());
 		}
 		if (Main.user.getFName() == null){
-			name.setText("Name :")
+			name.setText("Name :");
 		}
 		else{
 			name.setText("Name : " + Main.user.getFName());
@@ -67,6 +65,17 @@ public class ProfileViewController implements Initializable,EventHandler<ActionE
 		}
 		else{
 			zip.setText("Zip Code : " + Main.user.getLoc());
-		}*/
+		}
+	}
+	
+	public void home(MouseEvent event) {
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Home Button");
 	}
 }
