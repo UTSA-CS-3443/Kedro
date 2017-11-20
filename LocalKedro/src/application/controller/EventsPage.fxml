@@ -72,7 +72,7 @@
             </ToggleButton>
         </buttons>
       </ButtonBar>
-      <TextField alignment="CENTER" prefHeight="27.0" prefWidth="600.0" promptText="Search Events">
+      <TextField alignment="CENTER" fx:id="search" onAction="#search" prefHeight="27.0" prefWidth="600.0" promptText="Search Events">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -82,7 +82,7 @@
       </TextField>
       <ButtonBar prefHeight="40.0" prefWidth="200.0">
          <buttons>
-            <Button mnemonicParsing="false" style="-fx-background-color: yellow;" text="Search">
+            <Button mnemonicParsing="false" onAction="#search" style="-fx-background-color: yellow;" text="Search">
                <font>
                   <Font name="Monaco" size="13.0" />
                </font>
