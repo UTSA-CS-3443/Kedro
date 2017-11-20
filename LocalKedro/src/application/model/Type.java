@@ -19,8 +19,8 @@ public class Type {
 	 * @param name
 	 * @return
 	 */
-	public boolean checkValid(String name) {
-		switch(name) {
+	public boolean checkValid() {
+		switch(this.name) {
 			case "party":
 				System.out.println("Party");
 				return true;

@@ -53,11 +53,20 @@ public class CreateEventController implements EventHandler<ActionEvent> {
 				Main.stage.setScene(new Scene(root, 600, 400));
 				Main.stage.show();
 				Type type = new Type(eType);
-				Date date = new Date(eDate);
-				Location local = new Location(Integer.parseInt(eLoc));
-				Event event1 = new Event(eName, type, date, local);
-				event1.eventCheck();
-				event1.eventWrite();
+				if(type.checkValid()) {
+					Date date = new Date(eDate);
+					Location local = new Location(Integer.parseInt(eLoc));
+					Event event1 = new Event(eName, type, date, local);
+					event1.eventCheck();
+					event1.eventWrite();	
+				}
+				else {
+					Alert alert = new Alert(AlertType.ERROR);
+					alert.setTitle("Invalid Type");
+					alert.setHeaderText("Invalid Type");
+					alert.setContentText("Choose party, concert, conference\n, meet and greet or other");
+					alert.showAndWait();
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

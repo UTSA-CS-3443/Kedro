@@ -30,7 +30,7 @@ public class EventSearch {
 	 * @param location
 	 * @return
 	 */
-	public DisplayEvent[] searchAll(String name, Type type, Location location) {
+	public DisplayEvent[] searchAll() {
 		String filePath = new File("").getAbsolutePath();
 		//filepath is different for mac and windows
 		if(OS.equals("mac os x")) {
@@ -39,6 +39,15 @@ public class EventSearch {
 		else {
 			filePath += "\\EventFolder";
 		}
+		return searchName(this.searchName, filePath);
+	}
+	/**
+	 * this function searches with name parameter only
+	 * @param name
+	 * @param filePath
+	 * @return
+	 */
+	public DisplayEvent[] searchName(String name, String filePath) {
 		BufferedReader br;
 		//reads in a folder of files
 		File folder = new File(filePath);
@@ -47,13 +56,13 @@ public class EventSearch {
 		int i = 0;
 		//goes through all the files and searches their names
 		for(File rd : listOfFiles) {
-			if(i > listOfFiles.length) {
+			if(i > listOfFiles.length-1) {
 				return eventList;
 			}
 			if(rd.getName().equals(name)) {
 				try {
 					//uses the strings in the file to make a new object
-					br = new BufferedReader(new FileReader("rd"));
+					br = new BufferedReader(new FileReader(rd));
 					String evtNm = br.readLine();
 					String tpNm = br.readLine();
 					String dt = br.readLine();
