@@ -5,7 +5,7 @@ import java.util.*;
 import application.controller.MainController;
 
 public class User {
-
+	
 	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String name, password, email, fname;
 	private Location loc;
@@ -20,11 +20,9 @@ public class User {
 		this.setLoc(location);
 		this.setFName(fname);
 		this.setProceed(userCheck());
-		System.out.println(this.isProceed() + " " + this.getName() + " " + this.getPassword() + " " + this.getEmail()
-				+ " in user");
+		System.out.println(this.isProceed() + " " + this.getName() + " " + this.getPassword() + " " + this.getEmail() +" in user");
 		this.rsvp = new ArrayList<RSVP>();
 	}
-
 	/**
 	 * Creates the current user object and loads all of their info into the
 	 * application also if you guys get tired of logging in then just comment out
@@ -43,16 +41,16 @@ public class User {
 	}
 
 	/**
-	 * this function checks if the user exists and if they do it reads in all of
-	 * their rsvped events and other attributes that I have yet to add
-	 * 
+	 * this function checks if the user exists and if they do it reads in all of their
+	 * rsvped events and other attributes that I have yet to add
 	 * @return true if the user exists
 	 */
 	public boolean userCheck() {
 		String filePath = new File("").getAbsolutePath();
-		if (OS.equals("mac os x")) {
+		if(OS.equals("mac os x")) {
 			filePath += "/UserFolder";
-		} else {
+		}
+		else {
 			filePath += "\\UserFolder";
 		}
 		File folder = new File(filePath);
@@ -66,6 +64,7 @@ public class User {
 						line = br.readLine(); // password
 						if (line != null && line.equals(this.getPassword())) {
 							System.out.println("Welcome!");
+							this.setEmail(br.readLine()); // email
 							while ((line = br.readLine()) != null) { // reads in events to arrayList
 								if (!(line.equals("*"))) {
 									RSVP loadIn = new RSVP(line);
@@ -89,44 +88,46 @@ public class User {
 		}
 		return false;
 	}
-	//this function is useless. In main the current user is already set by the registerlogin controller
-	//and the registrationpage controller
+	
 	public void setCurrentUser() {
 		String filePath = new File("").getAbsolutePath();
-		if (OS.equals("mac os x")) {
-			filePath += "/UserFolder/" + this.getName();
-		} else {
-			filePath += "\\UserFolder\\" + this.getName();
+		if(OS.equals("mac os x")) {
+			filePath += "/UserFolder";
 		}
-		File file = new File(filePath);
-		if (file.isFile()) {
-			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-				String line = null;
-				line = br.readLine(); // user name
-				this.setName(line);
-				line = br.readLine(); // password
-				this.setPassword(line);
-				line = br.readLine(); // full name
-				this.setFName(line);
-				line = br.readLine();
-				this.setEmail(line);
-				line = br.readLine();
-				z = line;
-				Location location = new Location(Integer.parseInt(z));
-				this.setLoc(location);
+		else {
+			filePath += "\\UserFolder";
+		}
+		File folder = new File(filePath);
+		File[] listOfFiles = folder.listFiles();
+		for (File file : listOfFiles) {
+			if (file.isFile() && file.getName().equals(this.getName())) {
+				try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+					String line = null;
+					line = br.readLine(); // user name
+					setName(line);
+					line = br.readLine(); // password
+					setPassword(line);
+					line = br.readLine(); // full name
+					setFName(line);
+					line = br.readLine(); // email
+					setEmail(line);
+					line = br.readLine(); //location
+					z = line;
+					Location location = new Location(Integer.parseInt(z));
+					setLoc(location);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
+}
+
+	
+
 
 	public void userWrite() {
 		String filePath = new File("").getAbsolutePath();
-		if (OS.equals("mac os x")) {
-			filePath += "/UserFolder/";
-		} else {
-			filePath += "\\UserFolder\\";
-		}
+		filePath += "\\UserFolder\\";
 		File file = new File(filePath + this.getName());
 		System.out.println(file.getAbsolutePath());
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
