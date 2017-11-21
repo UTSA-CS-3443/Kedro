@@ -2,6 +2,8 @@ package application.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import application.Main;
+import application.model.Location;
 
 import com.teamdev.jxmaps.ControlPosition;
 import com.teamdev.jxmaps.LatLng;
@@ -13,16 +15,31 @@ import com.teamdev.jxmaps.MapTypeControlOptions;
 import com.teamdev.jxmaps.javafx.MapView;
 import com.teamdev.jxmaps.MapViewOptions;
 import com.teamdev.jxmaps.MapComponentType;
+import com.teamdev.jxmaps.ControlPosition;
+import com.teamdev.jxmaps.GeocoderCallback;
+import com.teamdev.jxmaps.GeocoderRequest;
+import com.teamdev.jxmaps.GeocoderResult;
+import com.teamdev.jxmaps.GeocoderStatus;
+import com.teamdev.jxmaps.InfoWindow;
+import com.teamdev.jxmaps.LatLng;
+import com.teamdev.jxmaps.Map;
+import com.teamdev.jxmaps.Marker;
+
 
 
 import application.Main;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
 import javafx.fxml.Initializable;
+import java.awt.*;
+import java.awt.Point;
+
 
 /**
  * This will handle everything that does with the profile and user page
@@ -35,6 +52,11 @@ public class UserController implements Initializable {
 	@FXML
 	private MapView mapView; 
 	
+	private Location loc = Main.user.getLoc(); // TO-DO: returns NULL
+	
+	String INITIAL_LOCATION = "78254";
+	
+	
 	 @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Creation of a JavaFX map view
@@ -45,6 +67,7 @@ public class UserController implements Initializable {
         mapView.setOnMapReadyHandler(new MapReadyHandler() {
             @Override
             public void onMapReady(MapStatus status) {
+            	System.out.println(INITIAL_LOCATION);
                 // Check if the map is loaded correctly
                 if (status == MapStatus.MAP_STATUS_OK) {
                     // Getting the associated map object
@@ -63,6 +86,8 @@ public class UserController implements Initializable {
                     map.setCenter(new LatLng(35.91466, 10.312499));
                     // Setting initial zoom value
                     map.setZoom(10.0);
+                    
+                    performGeocode(INITIAL_LOCATION);
                 }
             }
         });
@@ -92,6 +117,44 @@ public class UserController implements Initializable {
 		} 
 		System.out.println("Profiles Page");
 	}
+    
+    private void performGeocode(String text) {
+        // Getting the associated map object
+        final Map map = mapView.getMap();
+        // Creating a geocode request
+        GeocoderRequest request = new GeocoderRequest();
+        // Setting address to the geocode request
+        request.setAddress(text);
+
+        // Geocoding position by the entered address
+        mapView.getServices().getGeocoder().geocode(request, new GeocoderCallback(map) {
+            @Override
+            public void onComplete(GeocoderResult[] results, GeocoderStatus status) {
+                // Checking operation status
+                if ((status == GeocoderStatus.OK) && (results.length > 0)) {
+                    // Getting the first result
+                    GeocoderResult result = results[0];
+                    // Getting a location of the result
+                    LatLng location = result.getGeometry().getLocation();
+                    // Setting the map center to result location
+                    map.setCenter(location);
+                    // Creating a marker object
+                    Marker marker = new Marker(map);
+                    // Setting position of the marker to the result location
+                    marker.setPosition(location);
+                    // Creating an information window
+                    InfoWindow infoWindow = new InfoWindow(map);
+                    // Putting the address and location to the content of the information window
+                    infoWindow.setContent("<b>" + result.getFormattedAddress());
+                    // Moving the information window to the result location
+                    infoWindow.setPosition(location);
+                    // Showing of the information window
+                    infoWindow.open(map, marker);
+                }
+            }
+        });
+    }
+
 	
     public void logout() {
     	  try {

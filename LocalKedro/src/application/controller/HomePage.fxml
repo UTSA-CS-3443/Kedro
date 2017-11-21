@@ -15,6 +15,8 @@
 <?import javafx.scene.text.Text?>
 <?import com.teamdev.jxmaps.javafx.MapView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
 
 <VBox style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.UserController" >
    <children>
@@ -90,7 +92,14 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="174.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
                <children>
-                  <Text layoutX="51.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local events go here" />
+                      <TableView minHeight="205.0" minWidth="300.0" fx:id="tableView" >
+	                      <columns>
+				          <TableColumn editable="false" fx:id="tableColName" prefWidth="200.0" text="Event Name">
+				          </TableColumn>
+				          <TableColumn prefWidth="100.0" editable="false" fx:id="tableColZip" text="Zip Code">
+				          </TableColumn>
+    						 </columns>    
+    					</TableView>
                </children>
             </AnchorPane>
           <BorderPane prefHeight="205.0" prefWidth="174.0"  xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
