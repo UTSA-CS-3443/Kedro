@@ -14,6 +14,6 @@ public class Location {
 	}
 	
 	public String toString() {
-		return "" + this.zipcode + "\n";
+		return "" + this.zipcode;
 	}
 }

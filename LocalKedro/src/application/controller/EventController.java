@@ -1,5 +1,7 @@
 package application.controller;
 
+import java.io.IOException;
+
 import application.Main;
 import application.model.DisplayEvent;
 import application.model.DisplayUser;
@@ -50,25 +52,34 @@ public class EventController implements EventHandler<ActionEvent>{
 		}
 		System.out.println("Profiles Page");
 	}
-	
-	public void search(ActionEvent event){
+
+	public void search(ActionEvent event) {
 		s = search.getText().toString();
 		try {
 			EventSearch es = new EventSearch(s, null, null);
 			DisplayEvent[] de = es.searchAll();
-			//this is an array of event names. Set the text in the fxml to this in a for loop
-			if(de.length > 0 && de[0] != null) {
-				for(int i = 0; i <= de.length-1; i++) {
-					System.out.println(de[i].toString());
-					//set the hyperlink values or put this somewhere else. idk
-					//maybe iteratively create new hyperlinks
+			System.out.println(de.length);
+			// this is an array of event names. Set the text in the fxml to this in a for
+			// loop
+			for (DisplayEvent d : de) {
+				if(d == null) {
+					break;
 				}
+				else {
+					System.out.println(d.toString());
+				}
+				// set the hyperlink values or put this somewhere else. idk
+				// maybe iteratively create new hyperlinks
 			}
 			Parent root = FXMLLoader.load(getClass().getResource("EventResultsPage.fxml"));
 			Main.stage.setScene(new Scene(root, 600, 400));
 			Main.stage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (NullPointerException e) {
+			System.out.println("search didn't work");
+		} catch (IOException e) {
+			System.out.println("Page didn't load");
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("out of bounds here");
 		}
 		System.out.println("Events search");
 	}

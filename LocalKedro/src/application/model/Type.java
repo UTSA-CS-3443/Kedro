@@ -44,6 +44,6 @@ public class Type {
 	 * this returns a string of the type name
 	 */
 	public String toString() {
-		return "" + this.name + "\n";
+		return "" + this.name;
 	}
 }

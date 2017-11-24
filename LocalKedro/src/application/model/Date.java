@@ -15,7 +15,7 @@ public class Date {
 	}
 	
 	public String toString() {
-		return "" + this.getiMonth() + "/" + this.getiDay() + "/" +this.getiYear() + "\n";
+		return "" + this.getiMonth() + "/" + this.getiDay() + "/" +this.getiYear();
 	}
 	
 	/////GETTERS AND SETTERS/////

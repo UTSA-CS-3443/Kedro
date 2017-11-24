@@ -49,14 +49,13 @@ public class UserSearch {
 		System.out.println(listOfFiles.length);
 		int i = 0;
 		for (File rd : listOfFiles) {
-			if (i > listOfFiles.length-1) {
+			if (i > listOfFiles.length) {
 				return userList;
 			}
 			if (rd.getName().contains(this.name)) {
 				try {
 					br = new BufferedReader(new FileReader(rd));
 					String dsf = br.readLine();
-					System.out.println(dsf);
 					br.readLine();
 					br.readLine();
 					// reads lines into garbage to skip past the personal info
@@ -75,8 +74,8 @@ public class UserSearch {
 					System.out.println("io exception");
 					return null;
 				}
+				i++;
 			}
-			i++;
 		}
 		return userList;
 	}
