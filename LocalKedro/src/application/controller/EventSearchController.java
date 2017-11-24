@@ -59,20 +59,22 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 		System.out.println(de.length);
 		// this is an array of event names. Set the text in the fxml to this in a for
 		// loop
-		if (de.length > 2){
+		if (de.length > 2) {
 			event1.setText(de[0].getName());
 			event2.setText(de[1].getName());
 			event3.setText(de[2].getName());
-		}
-		else if (de.length > 1 && de.length < 3){
-				event1.setText(de[0].getName());
-				event2.setText(de[1].getName());
-				event3.setText("");
-		}
-		else if (de.length > 0 && de.length < 2){
-				event1.setText(de[0].getName());
-				event2.setText("");
-				event3.setText("");
+		} else if (de.length > 1 && de.length < 3) {
+			event1.setText(de[0].getName());
+			event2.setText(de[1].getName());
+			event3.setText("");
+		} else if (de.length > 0 && de.length < 2) {
+			event1.setText(de[0].getName());
+			event2.setText("");
+			event3.setText("");
+		} else if (de.length == 0) {
+			event1.setText("");
+			event2.setText("");
+			event3.setText("");
 		}
 	}
 	public void eventOne(ActionEvent arg0){

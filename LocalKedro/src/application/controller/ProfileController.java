@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import application.Main;
 import application.model.DisplayUser;
+import application.model.SearchString;
 import application.model.UserSearch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -46,21 +47,9 @@ public class ProfileController implements EventHandler<ActionEvent> {
 	}
 	public void search(ActionEvent event){
 		s = search.getText().toString();
+		SearchString strings = new SearchString(s);
+		Main.ss = strings;
 		try {
-			UserSearch us = new UserSearch(s);
-			DisplayUser[] du = us.searchAll();
-			// this is an array of user names. Set the text in the fxml to this in a for
-			// loop
-			for (DisplayUser d : du) {
-				if(d == null) {
-					break;
-				}
-				else {
-					System.out.println(d.getName());
-				}
-				// set the hyperlink values or put this somewhere else. idk
-				// maybe iteratively create new hyperlinks
-			}
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileResultsPage.fxml"));
 			Main.stage.setScene(new Scene(root, 600, 400));
 			Main.stage.show();

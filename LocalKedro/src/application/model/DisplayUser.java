@@ -9,15 +9,19 @@ import java.util.ArrayList;
  */
 public class DisplayUser {
 	//string and array list to help display the user
-	private String name;
+	private String name, email, fName;
+	private Location location;
 	private ArrayList<RSVP> rsvp;
 	
 	/**
 	 * sets the class constants and initalizes the array list
 	 * @param name
 	 */
-	public DisplayUser(String name) {
+	public DisplayUser(String name, String email, String fName, Location location) {
 		this.setName(name);
+		this.setEmail(email);
+		this.setFName(fName);
+		this.setLoc(location);
 		rsvp = new ArrayList<RSVP>();
 	}
 	
@@ -46,5 +50,25 @@ public class DisplayUser {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email){
+		this.email = email;
+	}
+	
+	public String getFName(){
+		return fName;
+	}
+	public void setFName(String fName){
+		this.fName = fName;
+	}
+	public Location getLoc() {
+		return location;
+	}
+	public void setLoc(Location loc) {
+		this.location = loc;
 	}
 }

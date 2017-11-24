@@ -27,7 +27,7 @@ public class ProfileSearchViewController implements Initializable,EventHandler<A
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		name.setText("Name: Jackie Rowe");
+		name.setText("Name " + Main.otherUser.getFName());
 		user.setText("Username: Jmeow12");
 		zip.setText("Location: 78028");
 		

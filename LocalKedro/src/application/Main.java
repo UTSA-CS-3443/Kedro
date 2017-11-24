@@ -4,6 +4,7 @@ import com.teamdev.jxmaps.javafx.MapView;
 
 import application.model.DisplayEvent;
 import application.model.Event;
+import application.model.OtherUser;
 import application.model.SearchString;
 import application.model.User;
 import javafx.application.Application;
@@ -19,6 +20,7 @@ public class Main extends Application {
 	public static User user;
 	public static SearchString ss;
 	public static Event event;
+	public static OtherUser otherUser;
 	
 	@Override
 	    public void init() throws Exception {

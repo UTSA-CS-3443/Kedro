@@ -58,14 +58,6 @@ public class EventController implements EventHandler<ActionEvent>{
 		s = search.getText().toString();
 		EventSearch es = new EventSearch(s, null, null);
 		DisplayEvent[] de = es.searchAll();
-		if (de.length < 1){
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("no search returns");
-			alert.setHeaderText("no search returns");
-			alert.setContentText("no search returns");
-			alert.showAndWait();
-		}
-		else{
 		SearchString strings = new SearchString(s);
 		Main.ss = strings;
 		try {
@@ -89,7 +81,6 @@ public class EventController implements EventHandler<ActionEvent>{
 			Main.stage.show();
 		}catch (Exception e){
 			e.printStackTrace();
-		}
 		}
 		/*} catch (NullPointerException e) {
 			System.out.println("search didn't work");

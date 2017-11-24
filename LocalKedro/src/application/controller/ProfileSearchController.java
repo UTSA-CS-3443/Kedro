@@ -4,6 +4,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.Main;
+import application.model.DisplayUser;
+import application.model.Event;
+import application.model.OtherUser;
+import application.model.UserSearch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -23,10 +27,11 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 	public Hyperlink profile1;
 	public Hyperlink profile2;
 	public Hyperlink profile3;
-
-	/**
-	 * this method handles and loads 
-	 */
+	
+	UserSearch us = new UserSearch(Main.ss.getText());
+	DisplayUser[] du = us.searchAll();
+	// this is an array of user names. Set the text in the fxml to this in a for
+	// loop
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -42,10 +47,23 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		profile1.setText("Travis80");
-		profile2.setText("Brusnak89");
-		profile3.setText("Jmeow12");
-		
+		if (du.length > 2) {
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+		} else if (du.length > 1 && du.length < 3) {
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText("");
+		} else if (du.length > 0 && du.length < 2) {
+			profile1.setText(du[0].getName());
+			profile2.setText("");
+			profile3.setText("");
+		} else if (du.length == 0) {
+			profile1.setText("");
+			profile2.setText("");
+			profile3.setText("");
+		}
 	}
 	
 	public void home(MouseEvent event) {
@@ -57,6 +75,40 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 			e.printStackTrace();
 		}
 		System.out.println("Home Button");
+	}
+	
+	public void profileOne(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[0].getName(), du[0].getEmail(), du[0].getLoc(), du[0].getFName());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileTwo(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[1].getName(), du[1].getEmail(), du[1].getLoc(), du[1].getFName());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileThree(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[2].getName(), du[2].getEmail(), du[2].getLoc(), du[2].getFName());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
