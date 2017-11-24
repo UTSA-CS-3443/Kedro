@@ -2,6 +2,9 @@ package application;
 
 import com.teamdev.jxmaps.javafx.MapView;
 
+import application.model.DisplayEvent;
+import application.model.Event;
+import application.model.SearchString;
 import application.model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +17,8 @@ public class Main extends Application {
 
 	public static Stage stage;
 	public static User user;
+	public static SearchString ss;
+	public static Event event;
 	
 	@Override
 	    public void init() throws Exception {

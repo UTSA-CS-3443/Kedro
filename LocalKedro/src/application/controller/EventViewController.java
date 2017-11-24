@@ -43,9 +43,9 @@ public class EventViewController implements Initializable,EventHandler<ActionEve
 
 	@Override
 	public void initialize(java.net.URL arg0, ResourceBundle arg1) {
-		date.setText("Date: 11/30/17");
-		name.setText("Name: Car Auction");
-		zip.setText("Location: 78259");
-		type.setText("Type: Other");
+		date.setText("Date: " + Main.event.getDate().toString());
+		name.setText("Name : " + Main.event.getName());
+		zip.setText("Location : " + Main.event.getLocation().toString());
+		type.setText("Type : " + Main.event.getType().toString());
 	}
 }

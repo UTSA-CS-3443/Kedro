@@ -33,9 +33,9 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="183.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
                <children>
-                  <Hyperlink fx:id="event1" onAction="#handle" text="Event 1" textFill="#eeff00" />
-                  <Hyperlink fx:id="event2" onAction="#handle" text="Event 2" textFill="#eeff00" />
-                  <Hyperlink fx:id="event3" onAction="#handle" text="Event 3" textFill="#eeff00" />
+                  <Hyperlink fx:id="event1" onAction="#eventOne" text="Event 1" textFill="#eeff00" />
+                  <Hyperlink fx:id="event2" onAction="#eventTwo" text="Event 2" textFill="#eeff00" />
+                  <Hyperlink fx:id="event3" onAction="#eventThree" text="Event 3" textFill="#eeff00" />
                </children>
             </VBox>
          </children>
