@@ -33,9 +33,9 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="183.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
                <children>
-                  <Hyperlink fx:id="profile1" onAction="#handle" text="Profile 1" textFill="#eeff00" />
-                  <Hyperlink fx:id="profile2" onAction="#handle" text="Profile 2" textFill="#eeff00" />
-                  <Hyperlink fx:id="profile3" onAction="#handle" text="Profile 3" textFill="#eeff00" />
+                  <Hyperlink fx:id="profile1" onAction="#profileOne" text="Profile 1" textFill="#eeff00" />
+                  <Hyperlink fx:id="profile2" onAction="#profileTwo" text="Profile 2" textFill="#eeff00" />
+                  <Hyperlink fx:id="profile3" onAction="#profileThree" text="Profile 3" textFill="#eeff00" />
                </children>
             </VBox>
          </children>
