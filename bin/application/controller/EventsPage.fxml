@@ -3,13 +3,11 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
-<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -96,11 +94,7 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0" />
          </buttons>
       </ButtonBar>
-      <Pagination pageCount="20" prefHeight="200.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
-         <effect>
-            <SepiaTone level="0.25" />
-         </effect>
-      </Pagination>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
     <Button mnemonicParsing="false" onAction="#handle" prefHeight="82.0" prefWidth="600.0" style="-fx-background-color: yellow;" text="Create Event">
          <font>
             <Font name="Hoefler Text" size="36.0" />
