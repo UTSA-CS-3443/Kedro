@@ -9,6 +9,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -51,23 +52,35 @@
             </Button>
         </buttons>
       </ButtonBar>
-      <AnchorPane prefHeight="301.0" prefWidth="306.0">
-         <children>
-            <Label fx:id="user" layoutX="14.0" layoutY="6.0" text="Username:">
+      <BorderPane>
+         <top>
+            <Label fx:id="user1" alignment="CENTER" contentDisplay="CENTER" text="Currently Viewing Profile" textAlignment="CENTER" underline="true" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="Bangla MN" size="13.0" />
+                  <Font name="Bangla MN" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="name" layoutX="14.0" layoutY="60.0" text="Name:">
-               <font>
-                  <Font name="Bangla MN" size="13.0" />
-               </font>
-            </Label>
-            <Label fx:id="zip" layoutX="14.0" layoutY="112.0" text="Zip Code:">
-               <font>
-                  <Font name="Bangla MN" size="12.0" />
-               </font>
-            </Label>
-         </children></AnchorPane>
+         </top>
+         <center>
+            <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="user" alignment="CENTER" contentDisplay="CENTER" text="Username:" textAlignment="CENTER">
+                     <font>
+                        <Font name="Bangla MN" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="name" text="Name:">
+                     <font>
+                        <Font name="Bangla MN" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="zip" alignment="CENTER" contentDisplay="CENTER" text="Zip Code:" textAlignment="CENTER">
+                     <font>
+                        <Font name="Bangla MN" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
    </children>
 </VBox>
