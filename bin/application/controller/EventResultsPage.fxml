@@ -50,37 +50,37 @@
                         <Font size="18.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="79.0" layoutY="72.0" text="Event 4" textFill="#eeff00" underline="true">
+                  <Hyperlink layoutX="79.0" fx:id="event4" onAction="#eventFour" layoutY="72.0" text="Event 4" textFill="#eeff00" underline="true">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="79.0" layoutY="103.0" text="Event 5" textFill="#eeff00" underline="true">
+                  <Hyperlink layoutX="79.0" fx:id="event5" onAction="#eventFive" layoutY="103.0" text="Event 5" textFill="#eeff00" underline="true">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="79.0" layoutY="134.0" text="Event 6" textFill="#eeff00" underline="true">
+                  <Hyperlink layoutX="79.0" fx:id="event6" onAction="#eventSix" layoutY="134.0" text="Event 6" textFill="#eeff00" underline="true">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="79.0" layoutY="165.0" text="Event 7" textFill="#eeff00" underline="true">
+                  <Hyperlink layoutX="79.0" fx:id="event7" onAction ="#eventSeven" layoutY="165.0" text="Event 7" textFill="#eeff00" underline="true">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="79.0" layoutY="196.0" text="Event 8" textFill="#eeff00" underline="true">
+                  <Hyperlink layoutX="79.0" fx:id="event8" onAction="#eventEight" layoutY="196.0" text="Event 8" textFill="#eeff00" underline="true">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="79.0" layoutY="227.0" text="Event 9" textFill="#eeff00" underline="true">
+                  <Hyperlink layoutX="79.0" fx:id="event9" onAction="#eventNine" layoutY="227.0" text="Event 9" textFill="#eeff00" underline="true">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="79.0" layoutY="258.0" text="Event 10" textFill="#eeff00" underline="true">
+                  <Hyperlink layoutX="79.0" fx:id="event10" onAction="#eventTen" layoutY="258.0" text="Event 10" textFill="#eeff00" underline="true">
                      <font>
                         <Font size="18.0" />
                      </font>

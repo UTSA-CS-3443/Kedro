@@ -14,7 +14,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 /**
  * this class is the controller that updates the view and calls search functions
@@ -47,22 +49,63 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		if (du.length > 2) {
-			profile1.setText(du[0].getName());
-			profile2.setText(du[1].getName());
-			profile3.setText(du[2].getName());
-		} else if (du.length > 1 && du.length < 3) {
-			profile1.setText(du[0].getName());
-			profile2.setText(du[1].getName());
-			profile3.setText("");
-		} else if (du.length > 0 && du.length < 2) {
-			profile1.setText(du[0].getName());
-			profile2.setText("");
-			profile3.setText("");
-		} else if (du.length == 0) {
+		if(du[0] == null)
+		{
 			profile1.setText("");
 			profile2.setText("");
 			profile3.setText("");
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("NO RESULTS");
+			alert.setHeaderText("NO RESULTS");
+			alert.setContentText("no results found");
+			alert.showAndWait();
+		}
+		else if(du[1] == null)
+		{
+			profile1.setText(du[0].getName());
+			profile2.setText("");
+			profile3.setText("");
+		}
+		else if(du[2] == null)
+		{
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText("");
+		}
+		else{
+		switch(du.length)
+		{
+		case 1:
+			profile1.setText(du[0].getName());
+			profile2.setText("");
+			profile3.setText("");
+			break;
+		case 2:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText("");
+			break;
+		case 3:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			break;
+		case 0:
+			profile1.setText("");
+			profile2.setText("");
+			profile3.setText("");
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("NO RESULTS");
+			alert.setHeaderText("NO RESULTS");
+			alert.setContentText("no results found");
+			alert.showAndWait();
+			break;
+		default:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			break;
+		}
 		}
 	}
 	

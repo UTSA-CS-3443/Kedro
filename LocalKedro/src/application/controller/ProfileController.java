@@ -53,10 +53,8 @@ public class ProfileController implements EventHandler<ActionEvent> {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileResultsPage.fxml"));
 			Main.stage.setScene(new Scene(root, 600, 400));
 			Main.stage.show();
-		} catch (NullPointerException e) {
-			System.out.println("search didn't work");
-		} catch (IOException e) {
-			System.out.println("Page didn't load");
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		System.out.println("profile search");
 	}

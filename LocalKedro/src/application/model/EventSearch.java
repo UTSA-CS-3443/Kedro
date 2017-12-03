@@ -14,6 +14,7 @@ public class EventSearch {
 	private String searchName;
 	private Type searchType;
 	private Location searchLocal;
+
 	
 	public EventSearch(String name, Type type, Location location) {
 		this.searchName = name;
@@ -93,8 +94,9 @@ public class EventSearch {
 					return null;
 				}
 				i++;
+
 			}
 		}
-		return eventList;
+			return eventList;
 	}
 }
