@@ -24,6 +24,11 @@ public class DisplayUser {
 		this.setLoc(location);
 		rsvp = new ArrayList<RSVP>();
 	}
+	public DisplayUser(String name, String email, String fName){
+		this.setName(name);
+		this.setEmail(email);
+		this.setFName(fName);
+	}
 	
 	/**
 	 * this adds an event name to the rsvp array list

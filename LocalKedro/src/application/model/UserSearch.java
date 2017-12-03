@@ -62,13 +62,20 @@ public class UserSearch {
 					String ll = br.readLine(); //location
 					// reads lines into garbage to skip past the personal info
 					// goes down to events they are registered to go to
-					DisplayUser user = new DisplayUser(dsf, fn, em, new Location(Integer.parseInt(ll)));
+					if(ll.isEmpty()){
+						DisplayUser user = new DisplayUser(dsf, fn, em, new Location(Integer.parseInt(ll)));
 					String line;
 					while ((line = br.readLine()) != null) {
 						user.signIn(line);
 					}
 					userList[i] = user;
 					br.close();
+					}
+					else{
+						DisplayUser user = new DisplayUser(dsf, fn, em);
+						userList[i] = user;
+						br.close();
+					}
 				} catch (FileNotFoundException e) {
 					System.out.println("file not found");
 					return null;

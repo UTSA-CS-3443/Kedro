@@ -66,6 +66,12 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 			profile2.setText("");
 			profile3.setText("");
 		}
+		else if(du[2] == null)
+		{
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText("");
+		}
 		else {
 		switch(du.length)
 		{
