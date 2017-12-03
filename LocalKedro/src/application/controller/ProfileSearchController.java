@@ -66,13 +66,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 			profile2.setText("");
 			profile3.setText("");
 		}
-		else if(du[2] == null)
-		{
-			profile1.setText(du[0].getName());
-			profile2.setText(du[1].getName());
-			profile3.setText("");
-		}
-		else{
+		else {
 		switch(du.length)
 		{
 		case 1:
@@ -89,16 +83,6 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 			profile1.setText(du[0].getName());
 			profile2.setText(du[1].getName());
 			profile3.setText(du[2].getName());
-			break;
-		case 0:
-			profile1.setText("");
-			profile2.setText("");
-			profile3.setText("");
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("NO RESULTS");
-			alert.setHeaderText("NO RESULTS");
-			alert.setContentText("no results found");
-			alert.showAndWait();
 			break;
 		default:
 			profile1.setText(du[0].getName());

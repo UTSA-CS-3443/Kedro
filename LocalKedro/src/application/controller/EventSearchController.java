@@ -62,6 +62,40 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 		System.out.println(de.length);
 		// this is an array of event names. Set the text in the fxml to this in a for
 		// switch
+			if (de[0] == null)
+			{
+				Alert alert = new Alert(AlertType.ERROR);
+				event1.setText("");
+				event2.setText("");
+				event3.setText("");
+				event4.setText("");
+				event5.setText("");
+				event6.setText("");
+				event7.setText("");
+				event8.setText("");
+				event9.setText("");
+				event10.setText("");
+				alert.setTitle("NO RESULTS");
+				alert.setHeaderText("NO RESULTS");
+				alert.setContentText("no results found");
+				alert.showAndWait();
+				noResults();
+			}
+			else if(de[1] == null)
+			{
+				event1.setText(de[0].getName());
+				event2.setText("");
+				event3.setText("");
+				event4.setText("");
+				event5.setText("");
+				event6.setText("");
+				event7.setText("");
+				event8.setText("");
+				event9.setText("");
+				event10.setText("");
+			}
+			else 
+			{
 		switch(de.length){
 		case 1:
 			event1.setText(de[0].getName());
@@ -183,23 +217,6 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 			event9.setText(de[8].getName());
 			event10.setText(de[9].getName());
 			break;
-		case 0:
-			event1.setText("");
-			event2.setText("");
-			event3.setText("");
-			event4.setText("");
-			event5.setText("");
-			event6.setText("");
-			event7.setText("");
-			event8.setText("");
-			event9.setText("");
-			event10.setText("");
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("NO RESULTS");
-			alert.setHeaderText("NO RESULTS");
-			alert.setContentText("no results found");
-			alert.showAndWait();
-			break;
 		default:
 			event1.setText(de[0].getName());
 			event2.setText(de[1].getName());
@@ -212,6 +229,7 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 			event9.setText(de[8].getName());
 			event10.setText(de[9].getName());
 			break;
+		}
 		}
 			
 	}
@@ -324,5 +342,14 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public void noResults(){
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
 	}
 }

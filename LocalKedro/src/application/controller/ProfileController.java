@@ -11,7 +11,9 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 
 public class ProfileController implements EventHandler<ActionEvent> {
@@ -47,6 +49,15 @@ public class ProfileController implements EventHandler<ActionEvent> {
 	}
 	public void search(ActionEvent event){
 		s = search.getText().toString();
+		if(search.getText() == null || search.getText().isEmpty())
+		{
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Empty");
+			alert.setHeaderText("Empty");
+			alert.setContentText("You left a field blank");
+			alert.showAndWait();
+		}
+		else{
 		SearchString strings = new SearchString(s);
 		Main.ss = strings;
 		try {
@@ -57,6 +68,7 @@ public class ProfileController implements EventHandler<ActionEvent> {
 			e.printStackTrace();
 		}
 		System.out.println("profile search");
+	}
 	}
 	
 	public void home(MouseEvent event) {

@@ -56,8 +56,15 @@ public class EventController implements EventHandler<ActionEvent>{
 
 	public void search(ActionEvent event) {
 		s = search.getText().toString();
-		EventSearch es = new EventSearch(s, null, null);
-		DisplayEvent[] de = es.searchAll();
+		if(search.getText() == null || search.getText().isEmpty())
+		{
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Empty");
+			alert.setHeaderText("Empty");
+			alert.setContentText("You left a field blank");
+			alert.showAndWait();
+		}
+		else{
 		SearchString strings = new SearchString(s);
 		Main.ss = strings;
 		try {
@@ -90,6 +97,7 @@ public class EventController implements EventHandler<ActionEvent>{
 			System.out.println("out of bounds here");
 		}
 		System.out.println("Events search");*/
+	}
 	}
 	
 	public void home(MouseEvent event) {
