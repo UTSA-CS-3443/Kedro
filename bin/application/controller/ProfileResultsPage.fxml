@@ -2,10 +2,12 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -29,16 +31,70 @@
             <Image url="@../logoPartyCenter.png" />
          </image>
       </ImageView>
-    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
-         <children>
-            <VBox prefHeight="200.0" prefWidth="183.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
+      <BorderPane>
+         <center>
+            <VBox alignment="CENTER" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;" BorderPane.alignment="CENTER">
                <children>
-                  <Hyperlink fx:id="profile1" onAction="#profileOne" text="Profile 1" textFill="#eeff00" />
-                  <Hyperlink fx:id="profile2" onAction="#profileTwo" text="Profile 2" textFill="#eeff00" />
-                  <Hyperlink fx:id="profile3" onAction="#profileThree" text="Profile 3" textFill="#eeff00" />
+                  <Hyperlink fx:id="profile1" onAction="#profileOne" text="Event 1" textFill="#eeff00" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="profile2" onAction="#profileTwo" text="Event 2" textFill="#eeff00" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="profile3" onAction="#profileThree" text="Event 3" textFill="#eeff00" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="79.0" fx:id="profile4" onAction="#profileFour" layoutY="72.0" text="Event 4" textFill="#eeff00" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="79.0" fx:id="profile5" onAction="#profileFive" layoutY="103.0" text="Event 5" textFill="#eeff00" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="79.0" fx:id="profile6" onAction="#profileSix" layoutY="134.0" text="Event 6" textFill="#eeff00" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="79.0" fx:id="profile7" onAction ="#profileSeven" layoutY="165.0" text="Event 7" textFill="#eeff00" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="79.0" fx:id="profile8" onAction="#profileEight" layoutY="196.0" text="Event 8" textFill="#eeff00" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="79.0" fx:id="profile9" onAction="#profileNine" layoutY="227.0" text="Event 9" textFill="#eeff00" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="79.0" fx:id="profile10" onAction="#profileTen" layoutY="258.0" text="Event 10" textFill="#eeff00" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
                </children>
             </VBox>
-         </children>
-      </AnchorPane>
+         </center>
+         <top>
+            <Label text="User Search Results" underline="true" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Cochin" size="36.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
    </children>
 </VBox>
