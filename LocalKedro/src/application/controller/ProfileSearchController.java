@@ -340,7 +340,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 			} 
 		}
 		else{
-		OtherUser u = new OtherUser(du[0].getName(), du[0].getEmail(), du[0].getLoc(), du[0].getFName());
+		OtherUser u = new OtherUser(du[0].getName(), du[0].getEmail(), du[0].getFName(), du[0].getLoc());
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -352,7 +352,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 	}
 	public void profileTwo(ActionEvent arg0){
-		OtherUser u = new OtherUser(du[1].getName(), du[1].getEmail(), du[1].getLoc(), du[1].getFName());
+		OtherUser u = new OtherUser(du[1].getName(), du[1].getEmail(), du[1].getFName(), du[1].getLoc());
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -363,7 +363,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 	}
 	public void profileThree(ActionEvent arg0){
-		OtherUser u = new OtherUser(du[2].getName(), du[2].getEmail(), du[2].getLoc(), du[2].getFName());
+		OtherUser u = new OtherUser(du[2].getName(), du[2].getEmail(), du[2].getFName(), du[2].getLoc());
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -374,7 +374,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 	}
 	public void profileFour(ActionEvent arg0){
-		OtherUser u = new OtherUser(du[3].getName(), du[3].getEmail(), du[3].getLoc(), du[3].getFName());
+		OtherUser u = new OtherUser(du[3].getName(), du[3].getEmail(), du[3].getFName(), du[3].getLoc());
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -385,7 +385,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 	}
 	public void profileFive(ActionEvent arg0){
-		OtherUser u = new OtherUser(du[4].getName(), du[4].getEmail(), du[4].getLoc(), du[4].getFName());
+		OtherUser u = new OtherUser(du[4].getName(), du[4].getEmail(), du[4].getFName(), du[4].getLoc());
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -396,7 +396,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 	}
 	public void profileSix(ActionEvent arg0){
-		OtherUser u = new OtherUser(du[5].getName(), du[5].getEmail(), du[5].getLoc(), du[5].getFName());
+		OtherUser u = new OtherUser(du[5].getName(), du[5].getEmail(), du[5].getFName(), du[5].getLoc());
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -407,7 +407,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 	}
 	public void profileSeven(ActionEvent arg0){
-		OtherUser u = new OtherUser(du[6].getName(), du[6].getEmail(), du[6].getLoc(), du[6].getFName());
+		OtherUser u = new OtherUser(du[6].getName(), du[6].getEmail(), du[6].getFName(), du[6].getLoc());
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -418,7 +418,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 	}
 	public void profileEight(ActionEvent arg0){
-		OtherUser u = new OtherUser(du[7].getName(), du[7].getEmail(), du[7].getLoc(), du[7].getFName());
+		OtherUser u = new OtherUser(du[7].getName(), du[7].getEmail(), du[7].getFName(), du[7].getLoc());
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -429,7 +429,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 	}
 	public void profileNine(ActionEvent arg0){
-		OtherUser u = new OtherUser(du[8].getName(), du[8].getEmail(), du[8].getLoc(), du[8].getFName());
+		OtherUser u = new OtherUser(du[8].getName(), du[8].getEmail(), du[8].getFName(), du[8].getLoc());
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -440,7 +440,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 	}
 	public void profileTen(ActionEvent arg0){
-		OtherUser u = new OtherUser(du[9].getName(), du[9].getEmail(), du[9].getLoc(), du[9].getFName());
+		OtherUser u = new OtherUser(du[9].getName(), du[9].getEmail(), du[9].getFName(), du[9].getLoc());
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));

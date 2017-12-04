@@ -10,26 +10,20 @@ import java.util.ArrayList;
 public class DisplayUser {
 	//string and array list to help display the user
 	private String name, email, fName;
-	private Location location;
+	private String location;
 	private ArrayList<RSVP> rsvp;
 	
 	/**
 	 * sets the class constants and initalizes the array list
 	 * @param name
 	 */
-	public DisplayUser(String name, String email, String fName, Location location) {
+	public DisplayUser(String name, String email, String fName, String location) {
 		this.setName(name);
 		this.setEmail(email);
 		this.setFName(fName);
 		this.setLoc(location);
 		rsvp = new ArrayList<RSVP>();
 	}
-	public DisplayUser(String name, String email, String fName){
-		this.setName(name);
-		this.setEmail(email);
-		this.setFName(fName);
-	}
-	
 	/**
 	 * this adds an event name to the rsvp array list
 	 * @param event
@@ -70,10 +64,10 @@ public class DisplayUser {
 	public void setFName(String fName){
 		this.fName = fName;
 	}
-	public Location getLoc() {
+	public String getLoc() {
 		return location;
 	}
-	public void setLoc(Location loc) {
+	public void setLoc(String loc) {
 		this.location = loc;
 	}
 }
