@@ -26,9 +26,9 @@ import javafx.scene.input.MouseEvent;
  */
 public class ProfileSearchController implements Initializable,EventHandler<ActionEvent> {
 	
-	public Hyperlink profile1;
-	public Hyperlink profile2;
-	public Hyperlink profile3;
+	public Hyperlink profile1, profile2, profile3, profile4, profile5, profile6, profile7, profile8, profile9, profile10;
+	
+	private int checkResult = 1;
 	
 	UserSearch us = new UserSearch(Main.ss.getText());
 	DisplayUser[] du = us.searchAll();
@@ -51,26 +51,133 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 	public void initialize(URL location, ResourceBundle resources) {
 		if(du[0] == null)
 		{
-			profile1.setText("");
+			profile1.setText("Return to profile page");
 			profile2.setText("");
 			profile3.setText("");
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("NO RESULTS");
 			alert.setHeaderText("NO RESULTS");
 			alert.setContentText("no results found");
 			alert.showAndWait();
+			checkResult = 0;
 		}
 		else if(du[1] == null)
 		{
 			profile1.setText(du[0].getName());
 			profile2.setText("");
 			profile3.setText("");
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
 		}
 		else if(du[2] == null)
 		{
 			profile1.setText(du[0].getName());
 			profile2.setText(du[1].getName());
 			profile3.setText("");
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[3] == null)
+		{
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if(du[4] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[5] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[6] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[7] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[8] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[9] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText(du[8].getName());
+			profile10.setText("");
 		}
 		else {
 		switch(du.length)
@@ -79,21 +186,133 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 			profile1.setText(du[0].getName());
 			profile2.setText("");
 			profile3.setText("");
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
 			break;
 		case 2:
 			profile1.setText(du[0].getName());
 			profile2.setText(du[1].getName());
 			profile3.setText("");
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
 			break;
 		case 3:
 			profile1.setText(du[0].getName());
 			profile2.setText(du[1].getName());
 			profile3.setText(du[2].getName());
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 4:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 5:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 6:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 7:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 8:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 9:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText(du[8].getName());
+			profile10.setText("");
+			break;
+		case 10:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText(du[8].getName());
+			profile10.setText(du[9].getName());
 			break;
 		default:
 			profile1.setText(du[0].getName());
 			profile2.setText(du[1].getName());
 			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText(du[8].getName());
+			profile10.setText(du[9].getName());
 			break;
 		}
 		}
@@ -111,6 +330,16 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 	}
 	
 	public void profileOne(ActionEvent arg0){
+		if (checkResult == 0){
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("ProfilesPage.fxml"));
+				Main.stage.setScene(new Scene(root, 600, 400));
+				Main.stage.show();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} 
+		}
+		else{
 		OtherUser u = new OtherUser(du[0].getName(), du[0].getEmail(), du[0].getLoc(), du[0].getFName());
 		Main.otherUser = u;
 		try {
@@ -119,6 +348,7 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 			Main.stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
 		}
 	}
 	public void profileTwo(ActionEvent arg0){
@@ -134,6 +364,83 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 	}
 	public void profileThree(ActionEvent arg0){
 		OtherUser u = new OtherUser(du[2].getName(), du[2].getEmail(), du[2].getLoc(), du[2].getFName());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileFour(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[3].getName(), du[3].getEmail(), du[3].getLoc(), du[3].getFName());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileFive(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[4].getName(), du[4].getEmail(), du[4].getLoc(), du[4].getFName());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileSix(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[5].getName(), du[5].getEmail(), du[5].getLoc(), du[5].getFName());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileSeven(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[6].getName(), du[6].getEmail(), du[6].getLoc(), du[6].getFName());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileEight(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[7].getName(), du[7].getEmail(), du[7].getLoc(), du[7].getFName());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileNine(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[8].getName(), du[8].getEmail(), du[8].getLoc(), du[8].getFName());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileTen(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[9].getName(), du[9].getEmail(), du[9].getLoc(), du[9].getFName());
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
