@@ -108,11 +108,39 @@ public class UserController implements Initializable {
                     // Setting initial zoom value
                     map.setZoom(10.0);
                     
-                    performGeocode(INITIAL_LOCATION, name );
-                    performGeocode(EVENT1_LOCATION, event1Name);
-                    performGeocode(EVENT2_LOCATION, event2Name);
-                    performGeocode(EVENT3_LOCATION, event3Name);
-                    
+                    performGeocode(Integer.toString(Main.user.getLoc().getZipcode()), "Your Location");
+                    switch(noSearch.length){
+                    case 1:
+                    	performGeocode(Integer.toString(noSearch[0].getLocation().getZipcode()), noSearch[0].getName());
+                    	break;
+                    case 2:
+                    	performGeocode(Integer.toString(noSearch[0].getLocation().getZipcode()), noSearch[0].getName());
+                    	performGeocode(Integer.toString(noSearch[1].getLocation().getZipcode()), noSearch[1].getName());
+                    	break;
+                    case 3:
+                    	performGeocode(Integer.toString(noSearch[0].getLocation().getZipcode()), noSearch[0].getName());
+                    	performGeocode(Integer.toString(noSearch[1].getLocation().getZipcode()), noSearch[1].getName());
+                    	performGeocode(Integer.toString(noSearch[2].getLocation().getZipcode()), noSearch[2].getName());
+                    	break;
+                    case 4:
+                    	performGeocode(Integer.toString(noSearch[0].getLocation().getZipcode()), noSearch[0].getName());
+                    	performGeocode(Integer.toString(noSearch[1].getLocation().getZipcode()), noSearch[1].getName());
+                    	performGeocode(Integer.toString(noSearch[2].getLocation().getZipcode()), noSearch[2].getName());
+                    	performGeocode(Integer.toString(noSearch[3].getLocation().getZipcode()), noSearch[3].getName());
+                    	break;
+                    case 5:
+                    	performGeocode(Integer.toString(noSearch[0].getLocation().getZipcode()), noSearch[0].getName());
+                    	performGeocode(Integer.toString(noSearch[1].getLocation().getZipcode()), noSearch[1].getName());
+                    	performGeocode(Integer.toString(noSearch[2].getLocation().getZipcode()), noSearch[2].getName());
+                    	performGeocode(Integer.toString(noSearch[3].getLocation().getZipcode()), noSearch[3].getName());
+                    	performGeocode(Integer.toString(noSearch[4].getLocation().getZipcode()), noSearch[4].getName());
+                    default:
+                    	performGeocode(Integer.toString(noSearch[0].getLocation().getZipcode()), noSearch[0].getName());
+                    	performGeocode(Integer.toString(noSearch[1].getLocation().getZipcode()), noSearch[1].getName());
+                    	performGeocode(Integer.toString(noSearch[2].getLocation().getZipcode()), noSearch[2].getName());
+                    	performGeocode(Integer.toString(noSearch[3].getLocation().getZipcode()), noSearch[3].getName());
+                    	performGeocode(Integer.toString(noSearch[4].getLocation().getZipcode()), noSearch[4].getName());
+                    }
                 }
             }
         });
