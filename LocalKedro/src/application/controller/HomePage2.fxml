@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EventController">
+   <children>
+      <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="KEDRO" textAlignment="CENTER" wrappingWidth="129.13134765625">
+         <font>
+            <Font name="AppleMyungjo Regular" size="24.0" />
+         </font>
+      </Text>
+      <AnchorPane />
+      <ImageView fitHeight="131.0" fitWidth="130.0" onMouseClicked="#home">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+         <image>
+            <Image url="@../logoPartyCenter.png" />
+         </image>
+      </ImageView>
+      <ButtonBar prefHeight="46.0" prefWidth="468.0">
+        <buttons>
+            <VBox>
+               <children>
+                  <ToggleButton mnemonicParsing="false" prefHeight="50.0" prefWidth="229.0" style="-fx-background-color: yellow;" text="Events">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <font>
+                        <Font name="Monaco" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="CROSSHAIR" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text="Already on Events Page" />
+                     </tooltip>
+                  </ToggleButton>
+               </children>
+            </VBox>
+            <ToggleButton layoutX="225.0" layoutY="17.0" mnemonicParsing="false" onAction="#openProfilesPage" prefHeight="80.0" style="-fx-background-color: yellow;" text="Profiles">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Monaco" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Bring up Profile Page" />
+               </tooltip>
+            </ToggleButton>
+        </buttons>
+      </ButtonBar>
+      <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="252.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
+               <children>
+                  <Label layoutX="66.0" layoutY="-3.0" text="Local Events" underline="true">
+                     <font>
+                        <Font name="Apple Chancery" size="18.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink layoutX="70.0" layoutY="32.0" text="Local Event 1" textFill="#e5ff00" underline="true">
+                     <font>
+                        <Font name="Didot" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="69.0" layoutY="58.0" text="Local Event 2" textFill="#e5ff00" underline="true">
+                     <font>
+                        <Font name="Didot" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="69.0" layoutY="84.0" text="Local Event 3" textFill="#e5ff00" underline="true">
+                     <font>
+                        <Font name="Didot" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="69.0" layoutY="110.0" text="Local Event 4" textFill="#e5ff00" underline="true">
+                     <font>
+                        <Font name="Didot" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="69.0" layoutY="131.0" text="Local Event 5" textFill="#e5ff00" underline="true">
+                     <font>
+                        <Font name="Didot" size="13.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="264.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;" />
+        </items>
+      </SplitPane>
+   </children>
+</VBox>
