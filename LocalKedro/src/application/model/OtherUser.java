@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class OtherUser {
 	private String name, password, email, fname;
-	private Location loc;
+	private String loc;
 	
-	public OtherUser(String name, String email, Location location, String fname) {
+	public OtherUser(String name, String email, String fname, String location) {
 		this.setName(name);
 		this.setEmail(email);
 		this.setLoc(location);
@@ -51,10 +51,10 @@ public class OtherUser {
 		this.email = email;
 	}
 
-	public Location getLoc() {
+	public String getLoc() {
 		return loc;
 	}
-	public void setLoc(Location loc) {
+	public void setLoc(String loc) {
 		this.loc = loc;
 	}
 }

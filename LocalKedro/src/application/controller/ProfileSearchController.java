@@ -24,12 +24,21 @@ import javafx.scene.input.MouseEvent;
  * @author SpaceHawks
  *
  */
+<<<<<<< HEAD
 public class ProfileSearchController implements Initializable, EventHandler<ActionEvent> {
 
 	public Hyperlink profile1;
 	public Hyperlink profile2;
 	public Hyperlink profile3;
 
+=======
+public class ProfileSearchController implements Initializable,EventHandler<ActionEvent> {
+	
+	public Hyperlink profile1, profile2, profile3, profile4, profile5, profile6, profile7, profile8, profile9, profile10;
+	
+	private int checkResult = 1;
+	
+>>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 	UserSearch us = new UserSearch(Main.ss.getText());
 	DisplayUser[] du = us.searchAll();
 
@@ -50,23 +59,57 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+<<<<<<< HEAD
 		if (du[0] == null) {
 			profile1.setText("");
+=======
+		if(du[0] == null)
+		{
+			profile1.setText("Return to profile page");
+>>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 			profile2.setText("");
 			profile3.setText("");
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("NO RESULTS");
 			alert.setHeaderText("NO RESULTS");
 			alert.setContentText("no results found");
 			alert.showAndWait();
+<<<<<<< HEAD
 		} else if (du[1] == null) {
+=======
+			checkResult = 0;
+		}
+		else if(du[1] == null)
+		{
+>>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 			profile1.setText(du[0].getName());
 			profile2.setText("");
 			profile3.setText("");
+<<<<<<< HEAD
 		} else if (du[2] == null) {
+=======
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if(du[2] == null)
+		{
+>>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 			profile1.setText(du[0].getName());
 			profile2.setText(du[1].getName());
 			profile3.setText("");
+<<<<<<< HEAD
 		} else {
 			switch (du.length) {
 			case 1:
@@ -90,6 +133,237 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 				profile3.setText(du[2].getName());
 				break;
 			}
+=======
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[3] == null)
+		{
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if(du[4] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[5] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[6] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[7] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[8] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText("");
+			profile10.setText("");
+		}
+		else if (du[9] == null){
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText(du[8].getName());
+			profile10.setText("");
+		}
+		else {
+		switch(du.length)
+		{
+		case 1:
+			profile1.setText(du[0].getName());
+			profile2.setText("");
+			profile3.setText("");
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 2:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText("");
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 3:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText("");
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 4:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText("");
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 5:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText("");
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 6:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText("");
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 7:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText("");
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 8:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText("");
+			profile10.setText("");
+			break;
+		case 9:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText(du[8].getName());
+			profile10.setText("");
+			break;
+		case 10:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText(du[8].getName());
+			profile10.setText(du[9].getName());
+			break;
+		default:
+			profile1.setText(du[0].getName());
+			profile2.setText(du[1].getName());
+			profile3.setText(du[2].getName());
+			profile4.setText(du[3].getName());
+			profile5.setText(du[4].getName());
+			profile6.setText(du[5].getName());
+			profile7.setText(du[6].getName());
+			profile8.setText(du[7].getName());
+			profile9.setText(du[8].getName());
+			profile10.setText(du[9].getName());
+			break;
+		}
+>>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 		}
 	}
 
@@ -103,9 +377,25 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 		}
 		System.out.println("Home Button");
 	}
+<<<<<<< HEAD
 
 	public void profileOne(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[0].getName(), du[0].getEmail(), du[0].getLoc(), du[0].getFName());
+=======
+	
+	public void profileOne(ActionEvent arg0){
+		if (checkResult == 0){
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("ProfilesPage.fxml"));
+				Main.stage.setScene(new Scene(root, 600, 400));
+				Main.stage.show();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} 
+		}
+		else{
+		OtherUser u = new OtherUser(du[0].getName(), du[0].getEmail(), du[0].getFName(), du[0].getLoc());
+>>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -114,10 +404,16 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		}
 	}
+<<<<<<< HEAD
 
 	public void profileTwo(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[1].getName(), du[1].getEmail(), du[1].getLoc(), du[1].getFName());
+=======
+	public void profileTwo(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[1].getName(), du[1].getEmail(), du[1].getFName(), du[1].getLoc());
+>>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -127,9 +423,91 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			e.printStackTrace();
 		}
 	}
+<<<<<<< HEAD
 
 	public void profileThree(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[2].getName(), du[2].getEmail(), du[2].getLoc(), du[2].getFName());
+=======
+	public void profileThree(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[2].getName(), du[2].getEmail(), du[2].getFName(), du[2].getLoc());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileFour(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[3].getName(), du[3].getEmail(), du[3].getFName(), du[3].getLoc());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileFive(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[4].getName(), du[4].getEmail(), du[4].getFName(), du[4].getLoc());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileSix(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[5].getName(), du[5].getEmail(), du[5].getFName(), du[5].getLoc());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileSeven(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[6].getName(), du[6].getEmail(), du[6].getFName(), du[6].getLoc());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileEight(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[7].getName(), du[7].getEmail(), du[7].getFName(), du[7].getLoc());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileNine(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[8].getName(), du[8].getEmail(), du[8].getFName(), du[8].getLoc());
+		Main.otherUser = u;
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
+			Main.stage.setScene(new Scene(root, 600, 400));
+			Main.stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void profileTen(ActionEvent arg0){
+		OtherUser u = new OtherUser(du[9].getName(), du[9].getEmail(), du[9].getFName(), du[9].getLoc());
+>>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));

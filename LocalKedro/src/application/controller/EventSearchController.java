@@ -30,6 +30,8 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 	int i;
 	int j;
 	int k;
+	
+	private int checkResult = 1;
 
 	EventSearch es = new EventSearch(Main.ss.getText(), null, null);
 	DisplayEvent[] de = es.searchAll();
@@ -65,7 +67,7 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 			if (de[0] == null)
 			{
 				Alert alert = new Alert(AlertType.ERROR);
-				event1.setText("");
+				event1.setText("Return to event page");
 				event2.setText("");
 				event3.setText("");
 				event4.setText("");
@@ -79,7 +81,7 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 				alert.setHeaderText("NO RESULTS");
 				alert.setContentText("no results found");
 				alert.showAndWait();
-				noResults();
+				checkResult = 0;
 			}
 			else if(de[1] == null)
 			{
@@ -234,6 +236,16 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 			
 	}
 	public void eventOne(ActionEvent arg0){
+		if (checkResult == 0){
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
+				Main.stage.setScene(new Scene(root, 600, 400));
+				Main.stage.show();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} 
+		}
+		else{
 		Event ev = new Event(de[0].getName(), de[0].getType(), de[0].getDate(), de[0].getLocation());
 		Main.event = ev;
 		try {
@@ -242,6 +254,7 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 			Main.stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
 		}
 	}
 	public void eventTwo(ActionEvent arg0){
@@ -342,14 +355,5 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-	public void noResults(){
-		try {
-			Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
-			Main.stage.setScene(new Scene(root, 600, 400));
-			Main.stage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} 
 	}
 }
