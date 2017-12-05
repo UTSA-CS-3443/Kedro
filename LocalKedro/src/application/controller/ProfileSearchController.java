@@ -24,24 +24,14 @@ import javafx.scene.input.MouseEvent;
  * @author SpaceHawks
  *
  */
-<<<<<<< HEAD
-public class ProfileSearchController implements Initializable, EventHandler<ActionEvent> {
-
-	public Hyperlink profile1;
-	public Hyperlink profile2;
-	public Hyperlink profile3;
-
-=======
 public class ProfileSearchController implements Initializable,EventHandler<ActionEvent> {
 	
 	public Hyperlink profile1, profile2, profile3, profile4, profile5, profile6, profile7, profile8, profile9, profile10;
 	
 	private int checkResult = 1;
 	
->>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 	UserSearch us = new UserSearch(Main.ss.getText());
 	DisplayUser[] du = us.searchAll();
-
 	// this is an array of user names. Set the text in the fxml to this in a for
 	// loop
 	@Override
@@ -54,19 +44,14 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 			e.printStackTrace();
 		}
 		System.out.println("Profiles Page");
-
+		
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-<<<<<<< HEAD
-		if (du[0] == null) {
-			profile1.setText("");
-=======
 		if(du[0] == null)
 		{
 			profile1.setText("Return to profile page");
->>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 			profile2.setText("");
 			profile3.setText("");
 			profile4.setText("");
@@ -81,20 +66,13 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 			alert.setHeaderText("NO RESULTS");
 			alert.setContentText("no results found");
 			alert.showAndWait();
-<<<<<<< HEAD
-		} else if (du[1] == null) {
-=======
 			checkResult = 0;
 		}
 		else if(du[1] == null)
 		{
->>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 			profile1.setText(du[0].getName());
 			profile2.setText("");
 			profile3.setText("");
-<<<<<<< HEAD
-		} else if (du[2] == null) {
-=======
 			profile4.setText("");
 			profile5.setText("");
 			profile6.setText("");
@@ -105,35 +83,9 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 		else if(du[2] == null)
 		{
->>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 			profile1.setText(du[0].getName());
 			profile2.setText(du[1].getName());
 			profile3.setText("");
-<<<<<<< HEAD
-		} else {
-			switch (du.length) {
-			case 1:
-				profile1.setText(du[0].getName());
-				profile2.setText("");
-				profile3.setText("");
-				break;
-			case 2:
-				profile1.setText(du[0].getName());
-				profile2.setText(du[1].getName());
-				profile3.setText("");
-				break;
-			case 3:
-				profile1.setText(du[0].getName());
-				profile2.setText(du[1].getName());
-				profile3.setText(du[2].getName());
-				break;
-			default:
-				profile1.setText(du[0].getName());
-				profile2.setText(du[1].getName());
-				profile3.setText(du[2].getName());
-				break;
-			}
-=======
 			profile4.setText("");
 			profile5.setText("");
 			profile6.setText("");
@@ -363,10 +315,9 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 			profile10.setText(du[9].getName());
 			break;
 		}
->>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 		}
 	}
-
+	
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -377,11 +328,6 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 		System.out.println("Home Button");
 	}
-<<<<<<< HEAD
-
-	public void profileOne(ActionEvent arg0) {
-		OtherUser u = new OtherUser(du[0].getName(), du[0].getEmail(), du[0].getLoc(), du[0].getFName());
-=======
 	
 	public void profileOne(ActionEvent arg0){
 		if (checkResult == 0){
@@ -395,7 +341,6 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 		else{
 		OtherUser u = new OtherUser(du[0].getName(), du[0].getEmail(), du[0].getFName(), du[0].getLoc());
->>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -406,14 +351,8 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 		}
 		}
 	}
-<<<<<<< HEAD
-
-	public void profileTwo(ActionEvent arg0) {
-		OtherUser u = new OtherUser(du[1].getName(), du[1].getEmail(), du[1].getLoc(), du[1].getFName());
-=======
 	public void profileTwo(ActionEvent arg0){
 		OtherUser u = new OtherUser(du[1].getName(), du[1].getEmail(), du[1].getFName(), du[1].getLoc());
->>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -423,11 +362,6 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 			e.printStackTrace();
 		}
 	}
-<<<<<<< HEAD
-
-	public void profileThree(ActionEvent arg0) {
-		OtherUser u = new OtherUser(du[2].getName(), du[2].getEmail(), du[2].getLoc(), du[2].getFName());
-=======
 	public void profileThree(ActionEvent arg0){
 		OtherUser u = new OtherUser(du[2].getName(), du[2].getEmail(), du[2].getFName(), du[2].getLoc());
 		Main.otherUser = u;
@@ -507,7 +441,6 @@ public class ProfileSearchController implements Initializable,EventHandler<Actio
 	}
 	public void profileTen(ActionEvent arg0){
 		OtherUser u = new OtherUser(du[9].getName(), du[9].getEmail(), du[9].getFName(), du[9].getLoc());
->>>>>>> branch 'Test' of https://github.com/UTSA-CS-3443/Kedro.git
 		Main.otherUser = u;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
