@@ -1,10 +1,13 @@
 package application.controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import application.Main;
 import application.model.Location;
 import application.model.DisplayEvent;
+import application.model.EventList;
+import application.model.EventSearch;
 
 import com.teamdev.jxmaps.ControlPosition;
 import com.teamdev.jxmaps.LatLng;
@@ -30,6 +33,7 @@ import com.teamdev.jxmaps.Marker;
 
 import application.Main;
 import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -53,7 +57,7 @@ public class UserController implements Initializable {
 	@FXML
 	private MapView mapView; 
 	@FXML
-    private TableColumn<DisplayEvent, String> tableColName; 
+    private TableColumn<DisplayEvent, String> tableColName, tableColZip; 
 	
 	private Location loc = Main.user.getLoc(); // TO-DO: returns NULL	
 	private String name = "YOU ARE HERE";
@@ -68,8 +72,14 @@ public class UserController implements Initializable {
 	String EVENT3_LOCATION = "78251";
 	String event3Name = "bop";
 	
+	EventSearch es = new EventSearch(null, null, null);
+	DisplayEvent[] noSearch = es.returnAllEvts();
+	
+	private ArrayList<EventList> data;
+			
+	
 	 @Override
-    public void initialize(URL location, ResourceBundle resources) { 
+    public void initialize(URL location, ResourceBundle resources) {
 		 tableColName.setCellValueFactory(cellData -> new ReadOnlyStringWrapper("Hi"));
         // Creation of a JavaFX map view
 		 //final MapView mapView = new MapView();

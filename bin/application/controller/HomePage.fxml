@@ -110,5 +110,6 @@
 		</BorderPane>
         </items>
       </SplitPane>
+      
    </children>
 </VBox>
