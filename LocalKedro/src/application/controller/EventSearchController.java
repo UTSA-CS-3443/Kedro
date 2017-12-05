@@ -35,6 +35,7 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 
 	EventSearch es = new EventSearch(Main.ss.getText(), null, null);
 	DisplayEvent[] de = es.searchAll();
+	DisplayEvent[] noSearch = es.returnAllEvts();
 	
 
 	@Override

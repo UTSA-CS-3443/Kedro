@@ -42,6 +42,59 @@ public class EventSearch {
 		}
 		return searchName(this.searchName, filePath);
 	}
+	
+	/**
+	 * 
+	 */
+	public DisplayEvent[] returnAllEvts()
+	{
+		BufferedReader br;
+		String filePath = new File("").getAbsolutePath();
+		// filepath is different for mac and windows
+		if (OS.equals("mac os x")) {
+			filePath += "/EventFolder";
+		} else {
+			filePath += "\\EventFolder";
+		}
+		File folder = new File(filePath);
+		File[] listOfFiles = folder.listFiles();
+		DisplayEvent[] eventList = new DisplayEvent[listOfFiles.length];
+		int i = 0;
+		for (File rd : listOfFiles) {
+			if (i > listOfFiles.length) {
+				return eventList;
+			}
+			try {
+				// uses the strings in the file to make a new object
+				br = new BufferedReader(new FileReader(rd));
+				String evtNm = br.readLine();
+				System.out.println("return all:" + evtNm + " return ended");
+				String dt = br.readLine();
+				String ll = br.readLine();
+				String tpNm = br.readLine();
+				Date time = new Date(dt);
+				Type tp = new Type(tpNm);
+				Location lo = new Location(Integer.parseInt(ll));
+				// put new object into an array
+				DisplayEvent event = new DisplayEvent(evtNm, tp, time, lo);
+				String line;
+				while ((line = br.readLine()) != null) {
+					event.addGuest(line);
+				}
+				eventList[i] = event;
+				br.close();
+			} catch (FileNotFoundException e) {
+				System.out.println("no file");
+				return eventList;
+			} catch (IOException e) {
+				System.out.println("no file");
+				return null;
+			}
+			i++;
+		}
+		return eventList;
+	}
+	
 	/**
 	 * this function searches with name parameter only
 	 * @param name
@@ -62,25 +115,19 @@ public class EventSearch {
 			}
 			if(rd.getName().contains(name)) {
 				try {
-					System.out.println(rd.getName());
 					//uses the strings in the file to make a new object
 					br = new BufferedReader(new FileReader(rd));
 					String evtNm = br.readLine();
 					System.out.println(evtNm);
 					String dt = br.readLine();
-					System.out.println(dt);
 					String ll = br.readLine();
-					System.out.println(ll);
 					String tpNm = br.readLine();
-					System.out.println(tpNm);
 					Date time = new Date(dt);
 					Type tp = new Type(tpNm);
 					Location lo = new Location(Integer.parseInt(ll));
-					System.out.println("|");
 					//put new object into an array
 					DisplayEvent event = new DisplayEvent(evtNm, tp, time, lo);
 					String line;
-					System.out.println("|");
 					while((line = br.readLine()) != null) {
 						event.addGuest(line);
 					}
