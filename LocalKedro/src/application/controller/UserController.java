@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import application.Main;
 import application.model.Location;
+import application.model.DisplayEvent;
 
 import com.teamdev.jxmaps.ControlPosition;
 import com.teamdev.jxmaps.LatLng;
@@ -51,14 +52,25 @@ public class UserController implements Initializable {
 	
 	@FXML
 	private MapView mapView; 
+	@FXML
+    private TableColumn<DisplayEvent, String> tableColName; 
 	
-	private Location loc = Main.user.getLoc(); // TO-DO: returns NULL
-	
+	private Location loc = Main.user.getLoc(); // TO-DO: returns NULL	
+	private String name = "YOU ARE HERE";
 	String INITIAL_LOCATION = "78254";
 	
+	String EVENT1_LOCATION = "78249";
+	String event1Name = "bill may";
+	
+	String EVENT2_LOCATION = "78250";
+	String event2Name = "bill nye";
+	
+	String EVENT3_LOCATION = "78251";
+	String event3Name = "bop";
 	
 	 @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources) { 
+		 tableColName.setCellValueFactory(cellData -> new ReadOnlyStringWrapper("Hi"));
         // Creation of a JavaFX map view
 		 //final MapView mapView = new MapView();
 
@@ -67,7 +79,6 @@ public class UserController implements Initializable {
         mapView.setOnMapReadyHandler(new MapReadyHandler() {
             @Override
             public void onMapReady(MapStatus status) {
-            	System.out.println(INITIAL_LOCATION);
                 // Check if the map is loaded correctly
                 if (status == MapStatus.MAP_STATUS_OK) {
                     // Getting the associated map object
@@ -87,7 +98,11 @@ public class UserController implements Initializable {
                     // Setting initial zoom value
                     map.setZoom(10.0);
                     
-                    performGeocode(INITIAL_LOCATION);
+                    performGeocode(INITIAL_LOCATION, name );
+                    performGeocode(EVENT1_LOCATION, event1Name);
+                    performGeocode(EVENT2_LOCATION, event2Name);
+                    performGeocode(EVENT3_LOCATION, event3Name);
+                    
                 }
             }
         });
@@ -118,7 +133,7 @@ public class UserController implements Initializable {
 		System.out.println("Profiles Page");
 	}
     
-    private void performGeocode(String text) {
+    private void performGeocode(String text, String MakerName) {
         // Getting the associated map object
         final Map map = mapView.getMap();
         // Creating a geocode request
@@ -145,7 +160,7 @@ public class UserController implements Initializable {
                     // Creating an information window
                     InfoWindow infoWindow = new InfoWindow(map);
                     // Putting the address and location to the content of the information window
-                    infoWindow.setContent("<b>" + result.getFormattedAddress());
+                    infoWindow.setContent("<b>" + MakerName);
                     // Moving the information window to the result location
                     infoWindow.setPosition(location);
                     // Showing of the information window
