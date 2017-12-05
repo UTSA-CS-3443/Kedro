@@ -52,7 +52,7 @@
             <Tooltip text="Enter Event Name" />
          </tooltip>
       </TextField>
-      <TextField fx:id="ETYPE" onAction="#handle" alignment="CENTER" promptText="Event Type">
+      <TextField fx:id="ETYPE" onAction="#handle" alignment="CENTER" promptText="Event Type(e.g. party, conference, etc)">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -63,7 +63,7 @@
             <Tooltip text="Enter Event Type" />
          </tooltip>
       </TextField>
-      <TextField fx:id="EDATE" onAction="#handle" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Date">
+      <TextField fx:id="EDATE" onAction="#handle" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Date (e.g mm/dd/yy) ">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
@@ -74,7 +74,7 @@
             <Tooltip text="Enter Event Date" />
          </tooltip>
       </TextField>
-      <TextField fx:id="ELOC" onAction="#handle" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Location">
+      <TextField fx:id="ELOC" onAction="#handle" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Location (e.g. zipcode only XXXXX)">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
