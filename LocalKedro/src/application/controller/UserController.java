@@ -70,7 +70,6 @@ public class UserController implements Initializable {
 	
 	 @Override
     public void initialize(URL location, ResourceBundle resources) { 
-		 System.out.println(loc);
 		 tableColName.setCellValueFactory(cellData -> new ReadOnlyStringWrapper("Hi"));
         // Creation of a JavaFX map view
 		 //final MapView mapView = new MapView();
