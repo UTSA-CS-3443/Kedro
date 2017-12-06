@@ -72,7 +72,6 @@ public class EventSearch {
 				String tpNm = br.readLine();
 				// put new object into an array
 				DisplayEvent event = new DisplayEvent(evtNm, tpNm, dt, ll);
-				String line;
 				eventList[i] = event;
 				br.close();
 			} catch (FileNotFoundException e) {
@@ -117,7 +116,6 @@ public class EventSearch {
 					String tpNm = br.readLine();
 					// put new object into an array
 					DisplayEvent event = new DisplayEvent(evtNm, tpNm, dt, ll);
-					String line;
 					eventList[i] = event;
 					br.close();
 				} catch (FileNotFoundException e) {
