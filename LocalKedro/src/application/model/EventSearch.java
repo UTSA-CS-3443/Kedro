@@ -98,7 +98,7 @@ public class EventSearch {
 		// reads in a folder of files
 		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();
-		DisplayEvent[] eventList = new DisplayEvent[listOfFiles.length - 1];
+		DisplayEvent[] eventList = new DisplayEvent[listOfFiles.length];
 		int i = 0;
 		// goes through all the files and searches their names
 		for (File rd : listOfFiles) {
