@@ -74,7 +74,7 @@
             <Tooltip text="Enter Event Date" />
          </tooltip>
       </TextField>
-      <TextField fx:id="ELOC" onAction="#handle" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Location (e.g. zipcode only XXXXX)">
+      <TextField fx:id="ELOC" onAction="#handle" alignment="CENTER" layoutX="10.0" layoutY="244.0" promptText="Event Location">
          <font>
             <Font name="Didot" size="13.0" />
          </font>
