@@ -18,22 +18,31 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 /**
- * This will handle the user input and button presses on the register login page
- * and the registration page
- * 
- * @author SpaceHawkksssssss
+ * This class handles the first view of the application the login and register page
+ * register takes the user to the registration page
+ * login checks inputed information and checks for validity if not valid shows an error message
+ * if valid changes user to the home page and sets the main user object to the user object logged in
+ * shows an error if any fields are left blank
+ * @author SpaceHawks
  *
  */
 public class MainController implements EventHandler<ActionEvent> {
-
+	/**
+	 * fxml text field which handle username and password
+	 */
 	public TextField USERNAME;
 	public TextField PASSWORD;
+	/**
+	 * strings that hold user information
+	 */
 	String u = null;
 	String p = null;
 	String name = null;
 	String zip = null;
 	String email = null;
-
+	/**
+	 * changes scene to registration page
+	 */
 	public void handle(ActionEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("RegistrationPage.fxml"));
@@ -44,7 +53,13 @@ public class MainController implements EventHandler<ActionEvent> {
 		}
 	}
 
-	// opens up HomePage with successful login
+	/**
+	 * grabs input from user and checks validity
+	 * if not valid shows an error message
+	 * if valid changes scene to the home page and sets main user object to the current user object
+	 * if any field is left blank shows an error message
+	 * @param arg0 - enables use through fxml
+	 */
 	public void handleButtonAction(ActionEvent arg0) {
 		u = USERNAME.getText().toString();
 		p = PASSWORD.getText().toString();

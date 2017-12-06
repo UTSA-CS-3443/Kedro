@@ -7,37 +7,35 @@ import java.util.ArrayList;
 /**
  * this class creates an event object and writes it to the file folder
  * 
- * @author Travis Woods
+ * @author SpaceHawks
  *
  */
 public class Event {
-
+	/**
+	 * class constant strings holds the users Operating system and event information
+	 */
 	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String name;
 	private String type;
 	private String date;
 	private String location;// make this a string
-	private ArrayList<RSVP> rsvp;
-
+	
+	/**
+	 * Constructor creates event object
+	 * @param name - event name
+	 * @param type - event type
+	 * @param date - event date
+	 * @param location - event location
+	 */
 	public Event(String name, String type, String date, String location) {
-		// objects need to be created for each of these and maybe add some more
-		// info to this
 		this.setName(name);
 		this.setType(type);
 		this.setDate(date);
 		this.setLocation(location);
-		this.rsvp = new ArrayList<RSVP>();
 	}
-
-	public void addGuest(String string) {
-		RSVP rp = new RSVP(string);
-		this.rsvp.add(rp);
-	}
-
-	public int getGuests() {
-		return this.rsvp.size();
-	}
-
+	/**
+	 * writes the event information to a file in the event folder
+	 */
 	public void eventWrite() {
 		String filePath = new File("").getAbsolutePath();
 		if (OS.equals("mac os x")) {
@@ -60,8 +58,10 @@ public class Event {
 		}
 	}
 
-	// doesn't work right yet. Need event pages finished
-	// false returns if the name exists
+	/**
+	 * checks if the event exists
+	 * @return false if succesful
+	 */
 	public boolean eventCheck() {
 		String filePath = new File("").getAbsolutePath();
 		filePath += "\\EventFolder";
@@ -81,44 +81,67 @@ public class Event {
 		}
 		return false;
 	}
-
+	/**
+	 * to string method for the event information
+	 */
 	public String toString() {
 		String line = "" + this.getName() + this.getType() + this.getDate() + this.getLocation() + "\n";
-		for (RSVP r : this.rsvp) {
-			line += r.getName() + "\n";
-		}
 		return line;
 	}
 
-	///// GETTERS AND SETTERS/////
+	/**
+	 * returns event name
+	 * @return name - event name
+	 */
 	public String getName() {
 		return name;
 	}
-
+	/**
+	 * sets event name
+	 * @param name - event name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	/**
+	 * returns event type
+	 * @return type - event type
+	 */
 	public String getType() {
 		return type;
 	}
-
+	/**
+	 * set event type
+	 * @param type - event type
+	 */
 	public void setType(String type) {
 		this.type = type;
 	}
-
+	/**
+	 * returns event date
+	 * @return date - date event
+	 */
 	public String getDate() {
 		return date;
 	}
-
+	/**
+	 * sets event date
+	 * @param date - event date
+	 */
 	public void setDate(String date) {
 		this.date = date;
 	}
-
+	/**
+	 * returns event location
+	 * @return location - event location
+	 */
 	public String getLocation() {
 		return location;
 	}
-
+	/**
+	 * sets event location
+	 * @param location - event location
+	 */
 	public void setLocation(String location) {
 		this.location = location;
 	}

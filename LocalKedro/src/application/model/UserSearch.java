@@ -10,8 +10,7 @@ import java.io.IOException;
  * this class searches through the list of files and returns an array of users
  * that match
  * 
- * @author Travis Woods
- *
+ * @author SpaceHawks
  */
 public class UserSearch {
 	// class constants
@@ -21,7 +20,7 @@ public class UserSearch {
 	/**
 	 * this sets the class constant to the object name
 	 * 
-	 * @param name
+	 * @param name - search name
 	 */
 	public UserSearch(String name) {
 		this.name = name;
@@ -31,8 +30,8 @@ public class UserSearch {
 	 * this is the search function the searches by username and doesn't display
 	 * anything except their name and the events they rsvped to go to
 	 * 
-	 * @param name
-	 * @return
+	 * @param name - search name
+	 * @return userList - list of users
 	 */
 	public DisplayUser[] searchAll() {
 		System.out.println(this.name);
@@ -65,9 +64,6 @@ public class UserSearch {
 
 					DisplayUser user = new DisplayUser(dsf, em, fn, ll);
 					String line;
-					while ((line = br.readLine()) != null) {
-						user.signIn(line);
-					}
 					userList[i] = user;
 					br.close();
 				} catch (FileNotFoundException e) {

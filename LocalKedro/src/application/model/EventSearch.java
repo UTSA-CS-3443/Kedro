@@ -4,34 +4,31 @@ import java.io.*;
 
 //import application.Location;
 /**
- * this class searchs by event name or type or location
+ * this class searchs by event name
  * 
- * @author Steve
+ * @author SpaceHawks
  *
  */
 public class EventSearch {
-
+	/**
+	 * class constant strings for operating system of user and the searchName for the event
+	 */
 	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String searchName;
-	private Type searchType;
-	private String searchLocal;
-
-	public EventSearch(String name, Type type, String location) {
+	/**
+	 * constructor for eventSearch
+	 * @param name - name of event
+	 * @param type - type of event
+	 * @param location - location of event
+	 */
+	public EventSearch(String name, String type, String location) {
 		this.searchName = name;
-		this.searchType = type;
-		this.searchLocal = location;
-		// searchAll(name, type, location); //can search name only
-		// right now and should be called in controller
 	}
 
 	/**
 	 * this method searches the list of files and returns an array of display
 	 * events that can be printed
-	 * 
-	 * @param name
-	 * @param type
-	 * @param location
-	 * @return
+	 * @return searchName(this.searchName, filePath) - the event being searched for and the file path for the operating system
 	 */
 	public DisplayEvent[] searchAll() {
 		String filePath = new File("").getAbsolutePath();
@@ -45,7 +42,8 @@ public class EventSearch {
 	}
 
 	/**
-	 * 
+	 *	returns all events
+	 *	@return - list of all events
 	 */
 	public DisplayEvent[] returnAllEvts() {
 		BufferedReader br;
@@ -75,9 +73,6 @@ public class EventSearch {
 				// put new object into an array
 				DisplayEvent event = new DisplayEvent(evtNm, tpNm, dt, ll);
 				String line;
-				while ((line = br.readLine()) != null) {
-					event.addGuest(line);
-				}
 				eventList[i] = event;
 				br.close();
 			} catch (FileNotFoundException e) {
@@ -94,10 +89,10 @@ public class EventSearch {
 
 	/**
 	 * this function searches with name parameter only
-	 * 
-	 * @param name
-	 * @param filePath
-	 * @return
+	 * returns all events matching
+	 * @param name - search name
+	 * @param filePath - operating system
+	 * @return eventList - list of events
 	 */
 	public DisplayEvent[] searchName(String name, String filePath) {
 		BufferedReader br;
@@ -123,9 +118,6 @@ public class EventSearch {
 					// put new object into an array
 					DisplayEvent event = new DisplayEvent(evtNm, tpNm, dt, ll);
 					String line;
-					while ((line = br.readLine()) != null) {
-						event.addGuest(line);
-					}
 					eventList[i] = event;
 					br.close();
 				} catch (FileNotFoundException e) {

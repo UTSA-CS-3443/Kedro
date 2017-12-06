@@ -20,25 +20,37 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 
 /**
- * this class is the controller that updates the view and calls search functions
- * to search for the user by name and displays search results
- * 
+ * * This class handles the search for events
+ * initializes all the hyperlinks and sets main other user object to the one selected
  * @author SpaceHawks
  *
  */
 public class ProfileSearchController implements Initializable, EventHandler<ActionEvent> {
-
+	
+	/**
+	 * fxml hyperlinks used to display event names
+	 */
 	public Hyperlink profile1, profile2, profile3, profile4, profile5, profile6, profile7, profile8, profile9,
 			profile10;
-
+	/**
+	 * int value that holds a value based on whether a search result was found
+	 */
 	private int checkResult = 1;
-
+	
+	/**
+	 * creatse a usersearch object with the search string
+	 */
 	UserSearch us = new UserSearch(Main.ss.getText());
+	/**
+	 * creates an array of display users which hold the profiles found
+	 */
 	DisplayUser[] du = us.searchAll();
 
-	// this is an array of user names. Set the text in the fxml to this in a for
-	// loop
 	@Override
+	/**
+	 * changes scene to profile search view page
+	 * @param event - enables use through fxml
+	 */
 	public void handle(ActionEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileSearchViewPage.fxml"));
@@ -51,6 +63,11 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 	}
 
 	@Override
+	/**
+	 * initializes hyperlinks based on profiles found in search
+	 * if no results found diplays an error and enables user to travel back to profile page
+	 * @param location, resources - enables initialization
+	 */
 	public void initialize(URL location, ResourceBundle resources) {
 		if (du[0] == null) {
 			profile1.setText("Return to profile page");
@@ -305,7 +322,10 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			}
 		}
 	}
-
+	/**
+	 * changes scene to home page
+	 * @param event - enables use through fxml
+	 */
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -315,7 +335,11 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main other user object to the array 0 other user object
+	 * changes scene to profiles search view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void profileOne(ActionEvent arg0) {
 		if (checkResult == 0) {
 			try {
@@ -337,7 +361,11 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			}
 		}
 	}
-
+	/**
+	 * sets the main other user object to the array 1 other user object
+	 * changes scene to profiles search view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void profileTwo(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[1].getName(), du[1].getEmail(), du[1].getFName(), du[1].getLoc());
 		Main.otherUser = u;
@@ -349,7 +377,11 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main other user object to the array 2 other user object
+	 * changes scene to profiles search view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void profileThree(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[2].getName(), du[2].getEmail(), du[2].getFName(), du[2].getLoc());
 		Main.otherUser = u;
@@ -361,7 +393,11 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main other user object to the array 3 other user object
+	 * changes scene to profiles search view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void profileFour(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[3].getName(), du[3].getEmail(), du[3].getFName(), du[3].getLoc());
 		Main.otherUser = u;
@@ -373,7 +409,11 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main other user object to the array 4 other user object
+	 * changes scene to profiles search view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void profileFive(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[4].getName(), du[4].getEmail(), du[4].getFName(), du[4].getLoc());
 		Main.otherUser = u;
@@ -385,7 +425,11 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main other user object to the array 5 other user object
+	 * changes scene to profiles search view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void profileSix(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[5].getName(), du[5].getEmail(), du[5].getFName(), du[5].getLoc());
 		Main.otherUser = u;
@@ -397,7 +441,11 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main other user object to the array 6 other user object
+	 * changes scene to profiles search view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void profileSeven(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[6].getName(), du[6].getEmail(), du[6].getFName(), du[6].getLoc());
 		Main.otherUser = u;
@@ -409,7 +457,11 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main other user object to the array 7 other user object
+	 * changes scene to profiles search view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void profileEight(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[7].getName(), du[7].getEmail(), du[7].getFName(), du[7].getLoc());
 		Main.otherUser = u;
@@ -421,7 +473,11 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main other user object to the array 8 other user object
+	 * changes scene to profiles search view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void profileNine(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[8].getName(), du[8].getEmail(), du[8].getFName(), du[8].getLoc());
 		Main.otherUser = u;
@@ -433,7 +489,11 @@ public class ProfileSearchController implements Initializable, EventHandler<Acti
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main other user object to the array 9 other user object
+	 * changes scene to profiles search view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void profileTen(ActionEvent arg0) {
 		OtherUser u = new OtherUser(du[9].getName(), du[9].getEmail(), du[9].getFName(), du[9].getLoc());
 		Main.otherUser = u;

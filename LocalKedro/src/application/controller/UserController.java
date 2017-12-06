@@ -44,24 +44,45 @@ import java.awt.*;
 import java.awt.Point;
 
 /**
- * This will handle everything that does with the profile and user page
- * 
+ * This class handles the home page and the google maps api
+ * it initializes hyperlinks which show the recent events in alphabetical order
+ * displays a google map and pins locations of all the events and the users inputted address
+ * changes scene to events page, profile page, and event view page
+ * allows user to logout and switch user or register a new user
+ * if no recent events are found displays a hyperlink to take user to create event page
  * @author Spacehawks
  *
  */
 public class UserController implements Initializable {
 
 	@FXML
+	/**
+	 * fxml map view
+	 */
 	private MapView mapView;
-
+	/**
+	 * fxml hyperlinks hold event names
+	 */
 	public Hyperlink event1, event2, event3, event4, event5;
-
+	/**
+	 * creates a new event search object with all null values
+	 */
 	EventSearch es = new EventSearch(null, null, null);
+	/**
+	 * places all events into an array of display event objects
+	 */
 	DisplayEvent[] noSearch = es.returnAllEvts();
-
+	/**
+	 * int variables for if there are no events
+	 */
 	private int iEventCount = 1;
 
 	@Override
+	/**
+	 * initializes hyperlinks to display up to 5 events in alphabetical order
+	 * initializes the google map to pin all event locations on map and user inputed address
+	 * @param location, resources - enables initialization
+	 */
 	public void initialize(URL location, ResourceBundle resources) {
 		// Creation of a JavaFX map view
 		// final MapView mapView = new MapView();
@@ -124,6 +145,11 @@ public class UserController implements Initializable {
 		}
 		mapView.setOnMapReadyHandler(new MapReadyHandler() {
 			@Override
+			/**
+			 * checks if the map is loaded correctly and creates the map
+			 * sets pins on the map for all events
+			 * sets pin on the map for user location
+			 */
 			public void onMapReady(MapStatus status) {
 				// Check if the map is loaded correctly
 				if (status == MapStatus.MAP_STATUS_OK) {
@@ -154,6 +180,9 @@ public class UserController implements Initializable {
 	}
 
 	@FXML
+	/**
+	 * changes scene to event page
+	 */
 	protected void handle() {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
@@ -166,6 +195,9 @@ public class UserController implements Initializable {
 	}
 
 	@FXML
+	/**
+	 * changes scene to profiles page
+	 */
 	protected void openProfilesPage() {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfilesPage.fxml"));
@@ -175,7 +207,11 @@ public class UserController implements Initializable {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * creates the pins for the google map
+	 * @param text - location
+	 * @param MakerName - name of event
+	 */
 	private void performGeocode(String text, String MakerName) {
 		// Getting the associated map object
 		final Map map = mapView.getMap();
@@ -213,7 +249,9 @@ public class UserController implements Initializable {
 			}
 		});
 	}
-
+	/**
+	 * changes scene to the register/login page
+	 */
 	public void logout() {
 		try {
 			Main.user = null;
@@ -225,7 +263,12 @@ public class UserController implements Initializable {
 		}
 
 	}
-
+	/**
+	 * sets the main event object to the array 0 event object
+	 * if there are no events it allows user to travel to create event page
+	 * changes scene to the event view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void eventOne(ActionEvent arg0) {
 		if (iEventCount == 0) {
 			try {
@@ -249,7 +292,11 @@ public class UserController implements Initializable {
 			}
 		}
 	}
-
+	/**
+	 * sets the main event object to the array 1 event object
+	 * changes scene to the event view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void eventTwo(ActionEvent arg0) {
 		Event ev = new Event(noSearch[1].getName(), noSearch[1].getType(), noSearch[1].getDate(),
 				noSearch[1].getLocation());
@@ -262,7 +309,11 @@ public class UserController implements Initializable {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main event object to the array 2 event object
+	 * changes scene to the event view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void eventThree(ActionEvent arg0) {
 		Event ev = new Event(noSearch[2].getName(), noSearch[2].getType(), noSearch[2].getDate(),
 				noSearch[2].getLocation());
@@ -275,7 +326,11 @@ public class UserController implements Initializable {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main event object to the array 3 event object
+	 * changes scene to the event view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void eventFour(ActionEvent arg0) {
 		Event ev = new Event(noSearch[3].getName(), noSearch[3].getType(), noSearch[3].getDate(),
 				noSearch[3].getLocation());
@@ -288,7 +343,11 @@ public class UserController implements Initializable {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * sets the main event object to the array 4 event object
+	 * changes scene to the event view page
+	 * @param arg0 - enables use through fxml
+	 */
 	public void eventFive(ActionEvent arg0) {
 		Event ev = new Event(noSearch[4].getName(), noSearch[4].getType(), noSearch[4].getDate(),
 				noSearch[4].getLocation());

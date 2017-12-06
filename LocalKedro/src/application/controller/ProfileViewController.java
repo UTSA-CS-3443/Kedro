@@ -15,14 +15,24 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-
+/**
+ * This class displays the current users information through labels and changes scene to the edit profile page
+ * @author SpaceHawks
+ *
+ */
 public class ProfileViewController implements Initializable, EventHandler<ActionEvent> {
-
+	/**
+	 * fxml labels that display user information
+	 */
 	public Label user;
 	public Label name;
 	public Label zip;
 
 	@Override
+	/**
+	 * changes scene to edit profile page
+	 * @param event - enables use through fxml
+	 */
 	public void handle(ActionEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("EditProfilePage.fxml"));
@@ -32,7 +42,10 @@ public class ProfileViewController implements Initializable, EventHandler<Action
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * changes scene to home page
+	 * @param event - enables use through fxml
+	 */
 	public void home(ActionEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -44,6 +57,10 @@ public class ProfileViewController implements Initializable, EventHandler<Action
 	}
 
 	@Override
+	/**
+	 * initializes labels to display the logged in users information
+	 * @param arg0, arg1 - enables initialization
+	 */
 	public void initialize(java.net.URL arg0, ResourceBundle arg1) {
 		if (Main.user.getName() == null) {
 			user.setText("Username : ");
@@ -61,7 +78,10 @@ public class ProfileViewController implements Initializable, EventHandler<Action
 			zip.setText("Location : " + Main.user.getLoc());
 		}
 	}
-
+	/**
+	 * changes scene to home page
+	 * @param event - enables use through fxml
+	 */
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));

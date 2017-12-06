@@ -3,14 +3,19 @@ package application.model;
 import java.io.*;
 import java.util.*;
 import application.controller.MainController;
-
+/**
+ * This class creates the user object and writes the user information to a file in userfolder
+ * sets current user
+ * checks if user is valid
+ * @author SpaceHawks
+ *
+ */
 public class User {
 
 	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String name, password, email, fname;
 	private String loc;
 	private boolean proceed = false;
-	private ArrayList<RSVP> rsvp;
 	String z;
 
 	public User(String name, String password, String email, String location, String fname) {
@@ -22,7 +27,6 @@ public class User {
 		this.setProceed(userCheck());
 		System.out.println(this.isProceed() + " " + this.getName() + " " + this.getPassword() + " " + this.getEmail()
 				+ " in user");
-		this.rsvp = new ArrayList<RSVP>();
 	}
 
 	/**
@@ -31,14 +35,13 @@ public class User {
 	 * out this.setProceed(userCheck()); and uncomment this.setProceed(true);
 	 * and it'll let you log in regardless
 	 * 
-	 * @param name
-	 * @param password
+	 * @param name - username
+	 * @param password - user password
 	 */
 	public User(String name, String password) {
 		this.setName(name);
 		this.setPassword(password);
 		// this.setProceed(true);
-		this.rsvp = new ArrayList<RSVP>();
 		this.setProceed(userCheck());
 	}
 
@@ -71,12 +74,6 @@ public class User {
 																		// events
 																		// to
 																		// arrayList
-								if (!(line.equals("*"))) {
-									RSVP loadIn = new RSVP(line);
-									this.rsvp.add(loadIn);
-								} else if (line.equals("*")) {
-									break;
-								}
 							}
 							// System.out.println(toString() + "\n");
 							return true;
@@ -93,7 +90,9 @@ public class User {
 		}
 		return false;
 	}
-
+	/**
+	 * sets the main user object to the current user
+	 */
 	public void setCurrentUser() {
 		String filePath = new File("").getAbsolutePath();
 		if (OS.equals("mac os x")) {
@@ -123,7 +122,9 @@ public class User {
 			}
 		}
 	}
-
+	/**
+	 * writes user information to a file in user folder
+	 */
 	public void userWrite() {
 		String filePath = new File("").getAbsolutePath();
 		if (OS.equals("mac os x")) {
@@ -144,65 +145,97 @@ public class User {
 			System.out.println("you done goofed");
 		}
 	}
-
-	public void signIn(Event event) {
-		RSVP rp = new RSVP(event.getName());
-		this.rsvp.add(rp);
-	}
-
+	/**
+	 * to string for username and email
+	 * @return returns username and email
+	 */
 	public String toString() {
 		String line = "" + this.getName() + this.getEmail();
-		for (RSVP r : this.rsvp) {
-			line += r.getName() + "\n";
-		}
 		return line;
 	}
 
 	///// GETTERS AND SETTERS//////
+	/**
+	 * returns users full name
+	 * @return fname - users full name
+	 */
 	public String getFName() {
 		return fname;
 	}
-
+	/**
+	 * sets users full name
+	 * @param fname - users full name
+	 */
 	public void setFName(String fname) {
 		this.fname = fname;
 	}
-
+	/**
+	 * returns username
+	 * @return name - username
+	 */
 	public String getName() {
 		return name;
 	}
-
+	/**
+	 * sets username
+	 * @param name - username
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	/**
+	 * returns user password
+	 * @return passwordd - user password
+	 */
 	public String getPassword() {
 		return password;
 	}
-
+	/**
+	 * sets user password
+	 * @param password - users password
+	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	/**
+	 * returns users email
+	 * @return email - users email
+	 */
 	public String getEmail() {
 		return email;
 	}
-
+	/**
+	 * sets users email
+	 * @param email - users email
+	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
+	/**
+	 * checks if user is valid
+	 * @return proceed - boolean value
+	 */
 	public boolean isProceed() {
 		return proceed;
 	}
-
+	/**
+	 * sets proceed for if user is valid
+	 * @param proceed - boolean value
+	 */
 	public void setProceed(boolean proceed) {
 		this.proceed = proceed;
 	}
-
+	/**
+	 * returns user location
+	 * @return loc - users location
+	 */
 	public String getLoc() {
 		return loc;
 	}
-
+	/**
+	 * sets users location
+	 * @param loc - users location
+	 */
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}

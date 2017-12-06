@@ -2,7 +2,6 @@ package application.controller;
 
 import application.Main;
 import application.model.Event;
-import application.model.Type;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +11,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
-
+/**
+ * This class handles the create event page
+ * this controller creates the event by calling eventCheck and eventWrite from the event model
+ * @author SpaceHawks
+ *
+ */
 public class CreateEventController implements EventHandler<ActionEvent> {
 
 	// this class handles all of the Event controllers within each individual
@@ -20,17 +24,29 @@ public class CreateEventController implements EventHandler<ActionEvent> {
 	// as in creating the event but also when the user interacts with an already
 	// created event page
 	// when join event is pressed it creates an rsvp object for the user
-
+	/**
+	 * fxml textfields which hold entered information
+	 */
 	public TextField ENAME;
 	public TextField ETYPE;
 	public TextField EDATE;
 	public TextField ELOC;
-
+	
+	/**
+	 * strings to hold textfield data
+	 */
 	String eName = "event name";
 	String eType = "event type";
 	String eDate = "event date";
 	String eLoc = "event location";
-
+	
+	/**
+	 * the handle method grabs the text inputed and stores them in the string variables
+	 * it shows an alert if a field is left blank
+	 * it writes the vent to a file after a check
+	 * changes scene to the events page
+	 * @param ActionEvent event - enables use through fxml
+	 */
 	@Override
 	public void handle(ActionEvent event) {
 		// takes info from the user and puts into event object in the try
@@ -59,7 +75,10 @@ public class CreateEventController implements EventHandler<ActionEvent> {
 			}
 		}
 	}
-
+	/**
+	 * this method cancels the creation and sends the user back to the events page
+	 * @param event - enables use through fxml
+	 */
 	public void cancel(ActionEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
@@ -69,7 +88,10 @@ public class CreateEventController implements EventHandler<ActionEvent> {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * this method takes the user to the home page
+	 * @param event - enables use through fxml
+	 */
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));

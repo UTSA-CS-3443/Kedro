@@ -15,16 +15,28 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 
 /**
- * This class is going to control the event page button presses and user input
- * 
- * @author Travis
+ * This class controls the event page
+ * changes the scene to the create event page
+ * changes the scene to the profiles page
+ * changes the scene to the home page
+ * search grabs user inputed data and creates a searchString object used to search and changes the scene to the events result page
+ * @author SpaceHawks
  *
  */
 public class EventController implements EventHandler<ActionEvent> {
-
+	/**
+	 * fxml text field that holds user inputed data
+	 */
 	public TextField search;
+	/**
+	 * string variable to hold text field data
+	 */
 	String s;
-
+	
+	/**
+	 * changes scene to create event page
+	 * @parm event - enables use through fxml
+	 */
 	@Override
 	public void handle(ActionEvent event) { // press on the create event page
 		// name
@@ -41,7 +53,11 @@ public class EventController implements EventHandler<ActionEvent> {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * changes scene to the profile page
+	 * @param event - enables use through fxml
+	 */
 	public void openProfilesPage(ActionEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfilesPage.fxml"));
@@ -51,7 +67,13 @@ public class EventController implements EventHandler<ActionEvent> {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * this method grabs a string from the user inputed data and creates a searchString object and sets the main searchString to the current object
+	 * displays an error if the search text field is left blank
+	 * changes scene to events result page
+	 * @param event - enables use through fxml
+	 */
 	public void search(ActionEvent event) {
 		s = search.getText().toString();
 		if (search.getText() == null || search.getText().isEmpty()) {
@@ -64,32 +86,18 @@ public class EventController implements EventHandler<ActionEvent> {
 			SearchString strings = new SearchString(s);
 			Main.ss = strings;
 			try {
-				/*
-				 * EventSearch es = new EventSearch(s, null, null);
-				 * DisplayEvent[] de = es.searchAll();
-				 * System.out.println(de.length); // this is an array of event
-				 * names. Set the text in the fxml to this in a for // loop
-				 * /*for (DisplayEvent d : de) { if(d == null) { break; } else {
-				 * System.out.println(d.toString()); } // set the hyperlink
-				 * values or put this somewhere else. idk // maybe iteratively
-				 * create new hyperlinks }
-				 */
 				Parent root = FXMLLoader.load(getClass().getResource("EventResultsPage.fxml"));
 				Main.stage.setScene(new Scene(root, 600, 400));
 				Main.stage.show();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			/*
-			 * } catch (NullPointerException e) { System.out.println(
-			 * "search didn't work"); } catch (IOException e) {
-			 * System.out.println("Page didn't load"); } catch
-			 * (ArrayIndexOutOfBoundsException e) { System.out.println(
-			 * "out of bounds here"); } System.out.println("Events search");
-			 */
 		}
 	}
-
+	/**
+	 * changes scene to home page
+	 * @param event - enables use through fxml
+	 */
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));

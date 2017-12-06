@@ -15,12 +15,27 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
-
+/**
+ * This class handles the profile page
+ * changes scene to events page view profile and home page
+ * search grabs user inputed data and creates a search string object it sets the main search string object to that search string object and changes scene to profile results page
+ * if search field is left blank shows an error message
+ * @author SpaceHawks
+ *
+ */
 public class ProfileController implements EventHandler<ActionEvent> {
-
+	/**
+	 * fxml text field holds search data
+	 */
 	public TextField search;
+	/**
+	 * string variable hold search data
+	 */
 	String s;
-
+	/**
+	 * changes scene to events page
+	 * @param event - enables use through fxml
+	 */
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -31,7 +46,11 @@ public class ProfileController implements EventHandler<ActionEvent> {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * changes scene to view profile
+	 * sets main user to the current user information
+	 * @param event - enables use thorugh fxml
+	 */
 	public void viewYourProfile(ActionEvent event) {
 		try {
 			Main.user.getEmail();
@@ -45,7 +64,13 @@ public class ProfileController implements EventHandler<ActionEvent> {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * creates search string object
+	 * sets main search string to current search string object
+	 * changes scene to profile results page
+	 * if field is left blank displays an error message
+	 * @param event - enables use through fxml
+	 */
 	public void search(ActionEvent event) {
 		s = search.getText().toString();
 		if (search.getText() == null || search.getText().isEmpty()) {
@@ -66,7 +91,10 @@ public class ProfileController implements EventHandler<ActionEvent> {
 			}
 		}
 	}
-
+	/**
+	 * changes scene to home page
+	 * @param event - enables use through fxml
+	 */
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));

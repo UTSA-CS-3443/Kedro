@@ -16,19 +16,31 @@ import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-
+/**
+ * This class handles the event view page and shows the current events information
+ * @author SpaceHawks
+ *
+ */
 public class EventViewController implements Initializable, EventHandler<ActionEvent> {
-
+	/**
+	 * fxml labels to hold event information
+	 */
 	public Label date;
 	public Label name;
 	public Label zip;
 	public Label type;
 
 	@Override
+	/**
+	 * blank needed for ActionEvent
+	 */
 	public void handle(ActionEvent event) {
 
 	}
-
+	/**
+	 * changes scene to homepage
+	 * @param event - enables use through fxml
+	 */
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -38,7 +50,10 @@ public class EventViewController implements Initializable, EventHandler<ActionEv
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * initializes the labels setting them to be the event information
+	 * @param arg0, arg1 - enables initialization
+	 */
 	@Override
 	public void initialize(java.net.URL arg0, ResourceBundle arg1) {
 		date.setText("Date: " + Main.event.getDate());

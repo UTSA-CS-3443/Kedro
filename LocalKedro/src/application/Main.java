@@ -38,6 +38,7 @@ public class Main extends Application {
 	/**
 	 * this is the start that loads the first page and sends the control over to
 	 * a new controller
+	 * @param Stage primaryStage - the initial stage of the application
 	 */
 	@Override
 	public void start(Stage primaryStage) {

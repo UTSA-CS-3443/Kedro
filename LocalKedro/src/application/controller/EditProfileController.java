@@ -10,20 +10,37 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TextField;
-
+/**
+ * this class handles the editing of the users profile
+ * it grabs text from text fields and writes the informationr recieved to the user file
+ * @author SpaceHawks
+ *
+ */
 public class EditProfileController implements EventHandler<ActionEvent> {
-
+	/**
+	 * fxml textfields which hold entered information 
+	 */
 	public TextField Yname;
 	public TextField Yemail;
 	public TextField Yzip;
 	public TextField PASS;
-
+	
+	/**
+	 * strings to hold text field information
+	 */
 	String n = null;
 	String z = null;
 	String e = null;
 	String p = null;
 
 	@Override
+	/**
+	 * this method grabs input from the user and writes the updated information to the user file
+	 * it checks for empty text fields and throws an error
+	 * it sets the main user to the information entered
+	 * changes the scene to the profile view page
+	 * @param event - enables use through fxml
+	 */
 	public void handle(ActionEvent event) {
 		n = Yname.getText().toString();
 		p = PASS.getText().toString();
@@ -53,7 +70,10 @@ public class EditProfileController implements EventHandler<ActionEvent> {
 			}
 		}
 	}
-
+	/**
+	 * this method cancels the edit and returns the user to the profile view page
+	 * @param event - enables use through fxml
+	 */
 	public void cancel(ActionEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ProfileViewPage.fxml"));
@@ -63,7 +83,10 @@ public class EditProfileController implements EventHandler<ActionEvent> {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * this method returns the user to the home page
+	 * @param event - enables use through fxml
+	 */
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
