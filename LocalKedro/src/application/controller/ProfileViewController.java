@@ -61,10 +61,10 @@ public class ProfileViewController implements Initializable,EventHandler<ActionE
 			name.setText("Name : " + Main.user.getFName());
 		}
 		if(Main.user.getLoc() == null){
-			zip.setText("Zip Code : ");
+			zip.setText("Location : ");
 		}
 		else{
-			zip.setText("Zip Code : " + Main.user.getLoc());
+			zip.setText("Location : " + Main.user.getLoc());
 		}
 	}
 	

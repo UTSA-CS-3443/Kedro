@@ -72,7 +72,7 @@
             <Glow />
          </effect>
          <tooltip>
-            <Tooltip text="Enter Zip Code" />
+            <Tooltip text="Enter Your Address or Zipcode" />
          </tooltip>
       </TextField>
       <PasswordField fx:id="PASS" alignment="CENTER" promptText="Password">

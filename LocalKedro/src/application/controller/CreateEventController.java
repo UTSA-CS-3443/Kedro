@@ -52,21 +52,10 @@ public class CreateEventController implements EventHandler<ActionEvent> {
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
 				Main.stage.setScene(new Scene(root, 600, 400));
-				Main.stage.show();
-				Type type = new Type(eType);
-				if(type.checkValid()) {
-					Date date = new Date(eDate);
-					Event event1 = new Event(eName, type, date, eLoc);
+				Main.stage.show();		Date date = new Date(eDate);
+					Event event1 = new Event(eName, eType, date, eLoc);
 					event1.eventCheck();
 					event1.eventWrite();	
-				}
-				else {
-					Alert alert = new Alert(AlertType.ERROR);
-					alert.setTitle("Invalid Type");
-					alert.setHeaderText("Invalid Type");
-					alert.setContentText("Choose party, concert, conference\n, meet and greet or other");
-					alert.showAndWait();
-				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

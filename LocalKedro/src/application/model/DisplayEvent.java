@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class DisplayEvent {
 	//class constants
 	private String name;
-	private Type type;
+	private String type;
 	private Date date;
 	private String location;//make this a string
 	private ArrayList<RSVP> rsvp;
@@ -24,7 +24,7 @@ public class DisplayEvent {
 	 * @param date
 	 * @param location
 	 */
-	public DisplayEvent(String name, Type type, Date date, String location) {
+	public DisplayEvent(String name, String type, Date date, String location) {
 		this.setName(name);
 		this.setType(type);
 		this.setDate(date);
@@ -63,11 +63,11 @@ public class DisplayEvent {
 		this.name = name;
 	}
 
-	public Type getType() {
+	public String getType() {
 		return type;
 	}
 
-	public void setType(Type type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 

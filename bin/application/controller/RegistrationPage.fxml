@@ -34,7 +34,7 @@
                   <DropShadow />
                </effect>
             </TextField>
-            <TextField fx:id="ZIP" layoutX="10.0" layoutY="94.0" prefHeight="0.0" prefWidth="200.0" promptText="ZIP CODE">
+            <TextField fx:id="ZIP" layoutX="10.0" layoutY="94.0" prefHeight="0.0" prefWidth="200.0" promptText="ADDRESS OR ZIPCODE">
                <effect>
                   <DropShadow />
                </effect>

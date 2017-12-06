@@ -14,12 +14,12 @@ public class Event {
 	
 	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String name;
-	private Type type;
+	private String type;
 	private Date date;
 	private String location;//make this a string
 	private ArrayList<RSVP> rsvp;
 
-	public Event(String name, Type type, Date date,String location) {
+	public Event(String name, String type, Date date,String location) {
 		//objects need to be created for each of these and maybe add some more info to this
 		this.setName(name);
 		this.setType(type);
@@ -51,7 +51,7 @@ public class Event {
 			pw.println(this.getName());
 			pw.println(this.getDate().toString());
 			pw.println(this.getLocation());
-			pw.println(this.getType().toString());
+			pw.println(this.getType());
 			//print out the guest list too I think
 			pw.close();
 		} catch (Exception e) {
@@ -99,11 +99,11 @@ public class Event {
 		this.name = name;
 	}
 
-	public Type getType() {
+	public String getType() {
 		return type;
 	}
 
-	public void setType(Type type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 

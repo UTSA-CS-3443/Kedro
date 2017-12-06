@@ -73,9 +73,8 @@ public class EventSearch {
 				String ll = br.readLine();
 				String tpNm = br.readLine();
 				Date time = new Date(dt);
-				Type tp = new Type(tpNm);
 				// put new object into an array
-				DisplayEvent event = new DisplayEvent(evtNm, tp, time, ll);
+				DisplayEvent event = new DisplayEvent(evtNm, tpNm, time, ll);
 				String line;
 				while ((line = br.readLine()) != null) {
 					event.addGuest(line);
@@ -122,9 +121,8 @@ public class EventSearch {
 					String ll = br.readLine();
 					String tpNm = br.readLine();
 					Date time = new Date(dt);
-					Type tp = new Type(tpNm);
 					//put new object into an array
-					DisplayEvent event = new DisplayEvent(evtNm, tp, time, ll);
+					DisplayEvent event = new DisplayEvent(evtNm, tpNm, time, ll);
 					String line;
 					while((line = br.readLine()) != null) {
 						event.addGuest(line);
