@@ -40,8 +40,7 @@ public class EditProfileController implements EventHandler<ActionEvent> {
 			alert.showAndWait();
 		} else {
 			Main.user.setFName(n);
-			Location location = new Location(Integer.parseInt(z));
-			Main.user.setLoc(location);
+			Main.user.setLoc(z);
 			Main.user.setEmail(e);
 			Main.user.setPassword(p);
 			Main.user.userWrite();

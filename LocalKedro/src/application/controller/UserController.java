@@ -57,7 +57,6 @@ public class UserController implements Initializable {
 
 	public Hyperlink event1, event2, event3, event4, event5;
 
-	private Location loc = Main.user.getLoc(); // TO-DO: returns NULL
 	private String name = "YOU ARE HERE";
 
 	EventSearch es = new EventSearch(null, null, null);
@@ -148,9 +147,9 @@ public class UserController implements Initializable {
 					// Setting initial zoom value
 					map.setZoom(10.0);
 
-					performGeocode(Integer.toString(Main.user.getLoc().getZipcode()), "Your Location");
+					performGeocode(Main.user.getLoc(), "Your Location");
 					for (int i = 0; i < noSearch.length; i++) {
-						performGeocode(Integer.toString(noSearch[i].getLocation().getZipcode()),
+						performGeocode(noSearch[i].getLocation(),
 								noSearch[i].getName());
 					}
 				}

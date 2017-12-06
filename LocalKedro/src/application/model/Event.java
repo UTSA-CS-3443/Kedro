@@ -3,7 +3,7 @@ package application.model;
 import java.io.*;
 import java.util.ArrayList;
 
-//import application.Location;
+import application.model.Location;
 //import application.RSVP;
 /**
  * this class creates an event object and writes it to the file folder
@@ -16,10 +16,10 @@ public class Event {
 	private String name;
 	private Type type;
 	private Date date;
-	private Location location;//make this a string
+	private String location;//make this a string
 	private ArrayList<RSVP> rsvp;
 
-	public Event(String name, Type type, Date date, Location location) {
+	public Event(String name, Type type, Date date,String location) {
 		//objects need to be created for each of these and maybe add some more info to this
 		this.setName(name);
 		this.setType(type);
@@ -27,7 +27,7 @@ public class Event {
 		this.setLocation(location);
 		this.rsvp = new ArrayList<RSVP>();
 	}
-	
+
 	public void addGuest(String string) {
 		RSVP rp = new RSVP(string);
 		this.rsvp.add(rp);
@@ -50,7 +50,7 @@ public class Event {
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
 			pw.println(this.getName());
 			pw.println(this.getDate().toString());
-			pw.println(this.getLocation().toString());
+			pw.println(this.getLocation());
 			pw.println(this.getType().toString());
 			//print out the guest list too I think
 			pw.close();
@@ -115,11 +115,11 @@ public class Event {
 		this.date = date;
 	}
 
-	public Location getLocation() {
+	public String getLocation() {
 		return location;
 	}
 
-	public void setLocation(Location location) {
+	public void setLocation(String location) {
 		this.location = location;
 	}
 }

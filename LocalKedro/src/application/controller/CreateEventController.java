@@ -56,8 +56,7 @@ public class CreateEventController implements EventHandler<ActionEvent> {
 				Type type = new Type(eType);
 				if(type.checkValid()) {
 					Date date = new Date(eDate);
-					Location local = new Location(Integer.parseInt(eLoc));
-					Event event1 = new Event(eName, type, date, local);
+					Event event1 = new Event(eName, type, date, eLoc);
 					event1.eventCheck();
 					event1.eventWrite();	
 				}

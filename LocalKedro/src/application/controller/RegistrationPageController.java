@@ -55,8 +55,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 
 		if (p.equals(pconfirm)) {
 			if (e.equals(econfirm)) {
-				Location location = new Location(Integer.parseInt(z));
-				User user = new User(u, p, e, location, fname);
+				User user = new User(u, p, e, z, fname);
 				if (user.isProceed()) {
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setTitle("Invalid Username");
@@ -101,8 +100,7 @@ public class RegistrationPageController implements EventHandler<ActionEvent> {
 			} else {
 				if (p.equals(pconfirm)) {
 					if (e.equals(econfirm)) {
-						Location location = new Location(Integer.parseInt(z));
-						User user = new User(u, p, e, location, fname);
+						User user = new User(u, p, e, z, fname);
 						if (!(user.isProceed())) {
 							Alert alert = new Alert(AlertType.ERROR);
 							alert.setTitle("Invalid Username");

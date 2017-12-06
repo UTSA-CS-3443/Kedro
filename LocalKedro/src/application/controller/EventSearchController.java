@@ -65,144 +65,162 @@ public class EventSearchController implements Initializable,EventHandler<ActionE
 		System.out.println(de.length);
 		// this is an array of event names. Set the text in the fxml to this in a for
 		// switch
-			if (de[0] == null)
-			{
-				Alert alert = new Alert(AlertType.ERROR);
-				event1.setText("Return to event page");
-				event2.setText("");
-				event3.setText("");
-				event4.setText("");
-				event5.setText("");
-				event6.setText("");
-				event7.setText("");
-				event8.setText("");
-				event9.setText("");
-				event10.setText("");
-				alert.setTitle("NO RESULTS");
-				alert.setHeaderText("NO RESULTS");
-				alert.setContentText("no results found");
-				alert.showAndWait();
-				checkResult = 0;
-			}
-			else if(de[1] == null)
-			{
-				event1.setText(de[0].getName());
-				event2.setText("");
-				event3.setText("");
-				event4.setText("");
-				event5.setText("");
-				event6.setText("");
-				event7.setText("");
-				event8.setText("");
-				event9.setText("");
-				event10.setText("");
-			}
-			else if(de[2] == null)
-			{
-				event1.setText(de[0].getName());
-				event2.setText(de[1].getName());
-				event3.setText("");
-				event4.setText("");
-				event5.setText("");
-				event6.setText("");
-				event7.setText("");
-				event8.setText("");
-				event9.setText("");
-				event10.setText("");
-			}
-			else if (de[3] == null)
-			{
-				event1.setText(de[0].getName());
-				event2.setText(de[1].getName());
-				event3.setText(de[2].getName());
-				event4.setText("");
-				event5.setText("");
-				event6.setText("");
-				event7.setText("");
-				event8.setText("");
-				event9.setText("");
-				event10.setText("");
-			}
-			else if(de[4] == null){
-				event1.setText(de[0].getName());
-				event2.setText(de[1].getName());
-				event3.setText(de[2].getName());
-				event4.setText(de[3].getName());
-				event5.setText("");
-				event6.setText("");
-				event7.setText("");
-				event8.setText("");
-				event9.setText("");
-				event10.setText("");
-			}
-			else if (de[5] == null)
-			{
-				event1.setText(de[0].getName());
-				event2.setText(de[1].getName());
-				event3.setText(de[2].getName());
-				event4.setText(de[3].getName());
-				event5.setText(de[4].getName());
-				event6.setText("");
-				event7.setText("");
-				event8.setText("");
-				event9.setText("");
-				event10.setText("");
-			}
-			else if (de[6] == null)
-			{
-				event1.setText(de[0].getName());
-				event2.setText(de[1].getName());
-				event3.setText(de[2].getName());
-				event4.setText(de[3].getName());
-				event5.setText(de[4].getName());
-				event6.setText(de[5].getName());
-				event7.setText("");
-				event8.setText("");
-				event9.setText("");
-				event10.setText("");
-			}
-			else if (de[7] == null)
-			{
-				event1.setText(de[0].getName());
-				event2.setText(de[1].getName());
-				event3.setText(de[2].getName());
-				event4.setText(de[3].getName());
-				event5.setText(de[4].getName());
-				event6.setText(de[5].getName());
-				event7.setText(de[6].getName());
-				event8.setText("");
-				event9.setText("");
-				event10.setText("");
-			}
-			else if (de[8] == null)
-			{
-				event1.setText(de[0].getName());
-				event2.setText(de[1].getName());
-				event3.setText(de[2].getName());
-				event4.setText(de[3].getName());
-				event5.setText(de[4].getName());
-				event6.setText(de[5].getName());
-				event7.setText(de[6].getName());
-				event8.setText(de[7].getName());
-				event9.setText("");
-				event10.setText("");
-			}
-			else if (de[9] == null)
-			{
-				event1.setText(de[0].getName());
-				event2.setText(de[1].getName());
-				event3.setText(de[2].getName());
-				event4.setText(de[3].getName());
-				event5.setText(de[4].getName());
-				event6.setText(de[5].getName());
-				event7.setText(de[6].getName());
-				event8.setText(de[7].getName());
-				event9.setText(de[8].getName());
-				event10.setText("");
-			}
-			else 
-			{
+		if (de[0] == null)
+		{
+			Alert alert = new Alert(AlertType.ERROR);
+			event1.setText("Return to event page");
+			event2.setText("");
+			event3.setText("");
+			event4.setText("");
+			event5.setText("");
+			event6.setText("");
+			event7.setText("");
+			event8.setText("");
+			event9.setText("");
+			event10.setText("");
+			alert.setTitle("NO RESULTS");
+			alert.setHeaderText("NO RESULTS");
+			alert.setContentText("no results found");
+			alert.showAndWait();
+			checkResult = 0;
+		}
+		else if(de[1] == null)
+		{
+			event1.setText(de[0].getName());
+			event2.setText("");
+			event3.setText("");
+			event4.setText("");
+			event5.setText("");
+			event6.setText("");
+			event7.setText("");
+			event8.setText("");
+			event9.setText("");
+			event10.setText("");
+		}
+		else if(de[2] == null)
+		{
+			event1.setText(de[0].getName());
+			event2.setText(de[1].getName());
+			event3.setText("");
+			event4.setText("");
+			event5.setText("");
+			event6.setText("");
+			event7.setText("");
+			event8.setText("");
+			event9.setText("");
+			event10.setText("");
+		}
+		else if (de[3] == null)
+		{
+			event1.setText(de[0].getName());
+			event2.setText(de[1].getName());
+			event3.setText(de[2].getName());
+			event4.setText("");
+			event5.setText("");
+			event6.setText("");
+			event7.setText("");
+			event8.setText("");
+			event9.setText("");
+			event10.setText("");
+		}
+		else if(de[4] == null){
+			event1.setText(de[0].getName());
+			event2.setText(de[1].getName());
+			event3.setText(de[2].getName());
+			event4.setText(de[3].getName());
+			event5.setText("");
+			event6.setText("");
+			event7.setText("");
+			event8.setText("");
+			event9.setText("");
+			event10.setText("");
+		}
+		else if (de[5] == null)
+		{
+			event1.setText(de[0].getName());
+			event2.setText(de[1].getName());
+			event3.setText(de[2].getName());
+			event4.setText(de[3].getName());
+			event5.setText(de[4].getName());
+			event6.setText("");
+			event7.setText("");
+			event8.setText("");
+			event9.setText("");
+			event10.setText("");
+		}
+		else if (de[6] == null)
+		{
+			event1.setText(de[0].getName());
+			event2.setText(de[1].getName());
+			event3.setText(de[2].getName());
+			event4.setText(de[3].getName());
+			event5.setText(de[4].getName());
+			event6.setText(de[5].getName());
+			event7.setText("");
+			event8.setText("");
+			event9.setText("");
+			event10.setText("");
+		}
+		else if (de[7] == null)
+		{
+			event1.setText(de[0].getName());
+			event2.setText(de[1].getName());
+			event3.setText(de[2].getName());
+			event4.setText(de[3].getName());
+			event5.setText(de[4].getName());
+			event6.setText(de[5].getName());
+			event7.setText(de[6].getName());
+			event8.setText("");
+			event9.setText("");
+			event10.setText("");
+		}
+		else if (de[8] == null)
+		{
+			event1.setText(de[0].getName());
+			event2.setText(de[1].getName());
+			event3.setText(de[2].getName());
+			event4.setText(de[3].getName());
+			event5.setText(de[4].getName());
+			event6.setText(de[5].getName());
+			event7.setText(de[6].getName());
+			event8.setText(de[7].getName());
+			event9.setText("");
+			event10.setText("");
+		}
+		else if (de[9] == null)
+		{
+			event1.setText(de[0].getName());
+			event2.setText(de[1].getName());
+			event3.setText(de[2].getName());
+			event4.setText(de[3].getName());
+			event5.setText(de[4].getName());
+			event6.setText(de[5].getName());
+			event7.setText(de[6].getName());
+			event8.setText(de[7].getName());
+			event9.setText(de[8].getName());
+			event10.setText("");
+		}
+		else 
+		{
 		switch(de.length){
+		case 0:
+			Alert alert = new Alert(AlertType.ERROR);
+			event1.setText("Return to event page");
+			event2.setText("");
+			event3.setText("");
+			event4.setText("");
+			event5.setText("");
+			event6.setText("");
+			event7.setText("");
+			event8.setText("");
+			event9.setText("");
+			event10.setText("");
+			alert.setTitle("NO RESULTS");
+			alert.setHeaderText("NO RESULTS");
+			alert.setContentText("no results found");
+			alert.showAndWait();
+			checkResult = 0;
+			break;
 		case 1:
 			event1.setText(de[0].getName());
 			event2.setText("");

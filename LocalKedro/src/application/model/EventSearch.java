@@ -74,9 +74,8 @@ public class EventSearch {
 				String tpNm = br.readLine();
 				Date time = new Date(dt);
 				Type tp = new Type(tpNm);
-				Location lo = new Location(Integer.parseInt(ll));
 				// put new object into an array
-				DisplayEvent event = new DisplayEvent(evtNm, tp, time, lo);
+				DisplayEvent event = new DisplayEvent(evtNm, tp, time, ll);
 				String line;
 				while ((line = br.readLine()) != null) {
 					event.addGuest(line);
@@ -106,7 +105,7 @@ public class EventSearch {
 		//reads in a folder of files
 		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();
-		DisplayEvent[] eventList = new DisplayEvent[listOfFiles.length-1];
+		DisplayEvent[] eventList = new DisplayEvent[listOfFiles.length];
 		int i = 0;
 		//goes through all the files and searches their names
 		for(File rd : listOfFiles) {
@@ -124,9 +123,8 @@ public class EventSearch {
 					String tpNm = br.readLine();
 					Date time = new Date(dt);
 					Type tp = new Type(tpNm);
-					Location lo = new Location(Integer.parseInt(ll));
 					//put new object into an array
-					DisplayEvent event = new DisplayEvent(evtNm, tp, time, lo);
+					DisplayEvent event = new DisplayEvent(evtNm, tp, time, ll);
 					String line;
 					while((line = br.readLine()) != null) {
 						event.addGuest(line);

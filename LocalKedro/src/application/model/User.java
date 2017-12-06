@@ -8,12 +8,12 @@ public class User {
 	
 	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String name, password, email, fname;
-	private Location loc;
+	private String loc;
 	private boolean proceed = false;
 	private ArrayList<RSVP> rsvp;
 	String z;
 
-	public User(String name, String password, String email, Location location, String fname) {
+	public User(String name, String password, String email, String location, String fname) {
 		this.setName(name);
 		this.setPassword(password);
 		this.setEmail(email);
@@ -112,9 +112,7 @@ public class User {
 					line = br.readLine(); // email
 					setEmail(line);
 					line = br.readLine(); //location
-					z = line;
-					Location location = new Location(Integer.parseInt(z));
-					setLoc(location);
+					setLoc(line);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -200,10 +198,10 @@ public class User {
 	public void setProceed(boolean proceed) {
 		this.proceed = proceed;
 	}
-	public Location getLoc() {
+	public String getLoc() {
 		return loc;
 	}
-	public void setLoc(Location loc) {
+	public void setLoc(String loc) {
 		this.loc = loc;
 	}
 }

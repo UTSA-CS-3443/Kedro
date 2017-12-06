@@ -13,7 +13,7 @@ public class DisplayEvent {
 	private String name;
 	private Type type;
 	private Date date;
-	private Location location;//make this a string
+	private String location;//make this a string
 	private ArrayList<RSVP> rsvp;
 	
 	/**
@@ -24,7 +24,7 @@ public class DisplayEvent {
 	 * @param date
 	 * @param location
 	 */
-	public DisplayEvent(String name, Type type, Date date, Location location) {
+	public DisplayEvent(String name, Type type, Date date, String location) {
 		this.setName(name);
 		this.setType(type);
 		this.setDate(date);
@@ -79,11 +79,11 @@ public class DisplayEvent {
 		this.date = date;
 	}
 
-	public Location getLocation() {
+	public String getLocation() {
 		return location;
 	}
 
-	public void setLocation(Location location) {
+	public void setLocation(String location) {
 		this.location = location;
 	}
 }

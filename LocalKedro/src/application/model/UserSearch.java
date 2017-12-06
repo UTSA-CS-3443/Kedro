@@ -45,7 +45,7 @@ public class UserSearch {
 		BufferedReader br;
 		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();
-		DisplayUser[] userList = new DisplayUser[listOfFiles.length-1];
+		DisplayUser[] userList = new DisplayUser[listOfFiles.length];
 		System.out.println(listOfFiles.length);
 		int i = 0;
 		for (File rd : listOfFiles) {
