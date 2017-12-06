@@ -143,9 +143,6 @@ public class EventSearch {
 				i++;
 
 			}
-			else{
-				break;
-			}
 		}
 			return eventList;
 	}

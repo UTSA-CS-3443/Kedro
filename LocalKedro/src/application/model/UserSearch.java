@@ -79,9 +79,6 @@ public class UserSearch {
 				}
 				i++;
 			}
-			else{
-				break;
-			}
 		}
 		return userList;
 	}

@@ -94,32 +94,32 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="174.0" style="-fx-background-color: #278FB4#278FB4 #278FB4#278FB4;">
           <children>
-                  <Label layoutX="66.0" layoutY="-3.0" text="Local Events" underline="true">
+                  <Label layoutX="66.0" layoutY="-3.0" text="Recent Events(alphabetical)" underline="true">
                      <font>
                         <Font name="Apple Chancery" size="18.0" />
                      </font>
                   </Label>
-                  <Hyperlink layoutX="70.0" layoutY="32.0" text="Local Event 1" textFill="#e5ff00" underline="true">
+                  <Hyperlink layoutX="70.0" layoutY="32.0" fx:id="event1" onAction="#eventOne"  text="Local Event 1" textFill="#e5ff00" underline="true">
                      <font>
                         <Font name="Didot" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="69.0" layoutY="58.0" text="Local Event 2" textFill="#e5ff00" underline="true">
+                  <Hyperlink layoutX="69.0" layoutY="58.0" fx:id="event2" onAction="#eventTwo" text="Local Event 2" textFill="#e5ff00" underline="true">
                      <font>
                         <Font name="Didot" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="69.0" layoutY="84.0" text="Local Event 3" textFill="#e5ff00" underline="true">
+                  <Hyperlink layoutX="69.0" layoutY="84.0" fx:id="event3" onAction="#eventThree" text="Local Event 3" textFill="#e5ff00" underline="true">
                      <font>
                         <Font name="Didot" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="69.0" layoutY="110.0" text="Local Event 4" textFill="#e5ff00" underline="true">
+                  <Hyperlink layoutX="69.0" layoutY="110.0" fx:id="event4" onAction="#eventFour" text="Local Event 4" textFill="#e5ff00" underline="true">
                      <font>
                         <Font name="Didot" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="69.0" layoutY="131.0" text="Local Event 5" textFill="#e5ff00" underline="true">
+                  <Hyperlink layoutX="69.0" layoutY="131.0" fx:id="event5" onAction="#eventFive" text="Local Event 5" textFill="#e5ff00" underline="true">
                      <font>
                         <Font name="Didot" size="13.0" />
                      </font>

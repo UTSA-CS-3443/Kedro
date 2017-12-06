@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EventController">
+<VBox style="-fx-background-color: #278FB4#278FB4;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.UserController">
    <children>
       <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="KEDRO" textAlignment="CENTER" wrappingWidth="129.13134765625">
          <font>
@@ -23,7 +23,7 @@
          </font>
       </Text>
       <AnchorPane />
-      <ImageView fitHeight="131.0" fitWidth="130.0" onMouseClicked="#home">
+      <ImageView fitHeight="131.0" fitWidth="130.0"
          <effect>
             <DropShadow />
          </effect>
