@@ -16,12 +16,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
-public class ProfileViewController implements Initializable,EventHandler<ActionEvent>{
-	
+public class ProfileViewController implements Initializable, EventHandler<ActionEvent> {
+
 	public Label user;
 	public Label name;
 	public Label zip;
-	
+
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -31,9 +31,8 @@ public class ProfileViewController implements Initializable,EventHandler<ActionE
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Editing Profile");
 	}
-	
+
 	public void home(ActionEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -42,32 +41,27 @@ public class ProfileViewController implements Initializable,EventHandler<ActionE
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Home Button");
 	}
-	
 
 	@Override
 	public void initialize(java.net.URL arg0, ResourceBundle arg1) {
-		if (Main.user.getName() == null){
+		if (Main.user.getName() == null) {
 			user.setText("Username : ");
-		}
-		else{
+		} else {
 			user.setText("Username: " + Main.user.getName());
 		}
-		if (Main.user.getFName() == null){
+		if (Main.user.getFName() == null) {
 			name.setText("Name :");
-		}
-		else{
+		} else {
 			name.setText("Name : " + Main.user.getFName());
 		}
-		if(Main.user.getLoc() == null){
+		if (Main.user.getLoc() == null) {
 			zip.setText("Location : ");
-		}
-		else{
+		} else {
 			zip.setText("Location : " + Main.user.getLoc());
 		}
 	}
-	
+
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -76,6 +70,5 @@ public class ProfileViewController implements Initializable,EventHandler<ActionE
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Home Button");
 	}
 }

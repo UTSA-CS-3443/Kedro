@@ -17,18 +17,18 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
-public class EventViewController implements Initializable,EventHandler<ActionEvent>{
-	
+public class EventViewController implements Initializable, EventHandler<ActionEvent> {
+
 	public Label date;
 	public Label name;
 	public Label zip;
 	public Label type;
-	
+
 	@Override
 	public void handle(ActionEvent event) {
 
 	}
-	
+
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -37,13 +37,11 @@ public class EventViewController implements Initializable,EventHandler<ActionEve
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Home Button");
 	}
-	
 
 	@Override
 	public void initialize(java.net.URL arg0, ResourceBundle arg1) {
-		date.setText("Date: " + Main.event.getDate().toString());
+		date.setText("Date: " + Main.event.getDate());
 		name.setText("Name : " + Main.event.getName());
 		zip.setText("Location : " + Main.event.getLocation().toString());
 		type.setText("Type : " + Main.event.getType().toString());

@@ -56,13 +56,13 @@ public class UserSearch {
 				try {
 					br = new BufferedReader(new FileReader(rd));
 					String dsf = br.readLine();
-					br.readLine(); //password
-					String fn = br.readLine(); //full name
+					br.readLine(); // password
+					String fn = br.readLine(); // full name
 					String em = br.readLine(); // email address
-					String ll = br.readLine(); //location
+					String ll = br.readLine(); // location
 					// reads lines into garbage to skip past the personal info
 					// goes down to events they are registered to go to
-				
+
 					DisplayUser user = new DisplayUser(dsf, em, fn, ll);
 					String line;
 					while ((line = br.readLine()) != null) {

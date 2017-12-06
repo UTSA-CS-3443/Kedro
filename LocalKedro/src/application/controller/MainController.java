@@ -42,7 +42,6 @@ public class MainController implements EventHandler<ActionEvent> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Register");
 	}
 
 	// opens up HomePage with successful login
@@ -71,13 +70,12 @@ public class MainController implements EventHandler<ActionEvent> {
 				}
 			} else {
 				Alert alert = new Alert(AlertType.ERROR);
-				alert.setTitle("Username not found");
-				alert.setHeaderText("Username not found");
-				alert.setContentText("Sorry that username does not exist");
+				alert.setTitle("Invalid Username or Password");
+				alert.setHeaderText("Invalid Username or Passowrd");
+				alert.setContentText("Sorry you entered an invalid username or password");
 				alert.showAndWait();
 			}
 		}
 		Main.user.setCurrentUser();
-		System.out.println("Logged In");
 	}
 }

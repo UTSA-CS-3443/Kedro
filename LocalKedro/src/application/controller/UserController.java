@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import application.Main;
-import application.model.Location;
 import application.model.DisplayEvent;
 import application.model.Event;
 import application.model.EventSearch;
@@ -57,11 +56,9 @@ public class UserController implements Initializable {
 
 	public Hyperlink event1, event2, event3, event4, event5;
 
-	private String name = "YOU ARE HERE";
-
 	EventSearch es = new EventSearch(null, null, null);
 	DisplayEvent[] noSearch = es.returnAllEvts();
-	
+
 	private int iEventCount = 1;
 
 	@Override
@@ -73,58 +70,58 @@ public class UserController implements Initializable {
 		// called when map initialization is done and
 		// the map object is ready to use. Current implementation of onMapReady
 		// customizes the map object.
-			switch (noSearch.length) {
-			case 0:
-				event1.setText("No Recent Events click to make one");
-				event2.setText("");
-				event3.setText("");
-				event4.setText("");
-				event5.setText("");
-				iEventCount = 0;
-				break;
-			case 1:
-				event1.setText(noSearch[0].getName());
-				event2.setText("");
-				event3.setText("");
-				event4.setText("");
-				event5.setText("");
-				break;
-			case 2:
-				event1.setText(noSearch[0].getName());
-				event2.setText(noSearch[1].getName());
-				event3.setText("");
-				event4.setText("");
-				event5.setText("");
-				break;
-			case 3:
-				event1.setText(noSearch[0].getName());
-				event2.setText(noSearch[1].getName());
-				event3.setText(noSearch[2].getName());
-				event4.setText("");
-				event5.setText("");
-				break;
-			case 4:
-				event1.setText(noSearch[0].getName());
-				event2.setText(noSearch[1].getName());
-				event3.setText(noSearch[2].getName());
-				event4.setText(noSearch[3].getName());
-				event5.setText("");
-				break;
-			case 5:
-				event1.setText(noSearch[0].getName());
-				event2.setText(noSearch[1].getName());
-				event3.setText(noSearch[2].getName());
-				event4.setText(noSearch[3].getName());
-				event5.setText(noSearch[4].getName());
-				break;
-			default:
-				event1.setText(noSearch[0].getName());
-				event2.setText(noSearch[1].getName());
-				event3.setText(noSearch[2].getName());
-				event4.setText(noSearch[3].getName());
-				event5.setText(noSearch[4].getName());
-				break;
-			}
+		switch (noSearch.length) {
+		case 0:
+			event1.setText("No Recent Events click to make one");
+			event2.setText("");
+			event3.setText("");
+			event4.setText("");
+			event5.setText("");
+			iEventCount = 0;
+			break;
+		case 1:
+			event1.setText(noSearch[0].getName());
+			event2.setText("");
+			event3.setText("");
+			event4.setText("");
+			event5.setText("");
+			break;
+		case 2:
+			event1.setText(noSearch[0].getName());
+			event2.setText(noSearch[1].getName());
+			event3.setText("");
+			event4.setText("");
+			event5.setText("");
+			break;
+		case 3:
+			event1.setText(noSearch[0].getName());
+			event2.setText(noSearch[1].getName());
+			event3.setText(noSearch[2].getName());
+			event4.setText("");
+			event5.setText("");
+			break;
+		case 4:
+			event1.setText(noSearch[0].getName());
+			event2.setText(noSearch[1].getName());
+			event3.setText(noSearch[2].getName());
+			event4.setText(noSearch[3].getName());
+			event5.setText("");
+			break;
+		case 5:
+			event1.setText(noSearch[0].getName());
+			event2.setText(noSearch[1].getName());
+			event3.setText(noSearch[2].getName());
+			event4.setText(noSearch[3].getName());
+			event5.setText(noSearch[4].getName());
+			break;
+		default:
+			event1.setText(noSearch[0].getName());
+			event2.setText(noSearch[1].getName());
+			event3.setText(noSearch[2].getName());
+			event4.setText(noSearch[3].getName());
+			event5.setText(noSearch[4].getName());
+			break;
+		}
 		mapView.setOnMapReadyHandler(new MapReadyHandler() {
 			@Override
 			public void onMapReady(MapStatus status) {
@@ -149,8 +146,7 @@ public class UserController implements Initializable {
 
 					performGeocode(Main.user.getLoc(), "Your Location");
 					for (int i = 0; i < noSearch.length; i++) {
-						performGeocode(noSearch[i].getLocation(),
-								noSearch[i].getName());
+						performGeocode(noSearch[i].getLocation(), noSearch[i].getName());
 					}
 				}
 			}
@@ -166,7 +162,6 @@ public class UserController implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Events Page");
 
 	}
 
@@ -179,7 +174,6 @@ public class UserController implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Profiles Page");
 	}
 
 	private void performGeocode(String text, String MakerName) {
@@ -229,32 +223,30 @@ public class UserController implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Logout");
 
 	}
 
 	public void eventOne(ActionEvent arg0) {
-		if (iEventCount == 0){
+		if (iEventCount == 0) {
 			try {
-				   Parent root = FXMLLoader.load(getClass().getResource("CreateEventPage.fxml"));
-				   Main.stage.setScene(new Scene(root, 600, 400));
-				   Main.stage.show();
-				   //Event event = new Event(name, type, date, location);
-				} catch(Exception e) {
-				   e.printStackTrace();
-				}
-		}
-		else{
-		Event ev = new Event(noSearch[0].getName(), noSearch[0].getType(), noSearch[0].getDate(),
-				noSearch[0].getLocation());
-		Main.event = ev;
-		try {
-			Parent root = FXMLLoader.load(getClass().getResource("EventViewPage.fxml"));
-			Main.stage.setScene(new Scene(root, 600, 400));
-			Main.stage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+				Parent root = FXMLLoader.load(getClass().getResource("CreateEventPage.fxml"));
+				Main.stage.setScene(new Scene(root, 600, 400));
+				Main.stage.show();
+				// Event event = new Event(name, type, date, location);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else {
+			Event ev = new Event(noSearch[0].getName(), noSearch[0].getType(), noSearch[0].getDate(),
+					noSearch[0].getLocation());
+			Main.event = ev;
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("EventViewPage.fxml"));
+				Main.stage.setScene(new Scene(root, 600, 400));
+				Main.stage.show();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 

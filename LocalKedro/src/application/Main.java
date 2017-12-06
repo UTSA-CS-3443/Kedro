@@ -15,10 +15,10 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+
 /**
  * 
- * @author Space hawks
- * this is the main method for our application
+ * @author Space hawks this is the main method for our application
  *
  */
 public class Main extends Application {
@@ -28,15 +28,16 @@ public class Main extends Application {
 	public static SearchString ss;
 	public static Event event;
 	public static OtherUser otherUser;
-	
+
 	@Override
-	    public void init() throws Exception {
-	        // Initializing of JavaFX engine
-	        MapView.InitJavaFX();
-	    }
-	
+	public void init() throws Exception {
+		// Initializing of JavaFX engine
+		MapView.InitJavaFX();
+	}
+
 	/**
-	 * this is the start that loads the first page and sends the control over to a new controller
+	 * this is the start that loads the first page and sends the control over to
+	 * a new controller
 	 */
 	@Override
 	public void start(Stage primaryStage) {
@@ -53,6 +54,7 @@ public class Main extends Application {
 
 	/**
 	 * this launches our application
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {

@@ -17,7 +17,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 
 public class ProfileController implements EventHandler<ActionEvent> {
-	
+
 	public TextField search;
 	String s;
 
@@ -30,7 +30,6 @@ public class ProfileController implements EventHandler<ActionEvent> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Events Page");
 	}
 
 	public void viewYourProfile(ActionEvent event) {
@@ -45,32 +44,29 @@ public class ProfileController implements EventHandler<ActionEvent> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.print("Viewing Personal Profile");
 	}
-	public void search(ActionEvent event){
+
+	public void search(ActionEvent event) {
 		s = search.getText().toString();
-		if(search.getText() == null || search.getText().isEmpty())
-		{
+		if (search.getText() == null || search.getText().isEmpty()) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Empty");
 			alert.setHeaderText("Empty");
 			alert.setContentText("You left a field blank");
 			alert.showAndWait();
+		} else {
+			SearchString strings = new SearchString(s);
+			Main.ss = strings;
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("ProfileResultsPage.fxml"));
+				Main.stage.setScene(new Scene(root, 600, 400));
+				Main.stage.show();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-		else{
-		SearchString strings = new SearchString(s);
-		Main.ss = strings;
-		try {
-			Parent root = FXMLLoader.load(getClass().getResource("ProfileResultsPage.fxml"));
-			Main.stage.setScene(new Scene(root, 600, 400));
-			Main.stage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println("profile search");
 	}
-	}
-	
+
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -79,6 +75,5 @@ public class ProfileController implements EventHandler<ActionEvent> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Home Button");
 	}
 }

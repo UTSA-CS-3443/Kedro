@@ -1,7 +1,6 @@
 package application.controller;
 
 import application.Main;
-import application.model.Location;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -45,14 +44,13 @@ public class EditProfileController implements EventHandler<ActionEvent> {
 			Main.user.setPassword(p);
 			Main.user.userWrite();
 			try {
-				
+
 				Parent root = FXMLLoader.load(getClass().getResource("ProfileViewPage.fxml"));
 				Main.stage.setScene(new Scene(root, 600, 400));
 				Main.stage.show();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			System.out.println("Edit Profile Saved");
 		}
 	}
 
@@ -64,9 +62,8 @@ public class EditProfileController implements EventHandler<ActionEvent> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Edit Profile Cancelled");
 	}
-	
+
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -75,7 +72,6 @@ public class EditProfileController implements EventHandler<ActionEvent> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Home Button");
 	}
 
 }

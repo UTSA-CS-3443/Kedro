@@ -5,28 +5,28 @@ import java.util.ArrayList;
 public class OtherUser {
 	private String name, password, email, fname;
 	private String loc;
-	
+
 	public OtherUser(String name, String email, String fname, String location) {
 		this.setName(name);
 		this.setEmail(email);
 		this.setLoc(location);
 		this.setFName(fname);
-		System.out.println(this.getName() + " " + this.getPassword() + " " + this.getEmail() +" in user");
+		System.out.println(this.getName() + " " + this.getPassword() + " " + this.getEmail() + " in user");
 	}
-	
+
 	public String toString() {
 		String line = "" + this.getName() + this.getEmail();
 		return line;
 	}
 
-	public String getFName(){
+	public String getFName() {
 		return fname;
 	}
-	
-	public void setFName(String fname){
+
+	public void setFName(String fname) {
 		this.fname = fname;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -54,6 +54,7 @@ public class OtherUser {
 	public String getLoc() {
 		return loc;
 	}
+
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}

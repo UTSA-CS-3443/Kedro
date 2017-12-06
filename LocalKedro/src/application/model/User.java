@@ -5,7 +5,7 @@ import java.util.*;
 import application.controller.MainController;
 
 public class User {
-	
+
 	private static String OS = System.getProperty("os.name").toLowerCase();
 	private String name, password, email, fname;
 	private String loc;
@@ -20,14 +20,16 @@ public class User {
 		this.setLoc(location);
 		this.setFName(fname);
 		this.setProceed(userCheck());
-		System.out.println(this.isProceed() + " " + this.getName() + " " + this.getPassword() + " " + this.getEmail() +" in user");
+		System.out.println(this.isProceed() + " " + this.getName() + " " + this.getPassword() + " " + this.getEmail()
+				+ " in user");
 		this.rsvp = new ArrayList<RSVP>();
 	}
+
 	/**
 	 * Creates the current user object and loads all of their info into the
-	 * application also if you guys get tired of logging in then just comment out
-	 * this.setProceed(userCheck()); and uncomment this.setProceed(true); and it'll
-	 * let you log in regardless
+	 * application also if you guys get tired of logging in then just comment
+	 * out this.setProceed(userCheck()); and uncomment this.setProceed(true);
+	 * and it'll let you log in regardless
 	 * 
 	 * @param name
 	 * @param password
@@ -41,16 +43,16 @@ public class User {
 	}
 
 	/**
-	 * this function checks if the user exists and if they do it reads in all of their
-	 * rsvped events and other attributes that I have yet to add
+	 * this function checks if the user exists and if they do it reads in all of
+	 * their rsvped events and other attributes that I have yet to add
+	 * 
 	 * @return true if the user exists
 	 */
 	public boolean userCheck() {
 		String filePath = new File("").getAbsolutePath();
-		if(OS.equals("mac os x")) {
+		if (OS.equals("mac os x")) {
 			filePath += "/UserFolder";
-		}
-		else {
+		} else {
 			filePath += "\\UserFolder";
 		}
 		File folder = new File(filePath);
@@ -65,7 +67,10 @@ public class User {
 						if (line != null && line.equals(this.getPassword())) {
 							System.out.println("Welcome!");
 							this.setEmail(br.readLine()); // email
-							while ((line = br.readLine()) != null) { // reads in events to arrayList
+							while ((line = br.readLine()) != null) { // reads in
+																		// events
+																		// to
+																		// arrayList
 								if (!(line.equals("*"))) {
 									RSVP loadIn = new RSVP(line);
 									this.rsvp.add(loadIn);
@@ -88,13 +93,12 @@ public class User {
 		}
 		return false;
 	}
-	
+
 	public void setCurrentUser() {
 		String filePath = new File("").getAbsolutePath();
-		if(OS.equals("mac os x")) {
+		if (OS.equals("mac os x")) {
 			filePath += "/UserFolder";
-		}
-		else {
+		} else {
 			filePath += "\\UserFolder";
 		}
 		File folder = new File(filePath);
@@ -111,24 +115,20 @@ public class User {
 					setFName(line);
 					line = br.readLine(); // email
 					setEmail(line);
-					line = br.readLine(); //location
+					line = br.readLine(); // location
 					setLoc(line);
-			} catch (Exception e) {
-				e.printStackTrace();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}
-}
-
-	
-
 
 	public void userWrite() {
 		String filePath = new File("").getAbsolutePath();
-		if(OS.equals("mac os x")) {
+		if (OS.equals("mac os x")) {
 			filePath += "/UserFolder/";
-		}
-		else {
+		} else {
 			filePath += "\\UserFolder\\";
 		}
 		File file = new File(filePath + this.getName());
@@ -159,14 +159,14 @@ public class User {
 	}
 
 	///// GETTERS AND SETTERS//////
-	public String getFName(){
+	public String getFName() {
 		return fname;
 	}
-	
-	public void setFName(String fname){
+
+	public void setFName(String fname) {
 		this.fname = fname;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -198,9 +198,11 @@ public class User {
 	public void setProceed(boolean proceed) {
 		this.proceed = proceed;
 	}
+
 	public String getLoc() {
 		return loc;
 	}
+
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}

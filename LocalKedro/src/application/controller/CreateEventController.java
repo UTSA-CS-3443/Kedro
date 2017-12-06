@@ -1,9 +1,7 @@
 package application.controller;
 
 import application.Main;
-import application.model.Date;
 import application.model.Event;
-import application.model.Location;
 import application.model.Type;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -52,15 +50,13 @@ public class CreateEventController implements EventHandler<ActionEvent> {
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
 				Main.stage.setScene(new Scene(root, 600, 400));
-				Main.stage.show();		Date date = new Date(eDate);
-					Event event1 = new Event(eName, eType, date, eLoc);
-					event1.eventCheck();
-					event1.eventWrite();	
+				Main.stage.show();
+				Event event1 = new Event(eName, eType, eDate, eLoc);
+				event1.eventCheck();
+				event1.eventWrite();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			System.out.println(eName + "\n" + eType + "\n" + eDate + "\n" + eLoc + "\n");
-			System.out.println("Event Created");
 		}
 	}
 
@@ -72,9 +68,8 @@ public class CreateEventController implements EventHandler<ActionEvent> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Create Event Cancelled");
 	}
-	
+
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -83,6 +78,5 @@ public class CreateEventController implements EventHandler<ActionEvent> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Home Button");
 	}
 }

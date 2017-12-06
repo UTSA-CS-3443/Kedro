@@ -13,8 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
-public class ProfileSearchViewController implements Initializable,EventHandler<ActionEvent> {
-	
+public class ProfileSearchViewController implements Initializable, EventHandler<ActionEvent> {
+
 	public Label name;
 	public Label user;
 	public Label zip;
@@ -22,7 +22,7 @@ public class ProfileSearchViewController implements Initializable,EventHandler<A
 	@Override
 	public void handle(ActionEvent event) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -30,9 +30,9 @@ public class ProfileSearchViewController implements Initializable,EventHandler<A
 		name.setText("Name: " + Main.otherUser.getFName());
 		user.setText("Username: " + Main.otherUser.getName());
 		zip.setText("Location: " + Main.otherUser.getLoc());
-		
+
 	}
-	
+
 	public void home(MouseEvent event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
