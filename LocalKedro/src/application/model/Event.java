@@ -44,7 +44,6 @@ public class Event {
 			filePath += "\\EventFolder\\";
 		}
 		File file = new File(filePath + this.getName());
-		System.out.println(file.getAbsolutePath());
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
 			pw.println(this.getName());
 			pw.println(this.getDate().toString());
@@ -54,7 +53,7 @@ public class Event {
 			pw.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("you done goofed");
+			System.out.println("File hiearchy incorrect. Please do not move files\n");
 		}
 	}
 
@@ -64,7 +63,11 @@ public class Event {
 	 */
 	public boolean eventCheck() {
 		String filePath = new File("").getAbsolutePath();
-		filePath += "\\EventFolder";
+		if (OS.equals("mac os x")) {
+			filePath += "/EventFolder";
+		} else {
+			filePath += "\\EventFolder";
+		}
 		File folder = new File(filePath); // add filepath
 		File[] listOfFiles = folder.listFiles();
 
@@ -76,7 +79,8 @@ public class Event {
 					return true;
 					// because the name doesn't exist
 				} catch (Exception e) {
-					System.out.println("Something doesn't exist");
+					e.printStackTrace();
+					System.out.println("File hiearchy incorrect. Please do not move files\n");
 				}
 		}
 		return false;

@@ -25,8 +25,6 @@ public class User {
 		this.setLoc(location);
 		this.setFName(fname);
 		this.setProceed(userCheck());
-		System.out.println(this.isProceed() + " " + this.getName() + " " + this.getPassword() + " " + this.getEmail()
-				+ " in user");
 	}
 
 	/**
@@ -68,14 +66,7 @@ public class User {
 					if (line.equals(this.getName())) {
 						line = br.readLine(); // password
 						if (line != null && line.equals(this.getPassword())) {
-							System.out.println("Welcome!");
 							this.setEmail(br.readLine()); // email
-							while ((line = br.readLine()) != null) { // reads in
-																		// events
-																		// to
-																		// arrayList
-							}
-							// System.out.println(toString() + "\n");
 							return true;
 						} else {
 							return false;
@@ -133,7 +124,6 @@ public class User {
 			filePath += "\\UserFolder\\";
 		}
 		File file = new File(filePath + this.getName());
-		System.out.println(file.getAbsolutePath());
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
 			pw.println(this.getName());
 			pw.println(this.getPassword());
@@ -142,7 +132,7 @@ public class User {
 			pw.println(this.getLoc());
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("you done goofed");
+			System.out.println("File hiearchy incorrect. Please do not move files\n");
 		}
 	}
 	/**

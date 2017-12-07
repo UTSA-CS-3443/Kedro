@@ -66,7 +66,6 @@ public class EventSearch {
 				// uses the strings in the file to make a new object
 				br = new BufferedReader(new FileReader(rd));
 				String evtNm = br.readLine();
-				System.out.println("return all:" + evtNm + " return ended");
 				String dt = br.readLine();
 				String ll = br.readLine();
 				String tpNm = br.readLine();
@@ -98,11 +97,17 @@ public class EventSearch {
 		// reads in a folder of files
 		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();
-		DisplayEvent[] eventList = new DisplayEvent[listOfFiles.length];
 		int i = 0;
+		int iSize = 0;
+		for(File rd : listOfFiles) {
+			if(rd.getName().contains(name)){
+				iSize++;
+			}
+		}
+		DisplayEvent[] eventList = new DisplayEvent[iSize];
 		// goes through all the files and searches their names
 		for (File rd : listOfFiles) {
-			if (i > listOfFiles.length) {
+			if (i > iSize-1) {
 				return eventList;
 			}
 			if (rd.getName().contains(name)) {
@@ -110,7 +115,6 @@ public class EventSearch {
 					// uses the strings in the file to make a new object
 					br = new BufferedReader(new FileReader(rd));
 					String evtNm = br.readLine();
-					System.out.println(evtNm);
 					String dt = br.readLine();
 					String ll = br.readLine();
 					String tpNm = br.readLine();
@@ -123,6 +127,9 @@ public class EventSearch {
 					return eventList;
 				} catch (IOException e) {
 					System.out.println("no file");
+					return null;
+				} catch (NullPointerException e) {
+					System.out.println("it was here");
 					return null;
 				}
 				i++;

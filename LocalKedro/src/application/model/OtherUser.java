@@ -23,7 +23,6 @@ public class OtherUser {
 		this.setEmail(email);
 		this.setLoc(location);
 		this.setFName(fname);
-		System.out.println(this.getName() + " " + this.getPassword() + " " + this.getEmail() + " in user");
 	}
 	/**
 	 * to string method returns username and email

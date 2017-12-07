@@ -92,7 +92,6 @@ public class EventSearchController implements Initializable, EventHandler<Action
 	 * @parm arg0, arg1 - arguments - enables initialization
 	 */
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		System.out.println(de.length);
 		// this is an array of event names. Set the text in the fxml to this in
 		// a for
 		// switch

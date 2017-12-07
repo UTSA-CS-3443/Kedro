@@ -73,7 +73,6 @@ public class MainController implements EventHandler<ActionEvent> {
 		} else {
 			User user = new User(u, p);
 			Main.user = user;
-			System.out.println(u + "\n" + p);
 			// added error checking so need name and abc123 to log in
 			if (user.isProceed()) {
 				try {
