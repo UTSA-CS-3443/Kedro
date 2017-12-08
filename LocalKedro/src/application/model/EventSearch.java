@@ -94,31 +94,26 @@ public class EventSearch {
 	 */
 	public DisplayEvent[] searchName(String name, String filePath) {
 		BufferedReader br;
-		// reads in a folder of files
+		//reads in a folder of files
 		File folder = new File(filePath);
 		File[] listOfFiles = folder.listFiles();
+		DisplayEvent[] eventList = new DisplayEvent[listOfFiles.length-1];
 		int i = 0;
-		int iSize = 0;
+		//goes through all the files and searches their names
 		for(File rd : listOfFiles) {
-			if(rd.getName().contains(name)){
-				iSize++;
-			}
-		}
-		DisplayEvent[] eventList = new DisplayEvent[iSize];
-		// goes through all the files and searches their names
-		for (File rd : listOfFiles) {
-			if (i > iSize-1) {
+			if(i > listOfFiles.length) {
 				return eventList;
 			}
-			if (rd.getName().contains(name)) {
+			if(rd.getName().contains(name)) {
 				try {
-					// uses the strings in the file to make a new object
+					//uses the strings in the file to make a new object
 					br = new BufferedReader(new FileReader(rd));
 					String evtNm = br.readLine();
+					System.out.println(evtNm);
 					String dt = br.readLine();
 					String ll = br.readLine();
 					String tpNm = br.readLine();
-					// put new object into an array
+					//put new object into an array
 					DisplayEvent event = new DisplayEvent(evtNm, tpNm, dt, ll);
 					eventList[i] = event;
 					br.close();
@@ -128,14 +123,10 @@ public class EventSearch {
 				} catch (IOException e) {
 					System.out.println("no file");
 					return null;
-				} catch (NullPointerException e) {
-					System.out.println("it was here");
-					return null;
 				}
 				i++;
-
 			}
 		}
-		return eventList;
+			return eventList;
 	}
 }
